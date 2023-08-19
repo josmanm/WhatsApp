@@ -1,0 +1,103 @@
+@use 'variables' as color;
+.container__whatsapp__myContacts
+{
+    height: 1000vh;
+    &__header
+    {
+       
+        height: 4rem;
+        width: 90vw;
+        display: flex;
+        background-color: color.$ligth-gray;
+        padding-left: 1rem;
+        align-items: center;
+        &-user
+        {
+            height: 3.5rem;
+            width: 3.5rem;
+            border-radius: 30px;
+           
+        }
+    }
+    &__barraSearch
+    {
+        
+        display: flex;
+        height: 4rem;
+        width: 90vw;
+        background-color: color.$grayLigth;
+        align-items: center;
+        &-search
+        {
+            width: 2rem;
+            height: 2.5rem;
+            background-color: white;
+            border-radius: 15px 0 0 15px;
+            margin-left: 1rem;
+            
+        }
+        &__formulario
+        {
+            
+            &-input
+            {
+                border: none;
+                height: 2.5rem;
+                width: 27rem;
+                border-radius: 0 15px 15px 0;
+                padding-left: 1rem;
+            }
+        }
+    }
+    
+    &__cardContact
+    {
+        border-bottom: 1px solid color.$ligth-gray;
+        display: flex;
+        align-items: center;
+        padding: 0.5rem;
+        
+        &-imagen
+        {
+            width: 3.5rem;
+            height: 3.5rem;
+            border-radius: 30px;
+        }
+        &__text
+        {
+            &__nameDate
+            {
+                width: 26rem;
+                display: flex;
+                justify-content: space-between;
+
+                &-name
+                {
+                    padding-left: 1rem;
+                }
+                &-date
+                {
+                    color: color.$gray;
+                }
+            
+            }
+            &__imgText
+            {
+                display: flex;
+                align-items: center;
+             
+                &-img
+                {
+               
+                    width: 2.5rem;
+                    height: 2.5rem;
+                }
+                &-text
+                {
+                    color: color.$gray;
+                }
+            }
+        }
+    }
+    
+}
