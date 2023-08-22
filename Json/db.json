@@ -1,18 +1,29 @@
 {
     "usuarios": [
         {
-            "Id":1,
-            "Nombre":"Juan",
-            "NumCelular": "3168553814",
-            "Contrasenia": "1234santiago",
-            "UrlImgPerfil": "",
-            "Flag": "",
-            "InfoUsuario":"",
-            "FechaHoraEnLinea": ""
+            "id":1,
+            "nombre":"Juan",
+            "numCelular": "3168553814",
+            "contrasenia": "1234santiago",
+            "urlImgPerfil": "",
+            "flag": "desconectado",
+            "infoUsuario":"Estoy dormido",
+            "fechaHoraEnLinea": "10/24/2023, 1:30:23 PM"
+        },
+        {
+            "id":2,
+            "nombre":"Camilo",
+            "numCelular": "3146962896",
+            "contrasenia": "1234camilo",
+            "urlImgPerfil": "",
+            "flag": "desconectado",
+            "infoUsuario":"en el trabajo",
+            "fechaHoraEnLinea": "10/24/2023, 1:30:23 PM"
         }
     ],
     "mensajes":[
         {
+            "id": 1,
             "idUser1": 1,
             "idUser2": 2,
             "conversaciones":{
