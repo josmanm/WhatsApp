@@ -1,14 +1,14 @@
 {
   "usuarios": [
     {
-        "nombre": "Juan",
-        "numCelular": "3168553814",
-        "contrasenia": "1234santiago",
-        "urlImgPerfil": "",
-        "flag": "En Linea",
-        "infoUsuario": "Estoy dormido",
-        "fechaHoraEnLinea": "10/24/2023, 1:30:23 PM",
-        "id": 1
+      "nombre": "Juan",
+      "numCelular": "3168553814",
+      "contrasenia": "1234santiago",
+      "urlImgPerfil": "",
+      "flag": "En Linea",
+      "infoUsuario": "Estoy dormido",
+      "fechaHoraEnLinea": "10/24/2023, 1:30:23 PM",
+      "id": 1
     },
     {
       "nombre": "Camilo",
@@ -32,15 +32,22 @@
       "id": 1,
       "idUser1": 1,
       "idUser2": 2,
-      "conversaciones": {
-        "mensaje": {
+      "conversaciones": [
+        {
+            "sendBy": 1,
+            "date": "2017-10-10",
+            "hour": "10:10:10PM",
+            "message": "Hola, como estas?",
+            "flag": false
+        },
+        {
           "sendBy": 1,
-          "date": "2017-10-10 10:10:10",
+          "date": "2017-10-10",
           "hour": "10:10:10",
           "message": "Hola, como estas?",
-          "flag": true
+          "flag": false
         }
-      }
+      ]
     }
   ]
 }

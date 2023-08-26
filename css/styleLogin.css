@@ -42,6 +42,9 @@
   align-items: center;
   justify-content: center;
 }
+.container_row_login a {
+  color: rgb(0, 168, 132);
+}
 
 * {
   margin: 0;

@@ -11,43 +11,49 @@ let botonIngresar = document.getElementById('botonIngresar');
 let data;
 
 const login = async (e) => {
-    const numCelular = document.getElementById('inputNumCelular').value;
-    const contrasenia = document.getElementById('contrasenia').value;
-    // Fetch all the forms we want to apply custom Bootstrap validation styles to
-    let userData = {
-        numCelular: numCelular,
-        contrasenia: contrasenia
-    }
-    userData = await getLogin(userData);
-    console.log(userData);
-    if(Object.keys(userData).length === 0){
-        console.log("no entro");
-    }else{
-        console.log(" entro");
-    }
+  const numCelular = document.getElementById('inputNumCelular').value;
+  const contrasenia = document.getElementById('contrasenia').value;
+  // Fetch all the forms we want to apply custom Bootstrap validation styles to
+  let userData = {
+    numCelular: numCelular,
+    contrasenia: contrasenia
+  }
+  userData = await getLogin(userData);
+  console.log(userData);
+  if (Object.keys(userData).length === 0) {
+    console.log("no entro");
+  } else {
+    console.log(" entro");
+  }
 }
 
 // Example starter JavaScript for disabling form submissions if there are invalid fields
 (function () {
-    'use strict'
-  
-    // Fetch all the forms we want to apply custom Bootstrap validation styles to
-    var forms = document.querySelectorAll('.needs-validation')
-  
-    // Loop over them and prevent submission
-    Array.prototype.slice.call(forms)
-      .forEach(function (form) {
-        form.addEventListener('submit', function (event) {
-          if (!form.checkValidity()) {
-            event.preventDefault()
-            event.stopPropagation()
-          }
-          else{
-            event.preventDefault();
-            login();
-          }
-          form.classList.add('was-validated')
-        }, false)
-      })
-  })()
+  'use strict'
+
+  // Fetch all the forms we want to apply custom Bootstrap validation styles to
+  var forms = document.querySelectorAll('.needs-validation')
+
+  // Loop over them and prevent submission
+  Array.prototype.slice.call(forms).forEach(function (form) {
+      form.addEventListener('submit', function (event) {
+        if (!form.checkValidity()) {
+          event.preventDefault()
+          event.stopPropagation()
+          Swal.fire({
+            icon: 'warning',
+            title: 'Oops...',
+            text: 'Falta llenar los campos indicados!',
+            confirmButtonColor: '#00a884',
+            width: '20rem',
+          })
+        }
+        else {
+          event.preventDefault();
+          login();
+        }
+        form.classList.add('was-validated')
+      }, false)
+    })
+})()
 
