@@ -32,7 +32,7 @@
                         <form class="container__whatsapp__changeImagen__body__data__formulario">
                             <label for="nombre">Tu nombre:</label>
                             <div class="container__whatsapp__changeImagen__body__data__formulario__nameImg">
-                                <input type="text" id="nombre" class="container__whatsapp__changeImagen__body__data__formulario__nameImg-name" value="Alejandra">
+                                <input type="text" id="nombre" class="container__whatsapp__changeImagen__body__data__formulario__nameImg-name" value="Alejandra" readonly>
                                 <img class="container__whatsapp__changeImagen__body__data__formulario__nameImg-img" src="img/edit.png" alt="edit">
                             </div>
                         </form>
@@ -67,6 +67,21 @@
                         </div>
                     </div>
                 </div>
+                <div class="container__whatsapp__myContacts__cardContact">
+                    <img class="fas fa-search container__whatsapp__myContacts__cardContact-imagen" src="img/user4.avif" alt="userContact">
+                    <div class="container__whatsapp__myContacts__cardContact__text">
+                        <div class="container__whatsapp__myContacts__cardContact__text__nameDate">
+                            <h5 class="container__whatsapp__myContacts__cardContact__text__nameDate-name">Vivian Contreras</h5>
+                            <h6 class="container__whatsapp__myContacts__cardContact__text__nameDate-date">Miercoles</h6>
+                        </div>
+                        <div class="container__whatsapp__myContacts__cardContact__text__imgText">
+                            <img class="container__whatsapp__myContacts__cardContact__text__imgText-img" src="img/check.png" alt="">
+                            <h6 class="container__whatsapp__myContacts__cardContact__text__imgText-text">
+                                Como te fue en el examen!
+                            </h6>
+                        </div>
+                    </div>
+                </div>
             </div>
             <!--fin my constacts-->
             <!--my chat-->
@@ -83,7 +98,44 @@
                     <img class="fas fa-search container__whatsapp__myChat__header-search" src="img/search.png" alt="search">
                 </div> 
                 <div class="container__whatsapp__myChat__fondo">
-        
+                    <div class="container__whatsapp__myChat__fondo__date">
+                        <h3 class="container__whatsapp__myChat__fondo__date-date">Jueves</h3>
+                    </div>
+                    <div class="container__whatsapp__myChat__fondo__mensajeEnviado">
+                        <div class="container__whatsapp__myChat__fondo__mensajeEnviado__contenedor">
+                            <div class="container__whatsapp__myChat__fondo__mensajeEnviado__contenedor__message">
+                                <h5 class="container__whatsapp__myChat__fondo__mensajeEnviado__contenedor__message-text">Me puedes enviar la dirección de tu casa </h5>
+                                <li><img class="container__whatsapp__myChat__fondo__mensajeEnviado__contenedor__message-arrow" src="img/icon-arrow-down.svg" alt="iconArrow">
+                                    <ul class="container__whatsapp__myChat__fondo__mensajeEnviado__contenedor__message-arrow-lista">
+                                        <li class="container__whatsapp__myChat__fondo__mensajeEnviado__contenedor__message-arrow-lista__textEdit">Editar <img class="container__whatsapp__myChat__fondo__mensajeRecibido__contenedor__message-arrow-lista__editImag" src="img/editar-codigo.png" alt="icon edit"> </li>
+                                        <li class="container__whatsapp__myChat__fondo__mensajeEnviado__contenedor__message-arrow-lista__textDelete">Eliminar <img class="container__whatsapp__myChat__fondo__mensajeRecibido__contenedor__message-arrow-lista__deleteImag" src="img/basura.png" alt="icon delete"></li>
+                                    </ul>
+                                </li>
+                            </div>
+                            <div class="container__whatsapp__myChat__fondo__mensajeEnviado__contenedor-img">
+                                <h6 class="container__whatsapp__myChat__fondo__mensajeEnviado__contenedor-img_date">7:49 p.m </h6>
+                                <img class="container__whatsapp__myChat__fondo__mensajeEnviado__contenedor-img_img" src="img/check.png" alt="mesage enviado">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container__whatsapp__myChat__fondo__mensajeRecibido">
+                        <div class="container__whatsapp__myChat__fondo__mensajeRecibido__contenedor">
+                            <div class="container__whatsapp__myChat__fondo__mensajeRecibido__contenedor__message">
+                                <h5 class="container__whatsapp__myChat__fondo__mensajeRecibido__contenedor__message-text">Claro que si! Calle 15 # 11-98 B/Limonar </h5>
+                                    <li><img class="container__whatsapp__myChat__fondo__mensajeRecibido__contenedor__message-arrow" src="img/icon-arrow-down.svg" alt="iconArrow">
+                                        <ul class="container__whatsapp__myChat__fondo__mensajeRecibido__contenedor__message-arrow-lista">
+                                            <li class="container__whatsapp__myChat__fondo__mensajeRecibido__contenedor__message-arrow-lista__textEdit">Editar <img class="container__whatsapp__myChat__fondo__mensajeRecibido__contenedor__message-arrow-lista__editImag" src="img/editar-codigo.png" alt="icon edit"> </li>
+                                            <li class="container__whatsapp__myChat__fondo__mensajeRecibido__contenedor__message-arrow-lista__textDelete">Eliminar <img class="container__whatsapp__myChat__fondo__mensajeRecibido__contenedor__message-arrow-lista__deleteImag" src="img/basura.png" alt="icon delete"></li>
+                                        </ul>
+                                    </li>
+                           
+                            </div>
+                            <div class="container__whatsapp__myChat__fondo__mensajeRecibido__contenedor-img">
+                                <h6 class="container__whatsapp__myChat__fondo__mensajeRecibido__contenedor-img_date">7:55 p.m </h6>
+                                <img class="container__whatsapp__myChat__fondo__mensajeRecibido__contenedor-img_img" src="img/check.png" alt="mesage enviado">
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="container__whatsapp__myChat__barraChats">
@@ -91,8 +143,9 @@
                     <img class="container__whatsapp__myChat__barraChats-document" src="img/iconArchivos.png" alt="iconDocument">
                     <form class="container__whatsapp__myChat__barraChats__formulario">
                         <input type="text" class="container__whatsapp__myChat__barraChats__formulario-input" placeholder="Escribe un mensaje">
+                        <button  type="submit"><img class="container__whatsapp__myChat__barraChats__formulario-send" src="img/microphone.png" alt="iconMicrophone"></button>
                     </form>
-                    <img class="container__whatsapp__myChat__barraChats-send" src="img/microphone.png" alt="iconMicrophone">
+                    
 
                 </div>
 
@@ -124,7 +177,7 @@
             <!--fin infoMessage-->
         </div>
       </div>
-
+    <script src="script/script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
 </body>
 </html>

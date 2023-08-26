@@ -21,7 +21,9 @@
             {
                 width: 1.5rem;
                 height: 1.5rem; 
-
+                &:hover{
+                    cursor: pointer;
+                }
             }
             &-perfil
             {
@@ -71,15 +73,12 @@
         }
         &__data
         {
-            
-    
             padding-left: 1rem;
             background-color: white;
             &__formulario
             {
                 & label
                 {
-                    
                     color: color.$gray;
                     font-weight: bold;
                     width: 100%;
@@ -98,13 +97,12 @@
                         width: 92%;
                         border: none;
                         font-weight: bold;
-                        
                     }
                     &-img
                     {
                         width: 2rem;
                         height: 2rem;  
-                         
+                        cursor: pointer;
                     }
                 }
             }

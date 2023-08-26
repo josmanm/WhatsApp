@@ -1,7 +1,6 @@
 @use '../variables' as color;
 .container__whatsapp__myContacts
-{
-
+{ 
     &__header
     {
         height: 4rem;
@@ -16,7 +15,10 @@
             height: 3.5rem;
             width: 3.5rem;
             border-radius: 30px;
-           
+            &:hover
+            {
+                cursor: pointer;
+            }
         }
     }
     &__barraSearch
@@ -56,7 +58,7 @@
         display: flex;
         align-items: center;
         padding: 0.5rem;
-        
+        width: 102%;
         &-imagen
         {
             width: 3.5rem;
@@ -98,6 +100,7 @@
                 }
             }
         }
+      
     }
     
 }

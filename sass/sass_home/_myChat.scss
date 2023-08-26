@@ -37,7 +37,7 @@
         {
             width: 2rem;
             height: 2rem;
-          
+            cursor: pointer;
         }
     }
     &__fondo
@@ -46,7 +46,195 @@
         background-image: url(../img/fondo.jpg);
         background-repeat: no-repeat;
         background-size: cover;
-       
+       &__date
+       {
+            display: flex;
+            justify-content: center;
+            &-date
+            {
+                margin-top: 0.5rem;
+                background-color: color.$blueLigth;
+                width: 8%;
+                font-size: 1.3rem;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 8px;
+            }
+        
+       }
+       &__mensajeEnviado
+       {
+            display: flex;
+            justify-content: end;
+            margin-right: 1.5rem;
+            &__contenedor
+            {
+                border-radius: 15px 15px 15px 15px;
+                padding-right: 1rem;
+                background-color: color.$greenChat;
+                width: 26rem;
+                flex-direction: column;
+                &__message
+                {
+                    display: flex;
+                    &-text
+                    {
+                        padding: 0.5rem; 
+                    }
+                    & li
+                    {
+                        list-style: none;
+                    }
+                    &-arrow
+                    {
+                        display: none;
+                        margin-top: 1rem;
+                        width: 1rem;
+                        height: 0.8rem;
+                        &-lista
+                        {
+                            display: none;
+                            position: absolute;
+                            padding: 0 0 0 0.5rem;
+                            margin-top: 0.5rem;
+                            margin-left: -90px;
+                            border-radius: 15px;
+                            width: 7rem;
+                            height: 4.5rem;
+                            background-color: color.$ligth-gray;
+                            border: 1px solid lightgray;
+                            &__textEdit
+                            {
+                                font-size: 1.2rem;
+                                &:hover
+                                {
+                                    cursor: pointer;
+                                }
+                            }
+                            &__editImag
+                            {
+                                width: 1.5rem;
+                                height: 1.5rem;
+                                margin-left: 1.3rem;
+                            }
+                            &__textDelete
+                            {
+                                font-size: 1.2rem;
+                                &:hover
+                                {
+                                    cursor: pointer;
+                                }
+                            }
+                            &__deleteImag
+                            {
+                                width: 1.5rem;
+                                height: 1.5rem;
+                            }
+                        }
+                    } 
+                }
+                &-img
+                {
+                    display: flex;
+                    align-items: center;
+                    justify-content: flex-end;
+                    &_img
+                    {
+                        width: 2rem;
+                        height: 100%;
+                    }
+                    
+                }
+            }
+            
+       }
+
+       &__mensajeRecibido
+       {
+            display: flex;
+            margin-left: 1.5rem;
+            &__contenedor
+            {
+                border-radius: 15px 15px 15px 15px;
+                padding-right: 1rem;
+                background-color: white;
+                width: 26rem;
+                flex-direction: column;
+                &__message
+                {
+                    display: flex;
+                    &-text
+                    {
+                        padding: 0.5rem; 
+                    }
+                    & li
+                    {
+                        list-style: none;
+                    }
+                    &-arrow
+                    {
+                        display: none;
+                        margin-top: 1rem;
+                        width: 1rem;
+                        height: 0.8rem;
+                        &-lista
+                        {
+                            display: none;
+                            position: absolute;
+                            padding: 0 0 0 0.5rem;
+                            margin-top: 0.5rem;
+                            margin-left: -90px;
+                            border-radius: 15px;
+                            width: 7rem;
+                            height: 4.5rem;
+                            background-color: color.$ligth-gray;
+                            border: 1px solid lightgray;
+                            &__textEdit
+                            {
+                                font-size: 1.2rem;
+                                &:hover
+                                {
+                                    cursor: pointer;
+                                }
+                            }
+                            &__editImag
+                            {
+                                width: 1.5rem;
+                                height: 1.5rem;
+                                margin-left: 1.3rem;
+                            }
+                            &__textDelete
+                            {
+                                font-size: 1.2rem;
+                                &:hover
+                                {
+                                    cursor: pointer;
+                                }
+                            }
+                            &__deleteImag
+                            {
+                                width: 1.5rem;
+                                height: 1.5rem;
+                            }
+                        }
+                    }  
+                   
+                }
+                &-img
+                {
+                    display: flex;
+                    align-items: center;
+                    justify-content: flex-end;
+                    &_img
+                    {
+                        width: 2rem;
+                        height: 100%;
+                    }
+                    
+                }
+            }
+        }
     }
     &__barraChats
     {
@@ -58,7 +246,6 @@
         gap: 1rem;
         &-emoji
         {
-
             width: 2rem;
             height: 2rem;
         }
@@ -76,11 +263,22 @@
                 border: none;
                 border-radius: 15px;
             }
+
+            &-send
+            {
+                
+                width: 2rem;
+                height: 2rem;
+            }
+            & button
+            {
+                border: none;
+            }
         }
-        &-send
-        {
-            width: 2rem;
-            height: 2rem;
-        }
+        
+    }
+    @media (max-width: 1115px)
+    {
+        display: none;
     }
 }

@@ -1,7 +1,9 @@
 @use '../variables' as color;
 .container__whatsapp__infoMesagge
 {
-        
+    display: none;
+    position: absolute;
+    margin-left: 63.5rem;
     background-color: color.$ligth-gray;
     height: 95vh;
     &__header
@@ -13,6 +15,10 @@
         {
             margin-left: 1rem;
             font-size: 1.2rem;
+        }
+        &-closeIcon
+        {
+            cursor: pointer;
         }
     }
 
@@ -50,9 +56,11 @@
         margin-top: 1rem;
         height: 7rem;
         background-color: white;
+        border-radius: 10px;
         &-date
         {
             color: color.$gray;
+            padding-left: 0.5rem;
         }
         &__infoMessage
         {
