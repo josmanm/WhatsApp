@@ -1,16 +1,9 @@
-import { createMessage } from '../script/createMessage.js';
-import { createUser } from '../script/createUser.js';
-import { deleteMessage } from '../script/deleteMessage.js';
-import { deleteUser } from '../script/deleteUser.js';
-import { updateMessage } from '../script/updateMessage.js';
-import { updateUser } from '../script/updateUser.js';
-import { getLogin } from './getLogin.js';
 import { getUsers } from './getUsers.js';
 
 let botonIngresar = document.getElementById('botonIngresar');
 let data;
 
-const login = async (e) => {
+const LOGIN = async (e) => {
   const numCelular = document.getElementById('inputNumCelular').value;
   const contrasenia = document.getElementById('contrasenia').value;
   // Fetch all the forms we want to apply custom Bootstrap validation styles to
@@ -18,15 +11,45 @@ const login = async (e) => {
     numCelular: numCelular,
     contrasenia: contrasenia
   }
-  userData = await getLogin(userData);
-  console.log(userData);
-  if (Object.keys(userData).length === 0) {
-    console.log("no entro");
-  } else {
-    console.log(" entro");
+  let listUsers = await getUsers();
+  let contraseniaCorrecta = false;
+  let numCelularCorrecto = false;
+
+ let user = listUsers.find(user => user.numCelular == userData.numCelular || user.contrasenia == userData.contrasenia);
+  if (user) {
+    if (user.contrasenia == userData.contrasenia) {
+      contraseniaCorrecta = true;
+    }if(user.numCelular == userData.numCelular){
+      numCelularCorrecto = true;
+    }
+    if (contraseniaCorrecta && numCelularCorrecto) {
+      window.open(`/index.html?id=${user.id}`,'_self');
+    }else if (contraseniaCorrecta && !numCelularCorrecto) {
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'Número de celular incorrecto!',
+        confirmButtonColor: '#00a884',
+        width: '20rem',
+      })}else{
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: 'Contraseña incorrecta!',
+          confirmButtonColor: '#00a884',
+          width: '20rem',
+        })
+      }
+  }else{
+    Swal.fire({
+      icon: 'error',
+      title: 'Oops...',
+      text: 'Usuario y contraseña incorrectos!',
+      confirmButtonColor: '#00a884',
+      width: '20rem',
+    })
   }
 }
-
 // Example starter JavaScript for disabling form submissions if there are invalid fields
 (function () {
   'use strict'
@@ -50,7 +73,7 @@ const login = async (e) => {
         }
         else {
           event.preventDefault();
-          login();
+          LOGIN();
         }
         form.classList.add('was-validated')
       }, false)

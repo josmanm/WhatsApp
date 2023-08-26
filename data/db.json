@@ -21,10 +21,34 @@
       "id": 2
     },
     {
-      "nombre": "Josman Santiago",
-      "numCelular": "3146962898",
+      "nombre": "Mannuel",
+      "numCelular": "3168553810",
+      "contrasenia": "12345",
+      "urlImgPerfil": "https://cdn.computerhoy.com/sites/navi.axelspringer.es/public/media/image/2018/08/fotos-perfil-whatsapp_16.jpg?tf=3840x",
+      "flag": "",
+      "infoUsuario": " ",
+      "fechaHoraEnLinea": "",
+      "id": 4
+    },
+    {
+      "nombre": "Mannuel",
+      "numCelular": "3168553813",
       "contrasenia": "1234",
-      "id": 3
+      "urlImgPerfil": "https://cdn.computerhoy.com/sites/navi.axelspringer.es/public/media/image/2018/08/fotos-perfil-whatsapp_16.jpg?tf=3840x",
+      "flag": "",
+      "infoUsuario": " ",
+      "fechaHoraEnLinea": "",
+      "id": 5
+    },
+    {
+      "nombre": "Mannuel",
+      "numCelular": "12312",
+      "contrasenia": "12321",
+      "urlImgPerfil": "https://cdn.computerhoy.com/sites/navi.axelspringer.es/public/media/image/2018/08/fotos-perfil-whatsapp_16.jpg?tf=3840x",
+      "flag": "",
+      "infoUsuario": " ",
+      "fechaHoraEnLinea": "",
+      "id": 6
     }
   ],
   "mensajes": [
@@ -34,17 +58,17 @@
       "idUser2": 2,
       "conversaciones": [
         {
-            "sendBy": 1,
-            "date": "2017-10-10",
-            "hour": "10:10:10PM",
-            "message": "Hola, como estas?",
-            "flag": false
-        },
-        {
           "sendBy": 1,
           "date": "2017-10-10",
-          "hour": "10:10:10",
+          "hour": "10:10:10PM",
           "message": "Hola, como estas?",
+          "flag": false
+        },
+        {
+          "sendBy": 2,
+          "date": "2017-10-10",
+          "hour": "10:11:10",
+          "message": "Bien y tu?",
           "flag": false
         }
       ]

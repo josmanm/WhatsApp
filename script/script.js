@@ -1,3 +1,8 @@
+import {getMessages} from './getMessages.js';
+
+const params = new URLSearchParams(window.location.search);
+const ID = params.get('id');
+
 const MY_CONTACTS_CARD = document.querySelector('.container__whatsapp__myContacts__cardContact');
 const SEND_MESSAGE = document.querySelector('.container__whatsapp__myChat__barraChats__formulario-input');
 const IMG_SEND = document.querySelector('.container__whatsapp__myChat__barraChats__formulario-send');
@@ -90,3 +95,13 @@ ARROW_DOWN_RECEIVE.addEventListener('click',()=>{
 ARROW_DOWN_RECEIVE.addEventListener('dblclick',()=>{
     LIST_MESSAGE_RECEIVE.style.display='none';
 });
+
+
+const LIST_MY_CHAT = async () => {
+    let listMessages = await getMessages();
+
+    let mylistMessages = listMessages.filter(index => index.idUser1 == ID || index.idUser2 == ID)
+    console.log(mylistMessages);
+}
+
+LIST_MY_CHAT();
