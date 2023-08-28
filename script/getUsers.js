@@ -4,7 +4,6 @@ import axios from 'https://cdn.jsdelivr.net/npm/axios@1.3.5/+esm';
 export async function getUsers(){
     try {
         const response = await axios.get(`http://localhost:3000/usuarios/`);
-        console.log("response get", response.data)
         return response.data;
     }catch (error) {
         console.error('Error getting users:', error);

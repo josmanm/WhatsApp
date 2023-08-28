@@ -4,7 +4,7 @@
       "nombre": "Juan",
       "numCelular": "3168553814",
       "contrasenia": "1234santiago",
-      "urlImgPerfil": "",
+      "urlImgPerfil": "https://cdn.computerhoy.com/sites/navi.axelspringer.es/public/media/image/2018/08/fotos-perfil-whatsapp_16.jpg?tf=3840x",
       "flag": "En Linea",
       "infoUsuario": "Estoy dormido",
       "fechaHoraEnLinea": "10/24/2023, 1:30:23 PM",
@@ -14,11 +14,21 @@
       "nombre": "Camilo",
       "numCelular": "3146962896",
       "contrasenia": "1234camilo",
-      "urlImgPerfil": "",
+      "urlImgPerfil": "https://cdn.computerhoy.com/sites/navi.axelspringer.es/public/media/image/2018/08/fotos-perfil-whatsapp_16.jpg?tf=3840x",
       "flag": "desconectado",
       "infoUsuario": "en el trabajo",
       "fechaHoraEnLinea": "10/24/2023, 1:30:23 PM",
       "id": 2
+    },
+    {
+      "nombre": "Mannuel",
+      "numCelular": "3168553813",
+      "contrasenia": "1234",
+      "urlImgPerfil": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGXvUBF0njwz36i4lmErYZeIXMEiQn4a4lvKSY2z7c&s",
+      "flag": "",
+      "infoUsuario": " ",
+      "fechaHoraEnLinea": "",
+      "id": 3
     },
     {
       "nombre": "Mannuel",
@@ -69,6 +79,48 @@
           "date": "2017-10-10",
           "hour": "10:11:10",
           "message": "Bien y tu?",
+          "flag": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "idUser1": 5,
+      "idUser2": 6,
+      "conversaciones": [
+        {
+          "sendBy": 1,
+          "date": "2017-10-10",
+          "hour": "10:10:10PM",
+          "message": "Hola, como estas?",
+          "flag": false
+        },
+        {
+          "sendBy": 2,
+          "date": "2017-10-10",
+          "hour": "10:11:10",
+          "message": "Bien y tu?",
+          "flag": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "idUser1": 1,
+      "idUser2": 3,
+      "conversaciones": [
+        {
+          "sendBy": 1,
+          "date": "2017-10-10",
+          "hour": "10:10:10PM",
+          "message": "Hola, como estas?",
+          "flag": false
+        },
+        {
+          "sendBy": 2,
+          "date": "2017-10-10",
+          "hour": "10:11:10",
+          "message": "super me alegra mucho?",
           "flag": false
         }
       ]
