@@ -124,12 +124,13 @@ const LIST_MY_CHAT = async () => {
     div.innerHTML += html;
 }
 
-LIST_MY_CHAT();
-
-
 const MY_CONTACTS_CARD = document.querySelector('.container__whatsapp__myContacts__cardContact');
 /*Poner en otro color cuando se seleccione una card */
 MY_CONTACTS_CARD.addEventListener('click', () => {
     console.log('cards:  ', MY_CONTACTS_CARD)
     MY_CONTACTS_CARD.style.backgroundColor = " rgb(237, 237, 237)";
+});
+
+document.addEventListener('DOMContentLoaded', ()=>{
+    LIST_MY_CHAT();
 });
