@@ -120,8 +120,8 @@ const LIST_MY_CHAT = async () => {
     </div>`;
         html += DIV;
     })
-    const div = document.querySelector('.container__whatsapp__myContacts')
-    div.innerHTML += html;
+    const div = document.querySelector('.container__card')
+    div.innerHTML = html;
 }
 
 const MY_CONTACTS_CARD = document.querySelector('.container__whatsapp__myContacts__cardContact');
