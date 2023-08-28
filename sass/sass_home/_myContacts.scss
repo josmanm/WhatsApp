@@ -1,15 +1,21 @@
 @use '../variables' as color;
 .container__whatsapp__myContacts
 { 
+    //border: 1px solid red;
     &__header
     {
         height: 4rem;
-        width: 90vw;
-        
+        width: 102.5%;
+       
         display: flex;
         background-color: color.$ligth-gray;
         padding-left: 1rem;
         align-items: center;
+        @media (max-width: 1115px)
+        {
+           width: 100%;
+
+        }
         &-user
         {
             height: 3.5rem;
@@ -23,12 +29,17 @@
     }
     &__barraSearch
     {
-        
+       
         display: flex;
         height: 4rem;
-        width: 90vw;
+        width: 102.5%;
         background-color: color.$grayLigth;
         align-items: center;
+        @media (max-width: 1115px)
+        {
+           width: 100%;
+
+        }
         &-search
         {
             width: 2rem;
@@ -59,6 +70,11 @@
         align-items: center;
         padding: 0.5rem;
         width: 102%;
+        @media (max-width: 1115px)
+        {
+           width: 100%;
+
+        }
         &-imagen
         {
             width: 3.5rem;
@@ -69,6 +85,7 @@
         {
             &__nameDate
             {
+                
                 width: 26rem;
                 display: flex;
                 justify-content: space-between;

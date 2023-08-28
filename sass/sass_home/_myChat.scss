@@ -238,6 +238,7 @@
     }
     &__barraChats
     {
+        
         display: flex;
         height: 4rem;
         background-color: color.$ligth-gray;
@@ -256,12 +257,20 @@
         }
         &__formulario
         {
+            display: flex;
+            
             &-input
             {
-                width: 52rem;
+      
+                width: 56vw;
                 height: 2.5rem;
                 border: none;
                 border-radius: 15px;
+                @media (max-width: 1115px)
+                {
+                    
+                    width: 70vw;
+                }
             }
 
             &-send
@@ -277,8 +286,10 @@
         }
         
     }
+
     @media (max-width: 1115px)
     {
         display: none;
+
     }
 }

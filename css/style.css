@@ -202,11 +202,19 @@
   width: 2rem;
   height: 2rem;
 }
+.container__whatsapp__myChat__barraChats__formulario {
+  display: flex;
+}
 .container__whatsapp__myChat__barraChats__formulario-input {
-  width: 52rem;
+  width: 56vw;
   height: 2.5rem;
   border: none;
   border-radius: 15px;
+}
+@media (max-width: 1115px) {
+  .container__whatsapp__myChat__barraChats__formulario-input {
+    width: 70vw;
+  }
 }
 .container__whatsapp__myChat__barraChats__formulario-send {
   width: 2rem;
@@ -223,11 +231,16 @@
 
 .container__whatsapp__myContacts__header {
   height: 4rem;
-  width: 90vw;
+  width: 102.5%;
   display: flex;
   background-color: rgb(237, 237, 237);
   padding-left: 1rem;
   align-items: center;
+}
+@media (max-width: 1115px) {
+  .container__whatsapp__myContacts__header {
+    width: 100%;
+  }
 }
 .container__whatsapp__myContacts__header-user {
   height: 3.5rem;
@@ -240,9 +253,14 @@
 .container__whatsapp__myContacts__barraSearch {
   display: flex;
   height: 4rem;
-  width: 90vw;
+  width: 102.5%;
   background-color: rgb(243, 243, 243);
   align-items: center;
+}
+@media (max-width: 1115px) {
+  .container__whatsapp__myContacts__barraSearch {
+    width: 100%;
+  }
 }
 .container__whatsapp__myContacts__barraSearch-search {
   width: 2rem;
@@ -264,6 +282,11 @@
   align-items: center;
   padding: 0.5rem;
   width: 102%;
+}
+@media (max-width: 1115px) {
+  .container__whatsapp__myContacts__cardContact {
+    width: 100%;
+  }
 }
 .container__whatsapp__myContacts__cardContact-imagen {
   width: 3.5rem;
