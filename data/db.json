@@ -4,7 +4,7 @@
       "nombre": "Juan",
       "numCelular": "3168553814",
       "contrasenia": "1234santiago",
-      "urlImgPerfil": "https://cdn.computerhoy.com/sites/navi.axelspringer.es/public/media/image/2018/08/fotos-perfil-whatsapp_16.jpg?tf=3840x",
+      "urlImgPerfil": "https://i.pinimg.com/236x/b3/1f/64/b31f64ef81bca422eb5aa5804b6dfbe3.jpg",
       "flag": "En Linea",
       "infoUsuario": "Estoy dormido",
       "fechaHoraEnLinea": "10/24/2023, 1:30:23 PM",
@@ -24,9 +24,9 @@
       "nombre": "Mannuel",
       "numCelular": "3168553813",
       "contrasenia": "1234",
-      "urlImgPerfil": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGXvUBF0njwz36i4lmErYZeIXMEiQn4a4lvKSY2z7c&s",
+      "urlImgPerfil": "https://cdn.superaficionados.com/imagenes/2-frases-de-naruto-naruto-boruto-cke.jpg",
       "flag": "",
-      "infoUsuario": " ",
+      "infoUsuario": "",
       "fechaHoraEnLinea": "",
       "id": 3
     },
@@ -34,7 +34,7 @@
       "nombre": "Mannuel",
       "numCelular": "3168553810",
       "contrasenia": "12345",
-      "urlImgPerfil": "https://cdn.computerhoy.com/sites/navi.axelspringer.es/public/media/image/2018/08/fotos-perfil-whatsapp_16.jpg?tf=3840x",
+      "urlImgPerfil": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRSUaGEEgvFL2qP9pjsihLs2hqzVKqvlT1Bxg&usqp=CAU",
       "flag": "",
       "infoUsuario": " ",
       "fechaHoraEnLinea": "",
@@ -44,7 +44,7 @@
       "nombre": "Mannuel",
       "numCelular": "3168553813",
       "contrasenia": "1234",
-      "urlImgPerfil": "https://cdn.computerhoy.com/sites/navi.axelspringer.es/public/media/image/2018/08/fotos-perfil-whatsapp_16.jpg?tf=3840x",
+      "urlImgPerfil": "https://e1.pxfuel.com/desktop-wallpaper/125/267/desktop-wallpaper-anime-profile-naruto-naruto-profile.jpg",
       "flag": "",
       "infoUsuario": " ",
       "fechaHoraEnLinea": "",
@@ -54,7 +54,7 @@
       "nombre": "Mannuel",
       "numCelular": "12312",
       "contrasenia": "12321",
-      "urlImgPerfil": "https://cdn.computerhoy.com/sites/navi.axelspringer.es/public/media/image/2018/08/fotos-perfil-whatsapp_16.jpg?tf=3840x",
+      "urlImgPerfil": "https://i.pinimg.com/736x/7c/00/2b/7c002be4f8fbad45db6e5bd0eeac3f82.jpg",
       "flag": "",
       "infoUsuario": " ",
       "fechaHoraEnLinea": "",
@@ -63,7 +63,6 @@
   ],
   "mensajes": [
     {
-      "id": 1,
       "idUser1": 1,
       "idUser2": 2,
       "conversaciones": [
@@ -80,8 +79,44 @@
           "hour": "10:11:10",
           "message": "Bien y tu?",
           "flag": false
+        },
+        {
+          "sendBy": "1",
+          "date": "2017-10-10",
+          "hour": "10:11:10",
+          "message": "este es el nuevo mensaje ",
+          "flag": false
+        },
+        {
+          "sendBy": "1",
+          "date": "2017-10-10",
+          "hour": "10:11:10",
+          "message": "por fin esta mierda funciona",
+          "flag": false
+        },
+        {
+          "sendBy": "1",
+          "date": "2017-10-10",
+          "hour": "10:11:10",
+          "message": "porbando de nuevo a ver como funciona",
+          "flag": false
+        },
+        {
+          "sendBy": "1",
+          "date": "2017-10-10",
+          "hour": "10:11:10",
+          "message": "holi",
+          "flag": false
+        },
+        {
+          "sendBy": "1",
+          "date": "2017-10-10",
+          "hour": "10:11:10",
+          "message": "por ahrora todo va bien",
+          "flag": false
         }
-      ]
+      ],
+      "id": 1
     },
     {
       "id": 2,
@@ -105,7 +140,6 @@
       ]
     },
     {
-      "id": 3,
       "idUser1": 1,
       "idUser2": 3,
       "conversaciones": [
@@ -122,8 +156,30 @@
           "hour": "10:11:10",
           "message": "super me alegra mucho?",
           "flag": false
+        },
+        {
+          "sendBy": "1",
+          "date": "2017-10-10",
+          "hour": "10:11:10",
+          "message": "holi",
+          "flag": false
+        },
+        {
+          "sendBy": "1",
+          "date": "2017-10-10",
+          "hour": "10:11:10",
+          "message": "este si es este si es",
+          "flag": false
+        },
+        {
+          "sendBy": "1",
+          "date": "2017-10-10",
+          "hour": "10:11:10",
+          "message": "parece que si sirve melo caramelo",
+          "flag": false
         }
-      ]
+      ],
+      "id": 3
     }
   ]
 }
