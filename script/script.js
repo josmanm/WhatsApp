@@ -1,6 +1,7 @@
 import { getMessages } from './getMessages.js';
 import { getUsers } from './getUsers.js';
 import { updateMessage } from './updateMessage.js';
+import { DateTime } from 'https://moment.github.io/luxon/es6/luxon.js';
 const params = new URLSearchParams(window.location.search);
 const ID = params.get('id');
 let ID2 = 0;
@@ -38,21 +39,21 @@ SEND_MESSAGE.addEventListener('input', () => {
 });
 
 /*Enviar Mensaje del usuario con sesion iniciada al del chat abierto*/
-SEND_MESSAGE.addEventListener('keypress',async (e) => {
+SEND_MESSAGE.addEventListener('keypress', async (e) => {
     if (e.key === 'Enter') {
         let user = listUsers.find(user => user.id == ID);
         let user2 = listUsers.find(user => user.id == ID2);
-        let message= listMessages.find(message => message.idUser1 == ID && message.idUser2 == ID2 || message.idUser1 == ID2 && message.idUser2 == ID);
+        let message = listMessages.find(message => message.idUser1 == ID && message.idUser2 == ID2 || message.idUser1 == ID2 && message.idUser2 == ID);
         message.conversaciones.push(
             {
                 "sendBy": ID,
-                "date": "2017-10-10",
-                "hour": "10:11:10",
+                "date": DateTime.now().toLocaleString(),
+                "hour": DateTime.local().toLocaleString(DateTime.TIME_SIMPLE),
                 "message": SEND_MESSAGE.value,
                 "flag": false
             }
         );
-       let data=updateMessage(parseInt(ID),parseInt(ID2), message.id,message.conversaciones);
+        let data = updateMessage(parseInt(ID), parseInt(ID2), message.id, message.conversaciones);
         SEND_MESSAGE.value = "";
         listMessages = await getMessages();
     }
@@ -79,13 +80,7 @@ CLOSE_TEMPLETE_INFO_MESSAGE.addEventListener('click', () => {
     TEMPLETE_INFO_MESSAGE.style.display = 'none';
 });
 
-/*Mostrar y desaparecer la flecha de opciones de los mensajes enviados */
-CONTAINER_SEND_MESSAGE.addEventListener('mouseover', () => {
-    ARROW_DOWN_SEND.style.display = 'block';
-});
-CONTAINER_SEND_MESSAGE.addEventListener('mouseout', () => {
-    ARROW_DOWN_SEND.style.display = 'none';
-});
+
 /*Mostrar y desaparecer la lista desplegable de los mensajes enviados */
 ARROW_DOWN_SEND.addEventListener('click', () => {
     LIST_MESSAGE_SEND.style.display = 'block';
@@ -150,18 +145,68 @@ const LIST_MY_CHAT = async () => {
 
 const LOADDING_CHAT = async (idUser2) => {
     let user = listUsers.find(user => user.id == ID);
-    let user2=listUsers.find(user => user.id == idUser2);
+    let user2 = listUsers.find(user => user.id == idUser2);
     const div = document.querySelector('.container__whatsapp__myChat__header__imgUserLine');
-    const IMAGE_PERFIL =                        
-    `<img class="container__whatsapp__myChat__header__imgUserLine-img" src="${user2.urlImgPerfil}" alt="user_chat">
+    const IMAGE_PERFIL =
+        `<img class="container__whatsapp__myChat__header__imgUserLine-img" src="${user2.urlImgPerfil}" alt="user_chat">
     <div class="container__whatsapp__myChat__header__imgUserLine__userLine">
         <h5 class="container__whatsapp__myChat__header__imgUserLine__userLine-name">${user2.nombre}</h5>
-        <h6 class="container__whatsapp__myChat__header__imgUserLine__userLine-line"> EN LÍNEA</h6>
+        <h6 class="container__whatsapp__myChat__header__imgUserLine__userLine-line"> ${user2.fechaHoraEnLinea}</h6>
     </div>`
     div.innerHTML = IMAGE_PERFIL;
 }
 const LOADING_MESSAGES = async () => {
-    
+    let user = listUsers.find(user => user.id == ID);
+    let user2 = listUsers.find(user => user.id == ID2);
+    let mylistMessages = listMessages.find(message => message.idUser1 == ID && message.idUser2 == ID2 || message.idUser1 == ID2 && message.idUser2 == ID);
+    let html = ``;
+    let div = document.querySelector('.container__whatsapp__myChat__fondo');
+    mylistMessages.conversaciones.forEach((message) => {
+        if (message.sendBy == ID) {
+            const DIV_MENSSAGE_SEND =
+            `<div class="container__whatsapp__myChat__fondo">
+                <div class="container__whatsapp__myChat__fondo__mensajeEnviado">
+                    <div class="container__whatsapp__myChat__fondo__mensajeEnviado__contenedor">
+                    <div class="container__whatsapp__myChat__fondo__mensajeEnviado__contenedor__message">
+                        <h5 class="container__whatsapp__myChat__fondo__mensajeEnviado__contenedor__message-text">${message.message} </h5>
+                        <li><img class="container__whatsapp__myChat__fondo__mensajeEnviado__contenedor__message-arrow" src="img/icon-arrow-down.svg" alt="iconArrow">
+                            <ul class="container__whatsapp__myChat__fondo__mensajeEnviado__contenedor__message-arrow-lista">
+                                <li class="container__whatsapp__myChat__fondo__mensajeEnviado__contenedor__message-arrow-lista__textEdit">Editar <img class="container__whatsapp__myChat__fondo__mensajeRecibido__contenedor__message-arrow-lista__editImag" src="img/editar-codigo.png" alt="icon edit"> </li>
+                                <li class="container__whatsapp__myChat__fondo__mensajeEnviado__contenedor__message-arrow-lista__textDelete">Eliminar <img class="container__whatsapp__myChat__fondo__mensajeRecibido__contenedor__message-arrow-lista__deleteImag" src="img/basura.png" alt="icon delete"></li>
+                            </ul>
+                        </li>
+                    </div>
+                    <div class="container__whatsapp__myChat__fondo__mensajeEnviado__contenedor-img">
+                        <h6 class="container__whatsapp__myChat__fondo__mensajeEnviado__contenedor-img_date">${message.hour}</h6>
+                        <img class="container__whatsapp__myChat__fondo__mensajeEnviado__contenedor-img_img" src="img/check.png" alt="mesage enviado">
+                    </div>
+                </div>
+            </div>`
+            html += DIV_MENSSAGE_SEND;
+        } else {
+            const DIV_MENSSAGE_SEND =
+            `
+            <div class="container__whatsapp__myChat__fondo__mensajeRecibido">
+                <div class="container__whatsapp__myChat__fondo__mensajeRecibido__contenedor">
+                    <div class="container__whatsapp__myChat__fondo__mensajeRecibido__contenedor__message">
+                        <h5 class="container__whatsapp__myChat__fondo__mensajeRecibido__contenedor__message-text">${message.message}</h5>
+                        <li><img class="container__whatsapp__myChat__fondo__mensajeRecibido__contenedor__message-arrow" src="img/icon-arrow-down.svg" alt="iconArrow">
+                            <ul class="container__whatsapp__myChat__fondo__mensajeRecibido__contenedor__message-arrow-lista">
+                                <li class="container__whatsapp__myChat__fondo__mensajeRecibido__contenedor__message-arrow-lista__textEdit">Editar <img class="container__whatsapp__myChat__fondo__mensajeRecibido__contenedor__message-arrow-lista__editImag" src="img/editar-codigo.png" alt="icon edit"> </li>
+                                <li class="container__whatsapp__myChat__fondo__mensajeRecibido__contenedor__message-arrow-lista__textDelete">Eliminar <img class="container__whatsapp__myChat__fondo__mensajeRecibido__contenedor__message-arrow-lista__deleteImag" src="img/basura.png" alt="icon delete"></li>
+                            </ul>
+                        </li>
+                </div>
+                <div class="container__whatsapp__myChat__fondo__mensajeRecibido__contenedor-img">
+                    <h6 class="container__whatsapp__myChat__fondo__mensajeRecibido__contenedor-img_date">7:55 p.m </h6>
+                    <img class="container__whatsapp__myChat__fondo__mensajeRecibido__contenedor-img_img" src="img/check.png" alt="mesage enviado">
+                </div>
+            </div>
+        </div>`
+        html += DIV_MENSSAGE_SEND;
+        }
+    });
+    div.innerHTML = html;
 }
 
 LOADING_IMAGE_PROFILE();
@@ -180,8 +225,9 @@ CONTAINER_DARD.addEventListener('click', () => {
     MY_CONTACTS_CARD.forEach((card) => {
         card.addEventListener('click', () => {
             card.style.backgroundColor = '#e9e9e9';
-            ID2= parseInt(card.id);
+            ID2 = parseInt(card.id);
             LOADDING_CHAT(ID2);
+            LOADING_MESSAGES(ID2);
         });
     });
 });
@@ -190,5 +236,12 @@ CONTAINER_DARD.addEventListener('click', () => {
 CHANGE_PERSONAL_INFORMATION.addEventListener('click', () => {
     TEMPLATE_CHANGE_IMAGE.style.display = 'block';
     TEMPLATE_MY_CONTACTS.style.display = 'none';
+});
 
+/*Mostrar y desaparecer la flecha de opciones de los mensajes enviados */
+CONTAINER_SEND_MESSAGE.addEventListener('mouseover', () => {
+    ARROW_DOWN_SEND.style.display = 'block';
+});
+CONTAINER_SEND_MESSAGE.addEventListener('mouseout', () => {
+    ARROW_DOWN_SEND.style.display = 'none';
 });

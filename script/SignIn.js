@@ -1,4 +1,6 @@
 import { getUsers } from './getUsers.js';
+import { updateUser } from './updateUser.js';
+import { DateTime } from 'https://moment.github.io/luxon/es6/luxon.js';
 
 let botonIngresar = document.getElementById('botonIngresar');
 let data;
@@ -23,6 +25,8 @@ const LOGIN = async (e) => {
       numCelularCorrecto = true;
     }
     if (contraseniaCorrecta && numCelularCorrecto) {
+      let hora = DateTime.local().toLocaleString(DateTime.TIME_SIMPLE);
+      let data  = await updateUser(user,hora);
       window.open(`/index.html?id=${user.id}`,'_self');
     }else if (contraseniaCorrecta && !numCelularCorrecto) {
       Swal.fire({
