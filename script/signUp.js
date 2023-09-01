@@ -1,5 +1,5 @@
-import { getUsers } from './getUsers.js';
-import { createUser } from './createUser.js';
+import { getUsers } from './user/service/getUsers.js';
+import { createUser } from './user/service/createUser.js';
 
 const BTNREGISTRAR = document.querySelector('#btnRegistrar');
 

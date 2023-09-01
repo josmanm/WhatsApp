@@ -1,5 +1,5 @@
-import { getUsers } from './getUsers.js';
-import { updateUser } from './updateUser.js';
+import { getUsers } from './user/service/getUsers.js';
+import { updateUser } from './user/service/updateUser.js';
 import { DateTime } from 'https://moment.github.io/luxon/es6/luxon.js';
 
 let botonIngresar = document.getElementById('botonIngresar');
