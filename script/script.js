@@ -2,12 +2,15 @@ import { getMessages } from './getMessages.js';
 import { getUsers } from './getUsers.js';
 import { updateMessage } from './updateMessage.js';
 import { DateTime } from 'https://moment.github.io/luxon/es6/luxon.js';
+
+/*Capturar los parametros que recibimos en la URL*/ 
 const params = new URLSearchParams(window.location.search);
+/* Constante con la id del usuaario que inicio sesion */
 const ID = params.get('id');
+/* Constante con la id del usuaario que se selecciono para chatear, cambiara cada vez que se selecione otro chat*/
 let ID2 = 0;
 const SEND_MESSAGE = document.querySelector('.container__whatsapp__myChat__barraChats__formulario-input');
 const IMG_SEND = document.querySelector('.container__whatsapp__myChat__barraChats__formulario-send');
-
 const TEMPLATE_CHANGE_IMAGE = document.querySelector('.container__whatsapp__changeImagen');
 const TEMPLATE_MY_CONTACTS = document.querySelector('.container__whatsapp__myContacts');
 const ARROW_BACK_PERFIL = document.querySelector('.container__whatsapp__changeImagen__header__imgPerfil-arrow');
@@ -25,6 +28,7 @@ const LIST_MESSAGE_RECEIVE = document.querySelector('.container__whatsapp__myCha
 const CONTAINER_DARD = document.querySelector('.container__card')
 const CONTAINER_HEADER_USER = document.querySelector('.container__whatsapp__myContacts__header');
 
+/*Realizamos dos gets uno para obtener infornacion de los mensajes y otros de los usuarios*/
 let listMessages = await getMessages();
 let listUsers = await getUsers();
 
@@ -38,9 +42,11 @@ SEND_MESSAGE.addEventListener('input', () => {
 
 });
 
-/*Enviar Mensaje del usuario con sesion iniciada al del chat abierto*/
+/*Enviar Mensaje del usuario con sesion iniciada al del ultimo chat seleccionado*/
 SEND_MESSAGE.addEventListener('keypress', async (e) => {
+    /*Se enviara el mensaje cuando se presione la tecla enter, falta hacer validacion de el boton que se encuentra al lado izquierdo*/ 
     if (e.key === 'Enter') {
+        /*Obtenemos la informacino del usuario que inicio sesion y el usuario que se selecciono para chatear*/
         let user = listUsers.find(user => user.id == ID);
         let user2 = listUsers.find(user => user.id == ID2);
         let message = listMessages.find(message => message.idUser1 == ID && message.idUser2 == ID2 || message.idUser1 == ID2 && message.idUser2 == ID);
@@ -48,7 +54,7 @@ SEND_MESSAGE.addEventListener('keypress', async (e) => {
             {
                 "sendBy": ID,
                 "date": DateTime.now().toLocaleString(),
-                "hour": DateTime.local().toLocaleString(DateTime.TIME_SIMPLE),
+                "hour": DateTime.local().toLocaleString(DateTime.TIME_WITH_SECONDS),
                 "message": SEND_MESSAGE.value,
                 "flag": false
             }
@@ -79,7 +85,6 @@ SEND_MESSAGE_MY_CHAT.addEventListener('click', () => {
 CLOSE_TEMPLETE_INFO_MESSAGE.addEventListener('click', () => {
     TEMPLETE_INFO_MESSAGE.style.display = 'none';
 });
-
 
 /*Mostrar y desaparecer la lista desplegable de los mensajes enviados */
 ARROW_DOWN_SEND.addEventListener('click', () => {
@@ -142,10 +147,10 @@ const LIST_MY_CHAT = async () => {
     })
     CONTAINER_DARD.innerHTML = html;
 }
-
-const LOADDING_CHAT = async (idUser2) => {
+/*Cargar la foto de perfil del usuario que se selecciono para chatear */
+const LOADDING_CHAT = async () => {
     let user = listUsers.find(user => user.id == ID);
-    let user2 = listUsers.find(user => user.id == idUser2);
+    let user2 = listUsers.find(user => user.id == ID2);
     const div = document.querySelector('.container__whatsapp__myChat__header__imgUserLine');
     const IMAGE_PERFIL =
         `<img class="container__whatsapp__myChat__header__imgUserLine-img" src="${user2.urlImgPerfil}" alt="user_chat">
@@ -155,6 +160,7 @@ const LOADDING_CHAT = async (idUser2) => {
     </div>`
     div.innerHTML = IMAGE_PERFIL;
 }
+/*Cargar los mensajes de chat  selecionado */
 const LOADING_MESSAGES = async () => {
     let user = listUsers.find(user => user.id == ID);
     let user2 = listUsers.find(user => user.id == ID2);
@@ -177,7 +183,7 @@ const LOADING_MESSAGES = async () => {
                         </li>
                     </div>
                     <div class="container__whatsapp__myChat__fondo__mensajeEnviado__contenedor-img">
-                        <h6 class="container__whatsapp__myChat__fondo__mensajeEnviado__contenedor-img_date">${message.hour}</h6>
+                        <h6 class="container__whatsapp__myChat__fondo__mensajeEnviado__contenedor-img_date">${message.hour.toLocaleString(DateTime.TIME_SIMPLE) }</h6>
                         <img class="container__whatsapp__myChat__fondo__mensajeEnviado__contenedor-img_img" src="img/check.png" alt="mesage enviado">
                     </div>
                 </div>
@@ -198,7 +204,7 @@ const LOADING_MESSAGES = async () => {
                         </li>
                 </div>
                 <div class="container__whatsapp__myChat__fondo__mensajeRecibido__contenedor-img">
-                    <h6 class="container__whatsapp__myChat__fondo__mensajeRecibido__contenedor-img_date">7:55 p.m </h6>
+                    <h6 class="container__whatsapp__myChat__fondo__mensajeRecibido__contenedor-img_date">${message.hour}</h6>
                     <img class="container__whatsapp__myChat__fondo__mensajeRecibido__contenedor-img_img" src="img/check.png" alt="mesage enviado">
                 </div>
             </div>
@@ -208,27 +214,49 @@ const LOADING_MESSAGES = async () => {
     });
     div.innerHTML = html;
 }
-
+const LAST_MESSAGE = async () => {
+    let bandera_fecha ={
+        "date": '30/12/2000',
+        "hour": '00:00 p.m'
+    }
+    let mylistMessages = listMessages.filter(message => message.idUser1 == ID || message.idUser2 == ID);
+    mylistMessages.forEach((message) => {
+        console.log(message.conversaciones[message.conversaciones.length - 1].date);
+        if (message.conversaciones[message.conversaciones.length - 1].date > bandera_fecha.date) {
+             bandera_fecha.date = message.conversaciones[message.conversaciones.length - 1].date;
+             bandera_fecha.hour = message.conversaciones[message.conversaciones.length - 1].hour;
+        }else if(message.conversaciones[message.conversaciones.length-1].date == bandera_fecha.date){
+             if(message.conversaciones[message.conversaciones.length - 1].hour > bandera_fecha.hour){
+                 bandera_fecha.date = message.conversaciones[message.conversaciones.length - 1].date;
+                 bandera_fecha.hour = message.conversaciones[message.conversaciones.length - 1].hour;
+                 }
+         }
+    });
+    return bandera_fecha;
+}
+const LAST_CHAT = async () => {
+    let bandera_fecha=  await LAST_MESSAGE();
+    console.log(bandera_fecha);
+}
+LAST_CHAT();
 LOADING_IMAGE_PROFILE();
 LIST_MY_CHAT();
-
-
 /*Los siguientes container los cargamos aqui y no en el principio de la script para no generar errores*/
 const MY_CONTACTS_CARD = document.querySelectorAll('.container__whatsapp__myContacts__cardContact');
 const CHANGE_PERSONAL_INFORMATION = document.querySelector('.container__whatsapp__myContacts__header-user');
 
-
-console.log(MY_CONTACTS_CARD)
 /*Poner en otro color cuando se seleccione una card */
 CONTAINER_DARD.addEventListener('click', () => {
-
     MY_CONTACTS_CARD.forEach((card) => {
         card.addEventListener('click', () => {
             card.style.backgroundColor = '#e9e9e9';
             ID2 = parseInt(card.id);
-            LOADDING_CHAT(ID2);
-            LOADING_MESSAGES(ID2);
+            LOADDING_CHAT();
+            LOADING_MESSAGES();
         });
+        if(card.id != ID2){
+            card.style.backgroundColor = '#ffffff';
+        }
     });
 });
 

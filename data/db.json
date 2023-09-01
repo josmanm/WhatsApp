@@ -56,7 +56,7 @@
       "contrasenia": "12321",
       "urlImgPerfil": "https://i.pinimg.com/736x/7c/00/2b/7c002be4f8fbad45db6e5bd0eeac3f82.jpg",
       "flag": "",
-      "infoUsuario": " ",
+      "infoUsuario": "Estamos locos de la cabeza",
       "fechaHoraEnLinea": "",
       "id": 6
     }
@@ -121,6 +121,20 @@
           "hour": "2:55 p. m.",
           "message": "probando 3",
           "flag": false
+        },
+        {
+          "sendBy": "1",
+          "date": "31/8/2023",
+          "hour": "4:20 p. m.",
+          "message": "para verificar el orden de la fecha",
+          "flag": false
+        },
+        {
+          "sendBy": "1",
+          "date": "31/8/2023",
+          "hour": "6:40 p. m.",
+          "message": "al final es esta",
+          "flag": false
         }
       ],
       "id": 1
@@ -132,15 +146,15 @@
       "conversaciones": [
         {
           "sendBy": 1,
-          "date": "2017-10-10",
-          "hour": "10:10:10PM",
+          "date": "31/8/2023",
+          "hour": "2:40 p. m.",
           "message": "Hola, como estas?",
           "flag": false
         },
         {
           "sendBy": 2,
-          "date": "2017-10-10",
-          "hour": "10:11:10",
+          "date": "31/8/2023",
+          "hour": "2:45 p. m.",
           "message": "Bien y tu?",
           "flag": false
         }
@@ -148,90 +162,48 @@
     },
     {
       "idUser1": 1,
-      "idUser2": 6,
+      "idUser2": 5,
       "conversaciones": [
         {
           "sendBy": 1,
-          "date": "2017-10-10",
-          "hour": "10:10:10PM",
+          "date": "31/8/2023",
+          "hour": "2:29 p. m.",
           "message": "Hola, como estas?",
           "flag": false
         },
         {
           "sendBy": 2,
-          "date": "2017-10-10",
-          "hour": "10:11:10",
+          "date": "31/8/2023",
+          "hour": "2:35 p. m.",
           "message": "super me alegra mucho?",
           "flag": false
         },
         {
           "sendBy": "1",
-          "date": "2017-10-10",
-          "hour": "10:11:10",
+          "date": "31/8/2023",
+          "hour": "2:46 p. m.",
           "message": "holi",
           "flag": false
         },
         {
           "sendBy": "1",
-          "date": "2017-10-10",
-          "hour": "10:11:10",
+          "date": "31/8/2023",
+          "hour": "2:48 p. m.",
           "message": "este si es este si es",
           "flag": false
         },
         {
           "sendBy": "1",
-          "date": "2017-10-10",
-          "hour": "10:11:10",
+          "date": "31/8/2023",
+          "hour": "2:50 p. m.",
           "message": "parece que si sirve melo caramelo",
           "flag": false
         },
         {
           "sendBy": "1",
           "date": "31/8/2023",
-          "hour": "1:47:42 p. m.",
-          "message": "123",
-          "flag": false
-        }
-      ],
-      "id": 3
-    },
-    {
-      "idUser1": 1,
-      "idUser2": 5,
-      "conversaciones": [
-        {
-          "sendBy": 1,
-          "date": "2017-10-10",
-          "hour": "10:10:10PM",
-          "message": "Hola, como estas?",
-          "flag": false
-        },
-        {
-          "sendBy": 2,
-          "date": "2017-10-10",
-          "hour": "10:11:10",
-          "message": "super me alegra mucho?",
-          "flag": false
-        },
-        {
-          "sendBy": "1",
-          "date": "2017-10-10",
-          "hour": "10:11:10",
-          "message": "holi",
-          "flag": false
-        },
-        {
-          "sendBy": "1",
-          "date": "2017-10-10",
-          "hour": "10:11:10",
-          "message": "este si es este si es",
-          "flag": false
-        },
-        {
-          "sendBy": "1",
-          "date": "2017-10-10",
-          "hour": "10:11:10",
-          "message": "parece que si sirve melo caramelo",
+          "hour": "7:15:38 p. m.",
+          "message": "ojala funcione",
           "flag": false
         }
       ],
@@ -243,36 +215,36 @@
       "conversaciones": [
         {
           "sendBy": 1,
-          "date": "2017-10-10",
-          "hour": "10:10:10PM",
+          "date": "30/8/2023",
+          "hour": "2:43 p. m.",
           "message": "Hola, como estas?",
           "flag": false
         },
         {
           "sendBy": 2,
-          "date": "2017-10-10",
-          "hour": "10:11:10",
+          "date": "30/8/2023",
+          "hour": "2:44 p. m.",
           "message": "super me alegra mucho?",
           "flag": false
         },
         {
           "sendBy": "1",
-          "date": "2017-10-10",
-          "hour": "10:11:10",
+          "date": "30/8/2023",
+          "hour": "2:45 p. m.",
           "message": "holi",
           "flag": false
         },
         {
           "sendBy": "1",
-          "date": "2017-10-10",
-          "hour": "10:11:10",
+          "date": "30/8/2023",
+          "hour": "2:47 p. m.",
           "message": "este si es este si es",
           "flag": false
         },
         {
           "sendBy": "1",
-          "date": "2017-10-10",
-          "hour": "10:11:10",
+          "date": "30/8/2023",
+          "hour": "2:48 p. m.",
           "message": "parece que si sirve melo caramelo",
           "flag": false
         }
