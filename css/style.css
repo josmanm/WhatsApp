@@ -11,6 +11,7 @@
   align-items: center;
 }
 .container__whatsapp__myChat__header__imgUserLine {
+  border: 1px solid b;
   display: flex;
 }
 .container__whatsapp__myChat__header__imgUserLine-img {
@@ -30,6 +31,7 @@
   cursor: pointer;
 }
 .container__whatsapp__myChat__fondo {
+  overflow-y: scroll;
   height: 81%;
   background-image: url(../img/fondo.jpg);
   background-repeat: no-repeat;
@@ -55,6 +57,7 @@
   margin-right: 1.5rem;
 }
 .container__whatsapp__myChat__fondo__mensajeEnviado__contenedor {
+  margin-top: 1rem;
   border-radius: 15px 15px 15px 15px;
   padding-right: 1rem;
   background-color: #E1F6CB;
@@ -123,6 +126,7 @@
   margin-left: 1.5rem;
 }
 .container__whatsapp__myChat__fondo__mensajeRecibido__contenedor {
+  margin-top: 1rem;
   border-radius: 15px 15px 15px 15px;
   padding-right: 1rem;
   background-color: white;
@@ -223,12 +227,6 @@
 .container__whatsapp__myChat__barraChats__formulario button {
   border: none;
 }
-@media (max-width: 1115px) {
-  .container__whatsapp__myChat {
-    display: none;
-  }
-}
-
 .container__whatsapp__myContacts__header {
   height: 4rem;
   width: 102.5%;

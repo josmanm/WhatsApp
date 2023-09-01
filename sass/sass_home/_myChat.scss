@@ -1,8 +1,10 @@
 @use '../variables' as color;
 .container__whatsapp__myChat
 {
+    
     height: 95vh;   
     padding: 0;
+    
   
     &__header
     {
@@ -16,6 +18,7 @@
         
         &__imgUserLine
         {
+            border: 1px solid b;
             display: flex;
             &-img
             {
@@ -28,6 +31,7 @@
                 margin-left: 1rem;
                 &-line
                 {
+                  
                     color: color.$gray;
                 }
             }
@@ -40,8 +44,10 @@
             cursor: pointer;
         }
     }
+    
     &__fondo
     {
+        overflow-y: scroll;
         height: 81%;
         background-image: url(../img/fondo.jpg);
         background-repeat: no-repeat;
@@ -68,8 +74,10 @@
             display: flex;
             justify-content: end;
             margin-right: 1.5rem;
+            
             &__contenedor
             {
+                margin-top: 1rem;
                 border-radius: 15px 15px 15px 15px;
                 padding-right: 1rem;
                 background-color: color.$greenChat;
@@ -156,6 +164,7 @@
             margin-left: 1.5rem;
             &__contenedor
             {
+                margin-top: 1rem;
                 border-radius: 15px 15px 15px 15px;
                 padding-right: 1rem;
                 background-color: white;
@@ -163,6 +172,7 @@
                 flex-direction: column;
                 &__message
                 {
+                    
                     display: flex;
                     &-text
                     {
@@ -289,7 +299,7 @@
 
     @media (max-width: 1115px)
     {
-        display: none;
+        //display: none;
 
     }
 }

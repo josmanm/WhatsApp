@@ -170,45 +170,47 @@ const LOADING_MESSAGES = async () => {
     mylistMessages.conversaciones.forEach((message) => {
         if (message.sendBy == ID) {
             const DIV_MENSSAGE_SEND =
-            `<div class="container__whatsapp__myChat__fondo">
-                <div class="container__whatsapp__myChat__fondo__mensajeEnviado">
-                    <div class="container__whatsapp__myChat__fondo__mensajeEnviado__contenedor">
-                    <div class="container__whatsapp__myChat__fondo__mensajeEnviado__contenedor__message">
-                        <h5 class="container__whatsapp__myChat__fondo__mensajeEnviado__contenedor__message-text">${message.message} </h5>
-                        <li><img class="container__whatsapp__myChat__fondo__mensajeEnviado__contenedor__message-arrow" src="img/icon-arrow-down.svg" alt="iconArrow">
-                            <ul class="container__whatsapp__myChat__fondo__mensajeEnviado__contenedor__message-arrow-lista">
-                                <li class="container__whatsapp__myChat__fondo__mensajeEnviado__contenedor__message-arrow-lista__textEdit">Editar <img class="container__whatsapp__myChat__fondo__mensajeRecibido__contenedor__message-arrow-lista__editImag" src="img/editar-codigo.png" alt="icon edit"> </li>
-                                <li class="container__whatsapp__myChat__fondo__mensajeEnviado__contenedor__message-arrow-lista__textDelete">Eliminar <img class="container__whatsapp__myChat__fondo__mensajeRecibido__contenedor__message-arrow-lista__deleteImag" src="img/basura.png" alt="icon delete"></li>
-                            </ul>
-                        </li>
-                    </div>
-                    <div class="container__whatsapp__myChat__fondo__mensajeEnviado__contenedor-img">
-                        <h6 class="container__whatsapp__myChat__fondo__mensajeEnviado__contenedor-img_date">${message.hour.toLocaleString(DateTime.TIME_SIMPLE) }</h6>
-                        <img class="container__whatsapp__myChat__fondo__mensajeEnviado__contenedor-img_img" src="img/check.png" alt="mesage enviado">
-                    </div>
+            `
+            <div class="container__whatsapp__myChat__fondo__mensajeEnviado">
+            <div class="container__whatsapp__myChat__fondo__mensajeEnviado__contenedor">
+                <div class="container__whatsapp__myChat__fondo__mensajeEnviado__contenedor__message">
+                    <h5 class="container__whatsapp__myChat__fondo__mensajeEnviado__contenedor__message-text">${message.message} </h5>
+                    <li><img class="container__whatsapp__myChat__fondo__mensajeEnviado__contenedor__message-arrow" src="img/icon-arrow-down.svg" alt="iconArrow">
+                        <ul class="container__whatsapp__myChat__fondo__mensajeEnviado__contenedor__message-arrow-lista">
+                            <li class="container__whatsapp__myChat__fondo__mensajeEnviado__contenedor__message-arrow-lista__textEdit">Editar <img class="container__whatsapp__myChat__fondo__mensajeRecibido__contenedor__message-arrow-lista__editImag" src="img/editar-codigo.png" alt="icon edit"> </li>
+                            <li class="container__whatsapp__myChat__fondo__mensajeEnviado__contenedor__message-arrow-lista__textDelete">Eliminar <img class="container__whatsapp__myChat__fondo__mensajeRecibido__contenedor__message-arrow-lista__deleteImag" src="img/basura.png" alt="icon delete"></li>
+                        </ul>
+                    </li>
                 </div>
-            </div>`
+                <div class="container__whatsapp__myChat__fondo__mensajeEnviado__contenedor-img">
+                    <h6 class="container__whatsapp__myChat__fondo__mensajeEnviado__contenedor-img_date">${message.hour.toLocaleString(DateTime.TIME_SIMPLE)} </h6>
+                    <img class="container__whatsapp__myChat__fondo__mensajeEnviado__contenedor-img_img" src="img/check.png" alt="mesage enviado">
+                </div>
+            </div>
+        </div>
+            `
             html += DIV_MENSSAGE_SEND;
         } else {
             const DIV_MENSSAGE_SEND =
             `
             <div class="container__whatsapp__myChat__fondo__mensajeRecibido">
-                <div class="container__whatsapp__myChat__fondo__mensajeRecibido__contenedor">
-                    <div class="container__whatsapp__myChat__fondo__mensajeRecibido__contenedor__message">
-                        <h5 class="container__whatsapp__myChat__fondo__mensajeRecibido__contenedor__message-text">${message.message}</h5>
-                        <li><img class="container__whatsapp__myChat__fondo__mensajeRecibido__contenedor__message-arrow" src="img/icon-arrow-down.svg" alt="iconArrow">
-                            <ul class="container__whatsapp__myChat__fondo__mensajeRecibido__contenedor__message-arrow-lista">
-                                <li class="container__whatsapp__myChat__fondo__mensajeRecibido__contenedor__message-arrow-lista__textEdit">Editar <img class="container__whatsapp__myChat__fondo__mensajeRecibido__contenedor__message-arrow-lista__editImag" src="img/editar-codigo.png" alt="icon edit"> </li>
-                                <li class="container__whatsapp__myChat__fondo__mensajeRecibido__contenedor__message-arrow-lista__textDelete">Eliminar <img class="container__whatsapp__myChat__fondo__mensajeRecibido__contenedor__message-arrow-lista__deleteImag" src="img/basura.png" alt="icon delete"></li>
-                            </ul>
-                        </li>
-                </div>
-                <div class="container__whatsapp__myChat__fondo__mensajeRecibido__contenedor-img">
-                    <h6 class="container__whatsapp__myChat__fondo__mensajeRecibido__contenedor-img_date">${message.hour}</h6>
-                    <img class="container__whatsapp__myChat__fondo__mensajeRecibido__contenedor-img_img" src="img/check.png" alt="mesage enviado">
-                </div>
-            </div>
-        </div>`
+                        <div class="container__whatsapp__myChat__fondo__mensajeRecibido__contenedor">
+                            <div class="container__whatsapp__myChat__fondo__mensajeRecibido__contenedor__message">
+                                <h5 class="container__whatsapp__myChat__fondo__mensajeRecibido__contenedor__message-text"> ${message.message}</h5>
+                                    <li><img class="container__whatsapp__myChat__fondo__mensajeRecibido__contenedor__message-arrow" src="img/icon-arrow-down.svg" alt="iconArrow">
+                                        <ul class="container__whatsapp__myChat__fondo__mensajeRecibido__contenedor__message-arrow-lista">
+                                            <li class="container__whatsapp__myChat__fondo__mensajeRecibido__contenedor__message-arrow-lista__textEdit">Editar <img class="container__whatsapp__myChat__fondo__mensajeRecibido__contenedor__message-arrow-lista__editImag" src="img/editar-codigo.png" alt="icon edit"> </li>
+                                            <li class="container__whatsapp__myChat__fondo__mensajeRecibido__contenedor__message-arrow-lista__textDelete">Eliminar <img class="container__whatsapp__myChat__fondo__mensajeRecibido__contenedor__message-arrow-lista__deleteImag" src="img/basura.png" alt="icon delete"></li>
+                                        </ul>
+                                    </li>
+                            </div>
+                            <div class="container__whatsapp__myChat__fondo__mensajeRecibido__contenedor-img">
+                                <h6 class="container__whatsapp__myChat__fondo__mensajeRecibido__contenedor-img_date">${message.hour.toLocaleString(DateTime.TIME_SIMPLE)} </h6>
+                                <img class="container__whatsapp__myChat__fondo__mensajeRecibido__contenedor-img_img" src="img/check.png" alt="mesage enviado">
+                            </div>
+                        </div>
+                        
+                    </div>`
         html += DIV_MENSSAGE_SEND;
         }
     });
