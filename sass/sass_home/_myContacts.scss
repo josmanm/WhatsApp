@@ -1,7 +1,7 @@
 @use '../variables' as color;
 .container__whatsapp__myContacts
 { 
-    //border: 1px solid red;
+    
     &__header
     {
         height: 4rem;
@@ -63,61 +63,66 @@
         }
     }
     
-    &__cardContact
+    &__card
     {
-        border-bottom: 1px solid color.$ligth-gray;
-        display: flex;
-        align-items: center;
-        padding: 0.5rem;
-        width: 102%;
-        @media (max-width: 1115px)
+        overflow-y: scroll;
+        height: 73%;
+        &__cardContact
         {
-           width: 100%;
-
-        }
-        &-imagen
-        {
-            width: 3.5rem;
-            height: 3.5rem;
-            border-radius: 30px;
-        }
-        &__text
-        {
-            &__nameDate
+            border-bottom: 1px solid color.$ligth-gray;
+            display: flex;
+            align-items: center;
+            padding: 0.5rem;
+            width: 100%;
+            @media (max-width: 1115px)
             {
+            width: 100%;
+
+            }
+            &-imagen
+            {
+                width: 3.5rem;
+                height: 3.5rem;
+                border-radius: 30px;
+            }
+            &__text
+            {
+                width: 100%;
+                &__nameDate
+                {
+                    display: flex;
+                    justify-content: space-between;
+                    &-name
+                    {
+                        padding-left: 1rem;
+                    }
+                    &-date
+                    {
+                        color: color.$gray;
+                    }
                 
-                width: 26rem;
-                display: flex;
-                justify-content: space-between;
-
-                &-name
-                {
-                    padding-left: 1rem;
                 }
-                &-date
+                &__imgText
                 {
-                    color: color.$gray;
-                }
-            
-            }
-            &__imgText
-            {
-                display: flex;
-                align-items: center;
-             
-                &-img
-                {
-               
-                    width: 2.5rem;
-                    height: 2.5rem;
-                }
-                &-text
-                {
-                    color: color.$gray;
+                    display: flex;
+                    align-items: center;
+                
+                    &-img
+                    {
+                
+                        width: 2.5rem;
+                        height: 2.5rem;
+                    }
+                    &-text
+                    {
+                        color: color.$gray;
+                    }
                 }
             }
+        
         }
-      
+
     }
+    
     
 }

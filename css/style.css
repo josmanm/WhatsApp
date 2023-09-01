@@ -274,43 +274,49 @@
   border-radius: 0 15px 15px 0;
   padding-left: 1rem;
 }
-.container__whatsapp__myContacts__cardContact {
+.container__whatsapp__myContacts__card {
+  overflow-y: scroll;
+  height: 73%;
+}
+.container__whatsapp__myContacts__card__cardContact {
   border-bottom: 1px solid rgb(237, 237, 237);
   display: flex;
   align-items: center;
   padding: 0.5rem;
-  width: 102%;
+  width: 100%;
 }
 @media (max-width: 1115px) {
-  .container__whatsapp__myContacts__cardContact {
+  .container__whatsapp__myContacts__card__cardContact {
     width: 100%;
   }
 }
-.container__whatsapp__myContacts__cardContact-imagen {
+.container__whatsapp__myContacts__card__cardContact-imagen {
   width: 3.5rem;
   height: 3.5rem;
   border-radius: 30px;
 }
-.container__whatsapp__myContacts__cardContact__text__nameDate {
-  width: 26rem;
+.container__whatsapp__myContacts__card__cardContact__text {
+  width: 100%;
+}
+.container__whatsapp__myContacts__card__cardContact__text__nameDate {
   display: flex;
   justify-content: space-between;
 }
-.container__whatsapp__myContacts__cardContact__text__nameDate-name {
+.container__whatsapp__myContacts__card__cardContact__text__nameDate-name {
   padding-left: 1rem;
 }
-.container__whatsapp__myContacts__cardContact__text__nameDate-date {
+.container__whatsapp__myContacts__card__cardContact__text__nameDate-date {
   color: rgb(135, 135, 136);
 }
-.container__whatsapp__myContacts__cardContact__text__imgText {
+.container__whatsapp__myContacts__card__cardContact__text__imgText {
   display: flex;
   align-items: center;
 }
-.container__whatsapp__myContacts__cardContact__text__imgText-img {
+.container__whatsapp__myContacts__card__cardContact__text__imgText-img {
   width: 2.5rem;
   height: 2.5rem;
 }
-.container__whatsapp__myContacts__cardContact__text__imgText-text {
+.container__whatsapp__myContacts__card__cardContact__text__imgText-text {
   color: rgb(135, 135, 136);
 }
 

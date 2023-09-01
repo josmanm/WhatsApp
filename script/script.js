@@ -25,7 +25,7 @@ const CONTAINER_RECEIVE_MESSAGE = document.querySelector('.container__whatsapp__
 const ARROW_DOWN_RECEIVE = document.querySelector('.container__whatsapp__myChat__fondo__mensajeRecibido__contenedor__message-arrow');
 const LIST_MESSAGE_SEND = document.querySelector('.container__whatsapp__myChat__fondo__mensajeEnviado__contenedor__message-arrow-lista');
 const LIST_MESSAGE_RECEIVE = document.querySelector('.container__whatsapp__myChat__fondo__mensajeRecibido__contenedor__message-arrow-lista');
-const CONTAINER_DARD = document.querySelector('.container__card')
+const CONTAINER_CARD = document.querySelector('.container__whatsapp__myContacts__card')
 const CONTAINER_HEADER_USER = document.querySelector('.container__whatsapp__myContacts__header');
 
 /*Realizamos dos gets uno para obtener infornacion de los mensajes y otros de los usuarios*/
@@ -128,16 +128,16 @@ const LIST_MY_CHAT = async () => {
         } else {
             user2 = listUsers.find(index => index.id == message.idUser1);
         }
-        const DIV_CARD = `<div id ="${user2.id}" class="container__whatsapp__myContacts__cardContact">
-        <img class="fas fa-search container__whatsapp__myContacts__cardContact-imagen" src=${user2.urlImgPerfil} alt="userContact">
-        <div class="container__whatsapp__myContacts__cardContact__text">
-            <div class="container__whatsapp__myContacts__cardContact__text__nameDate">
-                <h5 class="container__whatsapp__myContacts__cardContact__text__nameDate-name">${user2.nombre}</h5>
-                <h6 class="container__whatsapp__myContacts__cardContact__text__nameDate-date">Viernes </h6>
+        const DIV_CARD = `<div id ="${user2.id}" class= "container__whatsapp__myContacts__card__cardContact">
+        <img class="fas fa-search container__whatsapp__myContacts__card__cardContact-imagen" src=${user2.urlImgPerfil} alt="userContact">
+        <div class="container__whatsapp__myContacts__card__cardContact__text">
+            <div class="container__whatsapp__myContacts__card__cardContact__text__nameDate">
+                <h5 class="container__whatsapp__myContacts__card__cardContact__text__nameDate-name">${user2.nombre}</h5>
+                <h6 class="container__whatsapp__myContacts__card__cardContact__text__nameDate-date">Viernes </h6>
             </div>
-            <div class="container__whatsapp__myContacts__cardContact__text__imgText">
-                <img class="container__whatsapp__myContacts__cardContact__text__imgText-img" src="img/check.png" alt="">
-                <h6 class="container__whatsapp__myContacts__cardContact__text__imgText-text">
+            <div class="container__whatsapp__myContacts__card__cardContact__text__imgText">
+                <img class="container__whatsapp__myContacts__card__cardContact__text__imgText-img" src="img/check.png" alt="">
+                <h6 class="container__whatsapp__myContacts__card__cardContact__text__imgText-text">
                     ${message.conversaciones[message.conversaciones.length - 1].message}
                 </h6>
             </div>
@@ -145,7 +145,7 @@ const LIST_MY_CHAT = async () => {
     </div>`;
         html += DIV_CARD;
     })
-    CONTAINER_DARD.innerHTML = html;
+    CONTAINER_CARD.innerHTML = html;
 }
 /*Cargar la foto de perfil del usuario que se selecciono para chatear */
 const LOADDING_CHAT = async () => {
@@ -248,7 +248,7 @@ const MY_CONTACTS_CARD = document.querySelectorAll('.container__whatsapp__myCont
 const CHANGE_PERSONAL_INFORMATION = document.querySelector('.container__whatsapp__myContacts__header-user');
 
 /*Poner en otro color cuando se seleccione una card */
-CONTAINER_DARD.addEventListener('click', () => {
+CONTAINER_CARD.addEventListener('click', () => {
     MY_CONTACTS_CARD.forEach((card) => {
         card.addEventListener('click', () => {
             card.style.backgroundColor = '#e9e9e9';

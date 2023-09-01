@@ -1,64 +1,104 @@
 {
   "usuarios": [
     {
-      "nombre": "Juan",
+      "nombre": "Camilo Zemanate",
       "numCelular": "3168553814",
-      "contrasenia": "1234santiago",
-      "urlImgPerfil": "https://i.pinimg.com/236x/b3/1f/64/b31f64ef81bca422eb5aa5804b6dfbe3.jpg",
+      "contrasenia": "1234Camilo",
+      "urlImgPerfil": "https://res.cloudinary.com/dbktnqag9/image/upload/v1693584151/sprint1-profundizaci%C3%B3n/user3_atf6ad.webp",
       "flag": "En Linea",
       "infoUsuario": "Estoy dormido",
-      "fechaHoraEnLinea": "10:17 a. m.",
+      "fechaHoraEnLinea": "12:22 p. m.",
       "id": 1
     },
     {
-      "nombre": "La Mona Lisa",
+      "nombre": "Luisa Pino",
       "numCelular": "3146962896",
-      "contrasenia": "1234camilo",
-      "urlImgPerfil": "https://cdn.computerhoy.com/sites/navi.axelspringer.es/public/media/image/2018/08/fotos-perfil-whatsapp_16.jpg?tf=3840x",
+      "contrasenia": "1234Luisa",
+      "urlImgPerfil": "https://res.cloudinary.com/dbktnqag9/image/upload/v1693584151/sprint1-profundizaci%C3%B3n/user2_gshvzt.jpg",
       "flag": "desconectado",
-      "infoUsuario": "en el trabajo",
+      "infoUsuario": "En el trabajo",
       "fechaHoraEnLinea": "1:30 p.m",
       "id": 2
     },
     {
-      "nombre": "Naruto ",
+      "nombre": "Javier Ordoñez ",
       "numCelular": "3168553813",
-      "contrasenia": "1234",
-      "urlImgPerfil": "https://cdn.superaficionados.com/imagenes/2-frases-de-naruto-naruto-boruto-cke.jpg",
-      "flag": "",
-      "infoUsuario": "",
+      "contrasenia": "1234Javier",
+      "urlImgPerfil": "https://res.cloudinary.com/dbktnqag9/image/upload/v1693584150/sprint1-profundizaci%C3%B3n/pexels-photo-614810_uqf2rk.webp",
+      "flag": "En Linea",
+      "infoUsuario": "Disponible",
       "fechaHoraEnLinea": "",
       "id": 3
     },
     {
-      "nombre": "Pain",
+      "nombre": "Alejandra Guzman",
       "numCelular": "3168553810",
-      "contrasenia": "12345",
-      "urlImgPerfil": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRSUaGEEgvFL2qP9pjsihLs2hqzVKqvlT1Bxg&usqp=CAU",
-      "flag": "",
-      "infoUsuario": " ",
+      "contrasenia": "1234Alejandra",
+      "urlImgPerfil": "https://res.cloudinary.com/dbktnqag9/image/upload/v1693584150/sprint1-profundizaci%C3%B3n/primer-mujer-feliz-que-coloca-brazos-abiertos-al-aire-libre-sonriendo-camara_109710-2487_wv19pl.avif",
+      "flag": "desconectado",
+      "infoUsuario": "Solo llamadas",
       "fechaHoraEnLinea": "Viernes",
       "id": 4
     },
     {
-      "nombre": "Pain",
+      "nombre": "Santiago Muñoz",
       "numCelular": "3168553813",
-      "contrasenia": "1234",
-      "urlImgPerfil": "https://e1.pxfuel.com/desktop-wallpaper/125/267/desktop-wallpaper-anime-profile-naruto-naruto-profile.jpg",
-      "flag": "",
-      "infoUsuario": " ",
+      "contrasenia": "1234Santiago",
+      "urlImgPerfil": "https://res.cloudinary.com/dbktnqag9/image/upload/v1693584150/sprint1-profundizaci%C3%B3n/istockphoto-1200677760-612x612_euokeo.jpg",
+      "flag": "En Linea",
+      "infoUsuario": "Disponible",
       "fechaHoraEnLinea": "Viernes",
       "id": 5
     },
     {
-      "nombre": "Otaku",
+      "nombre": "Melissa Carvajal",
       "numCelular": "12312",
-      "contrasenia": "12321",
-      "urlImgPerfil": "https://i.pinimg.com/736x/7c/00/2b/7c002be4f8fbad45db6e5bd0eeac3f82.jpg",
-      "flag": "",
-      "infoUsuario": "Estamos locos de la cabeza",
+      "contrasenia": "1234Melissa",
+      "urlImgPerfil": "https://res.cloudinary.com/dbktnqag9/image/upload/v1693584150/sprint1-profundizaci%C3%B3n/user4_ifwj2c.jpg",
+      "flag": "desconectado",
+      "infoUsuario": "Solo whatsApp",
       "fechaHoraEnLinea": "5:30 p.m",
       "id": 6
+    },
+    {
+      "nombre": "Bill Gates",
+      "numCelular": "3124859760",
+      "contrasenia": "1234Bill",
+      "urlImgPerfil": "https://res.cloudinary.com/dbktnqag9/image/upload/v1693585198/sprint1-profundizaci%C3%B3n/bill_bgyfig.jpg",
+      "flag": "desconectado",
+      "infoUsuario": "Solo whatsApp",
+      "fechaHoraEnLinea": "5:30 p.m",
+      "id": 7
+    },
+    {
+      "nombre": "Marck Zuckerberg",
+      "numCelular": "3124859767",
+      "contrasenia": "1234Mark",
+      "urlImgPerfil": "https://res.cloudinary.com/dbktnqag9/image/upload/v1693585398/sprint1-profundizaci%C3%B3n/5ab125773d782_40394724_20220731180456_ccdlf7.jpg",
+      "flag": "desconectado",
+      "infoUsuario": "Solo whatsApp",
+      "fechaHoraEnLinea": "5:30 p.m",
+      "id": 8
+    },
+    {
+      "nombre": "Elon Musk",
+      "numCelular": "3168553824",
+      "contrasenia": "1234Elon",
+      "urlImgPerfil": "https://res.cloudinary.com/dbktnqag9/image/upload/v1693585597/sprint1-profundizaci%C3%B3n/Elon_Musk_Royal_Society__crop2_ipmfjr.jpg",
+      "flag": "En Linea",
+      "infoUsuario": "Disponible",
+      "fechaHoraEnLinea": "Viernes",
+      "id": 9
+    },
+    {
+      "nombre": "Messi",
+      "numCelular": "3178553824",
+      "contrasenia": "1234Messi",
+      "urlImgPerfil": "https://res.cloudinary.com/dbktnqag9/image/upload/v1693585796/sprint1-profundizaci%C3%B3n/MESSI_ggyj7a.jpg",
+      "flag": "En Linea",
+      "infoUsuario": "Disponible",
+      "fechaHoraEnLinea": "Viernes",
+      "id": 10
     }
   ],
   "mensajes": [
@@ -78,34 +118,6 @@
           "date": "31/8/2023",
           "hour": "10:13",
           "message": "Bien y tu ¿como vas?",
-          "flag": false
-        },
-        {
-          "sendBy": "1",
-          "date": "31/8/2023",
-          "hour": "2:55 p. m.",
-          "message": "probando 3",
-          "flag": false
-        },
-        {
-          "sendBy": "1",
-          "date": "31/8/2023",
-          "hour": "9:04:16 p. m.",
-          "message": "coo esta",
-          "flag": false
-        },
-        {
-          "sendBy": "1",
-          "date": "31/8/2023",
-          "hour": "9:04:29 p. m.",
-          "message": ".",
-          "flag": false
-        },
-        {
-          "sendBy": "1",
-          "date": "31/8/2023",
-          "hour": "9:04:32 p. m.",
-          "message": ".",
           "flag": false
         }
       ],
@@ -156,27 +168,6 @@
           "hour": "2:46 p. m.",
           "message": "holi",
           "flag": false
-        },
-        {
-          "sendBy": "1",
-          "date": "31/8/2023",
-          "hour": "2:48 p. m.",
-          "message": "este si es este si es",
-          "flag": false
-        },
-        {
-          "sendBy": "1",
-          "date": "31/8/2023",
-          "hour": "2:50 p. m.",
-          "message": "parece que si sirve melo ",
-          "flag": false
-        },
-        {
-          "sendBy": "1",
-          "date": "31/8/2023",
-          "hour": "7:15:38 p. m.",
-          "message": "ojala funcione",
-          "flag": false
         }
       ],
       "id": 3
@@ -200,28 +191,126 @@
           "flag": false
         },
         {
-          "sendBy": "1",
+          "sendBy": 1,
           "date": "30/8/2023",
           "hour": "2:45 p. m.",
           "message": "holi",
           "flag": false
-        },
-        {
-          "sendBy": "1",
-          "date": "30/8/2023",
-          "hour": "2:47 p. m.",
-          "message": "este si es este si es",
-          "flag": false
-        },
-        {
-          "sendBy": "1",
-          "date": "30/8/2023",
-          "hour": "2:48 p. m.",
-          "message": "parece que si sirve melo caramelo",
-          "flag": false
         }
       ],
       "id": 3
+    },
+    {
+      "idUser1": 1,
+      "idUser2": 7,
+      "conversaciones": [
+        {
+          "sendBy": 1,
+          "date": "31/8/2023",
+          "hour": "2:29 p. m.",
+          "message": "Hola, como estas?",
+          "flag": false
+        },
+        {
+          "sendBy": 2,
+          "date": "31/8/2023",
+          "hour": "2:35 p. m.",
+          "message": "super me alegra mucho?",
+          "flag": false
+        },
+        {
+          "sendBy": 1,
+          "date": "31/8/2023",
+          "hour": "2:46 p. m.",
+          "message": "holi",
+          "flag": false
+        }
+      ],
+      "id": 4
+    },
+    {
+      "idUser1": 1,
+      "idUser2": 8,
+      "conversaciones": [
+        {
+          "sendBy": 1,
+          "date": "31/8/2023",
+          "hour": "2:29 p. m.",
+          "message": "Hola, como estas?",
+          "flag": false
+        },
+        {
+          "sendBy": 2,
+          "date": "31/8/2023",
+          "hour": "2:35 p. m.",
+          "message": "super me alegra mucho?",
+          "flag": false
+        },
+        {
+          "sendBy": 1,
+          "date": "31/8/2023",
+          "hour": "2:46 p. m.",
+          "message": "holi",
+          "flag": false
+        }
+      ],
+      "id": 5
+    },
+    {
+      "idUser1": 1,
+      "idUser2": 9,
+      "conversaciones": [
+        {
+          "sendBy": 1,
+          "date": "31/8/2023",
+          "hour": "2:29 p. m.",
+          "message": "Hola, como estas?",
+          "flag": false
+        },
+        {
+          "sendBy": 2,
+          "date": "31/8/2023",
+          "hour": "2:35 p. m.",
+          "message": "super me alegra mucho?",
+          "flag": false
+        },
+        {
+          "sendBy": 1,
+          "date": "31/8/2023",
+          "hour": "2:46 p. m.",
+          "message": "holi",
+          "flag": false
+        }
+      ],
+      "id": 6
+    },
+    {
+      "idUser1": 1,
+      "idUser2": 10,
+      "conversaciones": [
+        {
+          "sendBy": 1,
+          "date": "31/8/2023",
+          "hour": "2:29 p. m.",
+          "message": "Hola, como estas?",
+          "flag": false
+        },
+        {
+          "sendBy": 2,
+          "date": "31/8/2023",
+          "hour": "2:35 p. m.",
+          "message": "super me alegra mucho?",
+          "flag": false
+        },
+        {
+          "sendBy": 1,
+          "date": "31/8/2023",
+          "hour": "2:46 p. m.",
+          "message": "holi",
+          "flag": false
+        }
+      ],
+      "id": 7
     }
   ]
 }
