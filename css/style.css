@@ -368,6 +368,10 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  border-radius: 90px;
+}
+.container__whatsapp__changeImagen__body__img-img:hover {
+  cursor: pointer;
 }
 .container__whatsapp__changeImagen__body__img-Imgtext {
   position: absolute;
@@ -379,6 +383,34 @@
 .container__whatsapp__changeImagen__body__img-Imgtext__text {
   color: white;
   padding-top: 0.5rem;
+}
+.container__whatsapp__changeImagen__body__ChangeImagen {
+  padding-left: 1rem;
+  background-color: white;
+  margin-bottom: 1rem;
+  display: none;
+}
+.container__whatsapp__changeImagen__body__ChangeImagen__formulario label {
+  color: rgb(135, 135, 136);
+  font-weight: bold;
+  width: 100%;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+}
+.container__whatsapp__changeImagen__body__ChangeImagen__formulario__nameImg {
+  display: flex;
+  height: 3rem;
+  align-items: center;
+}
+.container__whatsapp__changeImagen__body__ChangeImagen__formulario__nameImg-name {
+  width: 92%;
+  border: none;
+}
+.container__whatsapp__changeImagen__body__ChangeImagen__formulario__nameImg-img {
+  width: 2rem;
+  height: 2rem;
+  cursor: pointer;
 }
 .container__whatsapp__changeImagen__body__data {
   padding-left: 1rem;
@@ -400,7 +432,6 @@
 .container__whatsapp__changeImagen__body__data__formulario__nameImg-name {
   width: 92%;
   border: none;
-  font-weight: bold;
 }
 .container__whatsapp__changeImagen__body__data__formulario__nameImg-img {
   width: 2rem;

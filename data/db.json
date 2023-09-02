@@ -7,7 +7,7 @@
       "urlImgPerfil": "https://res.cloudinary.com/dbktnqag9/image/upload/v1693584151/sprint1-profundizaci%C3%B3n/user3_atf6ad.webp",
       "flag": "En Linea",
       "infoUsuario": "Estoy dormido",
-      "fechaHoraEnLinea": "12:22 p. m.",
+      "fechaHoraEnLinea": "5:58 p. m.",
       "id": 1
     },
     {
@@ -146,34 +146,34 @@
     },
     {
       "idUser1": 1,
-      "idUser2": 5,
+      "idUser2": 6,
       "conversaciones": [
         {
           "sendBy": 1,
-          "date": "31/8/2023",
-          "hour": "2:29 p. m.",
+          "date": "30/8/2023",
+          "hour": "2:43 p. m.",
           "message": "Hola, como estas?",
           "flag": false
         },
         {
           "sendBy": 2,
-          "date": "31/8/2023",
-          "hour": "2:35 p. m.",
+          "date": "30/8/2023",
+          "hour": "2:44 p. m.",
           "message": "super me alegra mucho?",
           "flag": false
         },
         {
-          "sendBy": "1",
-          "date": "31/8/2023",
-          "hour": "2:46 p. m.",
+          "sendBy": 1,
+          "date": "30/8/2023",
+          "hour": "2:45 p. m.",
           "message": "holi",
           "flag": false
         },
         {
           "sendBy": "1",
           "date": "1/9/2023",
-          "hour": "1:04:56 p. m.",
-          "message": "asdasd",
+          "hour": "4:41:13 p. m.",
+          "message": "Buenas tardes",
           "flag": false
         }
       ],
@@ -181,7 +181,7 @@
     },
     {
       "idUser1": 1,
-      "idUser2": 6,
+      "idUser2": 10,
       "conversaciones": [
         {
           "sendBy": 1,

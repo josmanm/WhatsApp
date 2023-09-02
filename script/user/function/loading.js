@@ -27,13 +27,31 @@ const LIST_MESSAGE_SEND = document.querySelector('.container__whatsapp__myChat__
 const LIST_MESSAGE_RECEIVE = document.querySelector('.container__whatsapp__myChat__fondo__mensajeRecibido__contenedor__message-arrow-lista');
 const CONTAINER_CARD = document.querySelector('.container__whatsapp__myContacts__card')
 const CONTAINER_HEADER_USER = document.querySelector('.container__whatsapp__myContacts__header');
-
-
+const CHANGE_IMAGEN = document.querySelector('.container__whatsapp__changeImagen__body__img');
+const URL_CHANGE_IMAGEN = document.querySelector('.container__whatsapp__changeImagen__body__ChangeImagen__formulario__nameImg');
+/*Imagen del usuario en watsApp */
 export const LOADING_IMAGE_PROFILE = async () => {
     let user = listUsers.find(user => user.id == ID);
     const img = `<img class="container__whatsapp__myContacts__header-user" src="${user.urlImgPerfil}" alt="userMyContacts"></img>`
     CONTAINER_HEADER_USER.innerHTML = img;
 }
+/*Imagen del usario en el panel change imagen */
+export const IMAGEN_PANEL_CHANGE_IMAGEN = async()=>{
+    let user = listUsers.find(user=> user.id == ID);
+    const IMG_CHANGE_IMAGEN = `<img class="container__whatsapp__changeImagen__body__img-img" src="${user.urlImgPerfil}" alt="fondoChangeImg">`
+    CHANGE_IMAGEN.innerHTML = IMG_CHANGE_IMAGEN;    
+}
+/*Url por defecto del usuario que ingreso */
+export const URL_DEFECTO = async()=>{
+    let user = listUsers.find(user=> user.id == ID);
+    const URLDEFECTO = `
+                        <input type="url" id="url" class="container__whatsapp__changeImagen__body__ChangeImagen__formulario__nameImg-name" value="${user.urlImgPerfil}"  >
+                        <img class="container__whatsapp__changeImagen__body__ChangeImagen__formulario__nameImg-img" src="https://res.cloudinary.com/dbktnqag9/image/upload/v1693670649/right_or_wrong_4_preview_fntwpz.png" alt="edit">
+                        `
+    URL_CHANGE_IMAGEN.innerHTML = URLDEFECTO;
+}
+
+
 /*Listar la lista de mensajes de cada usuario */
 export const LIST_MY_CHAT = async () => {
     let user = listUsers.find(user => user.id == ID);

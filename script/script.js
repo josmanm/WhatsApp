@@ -3,7 +3,7 @@ import { getUsers } from './user/service/getUsers.js';
 import { getMessages } from './message/service/getMessages.js';
 import { updateMessage } from './message/service/updateMessage.js';
 import { DateTime } from 'https://moment.github.io/luxon/es6/luxon.js';
-import {LOADING_IMAGE_PROFILE,LIST_MY_CHAT,LOADDING_CHAT,LOADING_MESSAGES,LAST_MESSAGE,LAST_CHAT} from './user/function/loading.js';
+import {LOADING_IMAGE_PROFILE,LIST_MY_CHAT,LOADDING_CHAT,LOADING_MESSAGES,LAST_MESSAGE,LAST_CHAT,IMAGEN_PANEL_CHANGE_IMAGEN, URL_DEFECTO} from './user/function/loading.js';
 
 
 /*Capturar los parametros que recibimos en la URL*/ 
@@ -12,6 +12,7 @@ const params = new URLSearchParams(window.location.search);
 const ID = params.get('id');
 /* Constante con la id del usuaario que se selecciono para chatear, cambiara cada vez que se selecione otro chat*/
 let ID2 = 0;
+
 const SEND_MESSAGE = document.querySelector('.container__whatsapp__myChat__barraChats__formulario-input');
 const IMG_SEND = document.querySelector('.container__whatsapp__myChat__barraChats__formulario-send');
 const TEMPLATE_CHANGE_IMAGE = document.querySelector('.container__whatsapp__changeImagen');
@@ -30,6 +31,8 @@ const LIST_MESSAGE_SEND = document.querySelector('.container__whatsapp__myChat__
 const LIST_MESSAGE_RECEIVE = document.querySelector('.container__whatsapp__myChat__fondo__mensajeRecibido__contenedor__message-arrow-lista');
 const CONTAINER_CARD = document.querySelector('.container__whatsapp__myContacts__card')
 const CONTAINER_HEADER_USER = document.querySelector('.container__whatsapp__myContacts__header');
+const CHANGE_IMAGEN = document.querySelector('.container__whatsapp__changeImagen__body__img');
+const FORM_CHANGE_IMAGEN = document.querySelector('.container__whatsapp__changeImagen__body__ChangeImagen');
 
 /*Realizamos dos gets uno para obtener infornacion de los mensajes y otros de los usuarios*/
 let listMessages = await getMessages();
@@ -89,29 +92,6 @@ CLOSE_TEMPLETE_INFO_MESSAGE.addEventListener('click', () => {
     TEMPLETE_INFO_MESSAGE.style.display = 'none';
 });
 
-/*Mostrar y desaparecer la lista desplegable de los mensajes enviados */
-ARROW_DOWN_SEND.addEventListener('click', () => {
-    LIST_MESSAGE_SEND.style.display = 'block';
-});
-ARROW_DOWN_SEND.addEventListener('dblclick', () => {
-    LIST_MESSAGE_SEND.style.display = 'none';
-});
-/*Mostrar y desaparecer la flecha de opciones de los mensajes recividos */
-CONTAINER_RECEIVE_MESSAGE.addEventListener('mouseover', () => {
-    ARROW_DOWN_RECEIVE.style.display = 'block';
-});
-CONTAINER_RECEIVE_MESSAGE.addEventListener('mouseout', () => {
-    ARROW_DOWN_RECEIVE.style.display = 'none';
-});
-/*Mostrar y desaparecer la lista desplegable de los mensajes enviados */
-ARROW_DOWN_RECEIVE.addEventListener('click', () => {
-    LIST_MESSAGE_RECEIVE.style.display = 'block';
-});
-ARROW_DOWN_RECEIVE.addEventListener('dblclick', () => {
-    LIST_MESSAGE_RECEIVE.style.display = 'none';
-});
-
-
 /*Listar la lista de mensajes de cada usuario */
 
 /*Cargar la foto de perfil del usuario que se selecciono para chatear */
@@ -122,6 +102,8 @@ ARROW_DOWN_RECEIVE.addEventListener('dblclick', () => {
 LAST_CHAT();
 LOADING_IMAGE_PROFILE();
 LIST_MY_CHAT();
+IMAGEN_PANEL_CHANGE_IMAGEN();
+URL_DEFECTO();
 /*Los siguientes container los cargamos aqui y no en el principio de la script para no generar errores*/
 const MY_CONTACTS_CARD = document.querySelectorAll('.container__whatsapp__myContacts__card__cardContact');
 const CHANGE_PERSONAL_INFORMATION = document.querySelector('.container__whatsapp__myContacts__header-user');
@@ -154,4 +136,34 @@ CONTAINER_SEND_MESSAGE.addEventListener('mouseover', () => {
 });
 CONTAINER_SEND_MESSAGE.addEventListener('mouseout', () => {
     ARROW_DOWN_SEND.style.display = 'none';
+});
+/*Mostrar y desaparecer la lista desplegable de los mensajes enviados */
+ARROW_DOWN_SEND.addEventListener('click', () => {
+    LIST_MESSAGE_SEND.style.display = 'block';
+});
+ARROW_DOWN_SEND.addEventListener('dblclick', () => {
+    LIST_MESSAGE_SEND.style.display = 'none';
+});
+/*Mostrar y desaparecer la flecha de opciones de los mensajes recividos */
+CONTAINER_RECEIVE_MESSAGE.addEventListener('mouseover', () => {
+    ARROW_DOWN_RECEIVE.style.display = 'block';
+});
+CONTAINER_RECEIVE_MESSAGE.addEventListener('mouseout', () => {
+    ARROW_DOWN_RECEIVE.style.display = 'none';
+});
+/*Mostrar y desaparecer la lista desplegable de los mensajes enviados */
+ARROW_DOWN_RECEIVE.addEventListener('click', () => {
+    LIST_MESSAGE_RECEIVE.style.display = 'block';
+});
+ARROW_DOWN_RECEIVE.addEventListener('dblclick', () => {
+    LIST_MESSAGE_RECEIVE.style.display = 'none';
+});
+
+/*Mostar form para cambiar la URL de la imagen */
+CHANGE_IMAGEN.addEventListener('click',()=>{
+    FORM_CHANGE_IMAGEN.style.display='block';
+});
+/*Ocultar form para cambiar la URL de la imagen */
+CHANGE_IMAGEN.addEventListener('dblclick',()=>{
+    FORM_CHANGE_IMAGEN.style.display='none';
 });
