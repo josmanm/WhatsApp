@@ -12,7 +12,8 @@ let listUsers = await getUsers();
 
 const CONTAINER_CARD = document.querySelector('.container__whatsapp__myContacts__card')
 const CONTAINER_HEADER_USER = document.querySelector('.container__whatsapp__myContacts__header');
-
+const LIST_MESSAGE_SEND = document.querySelector('.container__whatsapp__myChat__fondo__mensajeEnviado__contenedor__message-arrow-lista');
+const LIST_MESSAGE_RECEIVE = document.querySelector('.container__whatsapp__myChat__fondo__mensajeRecibido__contenedor__message-arrow-lista');
 
 /*Imagen del usuario en watsApp */
 export const LOADING_IMAGE_PROFILE = async () => {
@@ -28,7 +29,6 @@ export const IMAGEN_PANEL_CHANGE_IMAGEN = async()=>{
     CHANGE_IMAGEN.innerHTML = IMG_CHANGE_IMAGEN;    
 }
 /*Url por defecto del usuario que ingreso */
-
 const URL_CHANGE_IMAGEN = document.querySelector('.container__whatsapp__changeImagen__body__ChangeImagen__formulario__nameImg');
 
 export const URL_DEFECTO = async()=>{
@@ -41,7 +41,6 @@ export const URL_DEFECTO = async()=>{
        
     
 }
-
 /*Cargar el nombre del usuario */
 const ADDNAME =document.querySelector('.container__whatsapp__changeImagen__body__data__formulario__nameImg');
 export const NAME_USER = async () => {
@@ -52,7 +51,6 @@ export const NAME_USER = async () => {
                 `
     ADDNAME.innerHTML = name;
 }
-
 /*Listar la lista de mensajes de cada usuario */
 export const LIST_MY_CHAT = async () => {
     let user = listUsers.find(user => user.id == ID);
@@ -156,7 +154,7 @@ export const LOADING_MESSAGES = async (ID2) => {
 export const LAST_MESSAGE = async () => {
     let bandera_fecha ={
         "date": '30/12/2000',
-        "hour": '00:00 p.m'
+        "hour": '00:0 0 p.m'
     }
     let mylistMessages = listMessages.filter(message => message.idUser1 == ID || message.idUser2 == ID);
     mylistMessages.forEach((message) => {
@@ -177,11 +175,18 @@ const ARROW_DOWN_SEND = document.querySelector('.container__whatsapp__myChat__fo
 const CONTAINER_RECEIVE_MESSAGE = document.querySelector('.container__whatsapp__myChat__fondo__mensajeRecibido__contenedor');
 const ARROW_DOWN_RECEIVE = document.querySelector('.container__whatsapp__myChat__fondo__mensajeRecibido__contenedor__message-arrow');
 export const LAST_CHAT = async () => {
-    let bandera_fecha=  await LAST_MESSAGE();
+    let bandera_fecha =  await LAST_MESSAGE();
+    let html = ``;
+    let mylistMessages = listMessages.filter(message => message.idUser1 == ID || message.idUser2 == ID);
+    let div = document.querySelector('.container__whatsapp__myChat__fondo');
+    console.log(bandera_fecha);
+    mylistMessages.forEach(async (message) => {
+        if (String(message.conversaciones[message.conversaciones.length - 1].date == String (bandera_fecha.date)) && String(message.conversaciones[message.conversaciones.length - 1].hour == String (bandera_fecha.hour)) ) {
+            LOADING_MESSAGES(message.idUser2);
+            listMessages = await getMessages();
+        }
+    })
 }
-
-
-
 /*Mostrar y desaparecer la flecha de opciones de los mensajes enviados */
 CONTAINER_SEND_MESSAGE.addEventListener('mouseover', () => {
     ARROW_DOWN_SEND.style.display = 'block';
@@ -210,5 +215,3 @@ ARROW_DOWN_RECEIVE.addEventListener('click', () => {
 ARROW_DOWN_RECEIVE.addEventListener('dblclick', () => {
     LIST_MESSAGE_RECEIVE.style.display = 'none';
 });
-
-

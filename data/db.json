@@ -7,7 +7,7 @@
       "urlImgPerfil": "https://res.cloudinary.com/dbktnqag9/image/upload/v1693584151/sprint1-profundizaci%C3%B3n/user3_atf6ad.webp",
       "flag": "En Linea",
       "infoUsuario": "Estoy dormido",
-      "fechaHoraEnLinea": "10:30 a. m.",
+      "fechaHoraEnLinea": "10:56 a. m.",
       "id": 1
     },
     {
@@ -133,6 +133,13 @@
           "hour": "12:33:07 a. m.",
           "message": "que putas",
           "flag": false
+        },
+        {
+          "sendBy": "1",
+          "date": "4/9/2023",
+          "hour": "12:39:19 p. m.",
+          "message": "probando",
+          "flag": false
         }
       ],
       "id": 1
@@ -189,33 +196,12 @@
           "hour": "12:37:29 a. m.",
           "message": "hola messi com ovas?",
           "flag": false
-        }
-      ],
-      "id": 3
-    },
-    {
-      "idUser1": 1,
-      "idUser2": 10,
-      "conversaciones": [
-        {
-          "sendBy": 1,
-          "date": "30/8/2023",
-          "hour": "2:43 p. m.",
-          "message": "Hola, como estas?",
-          "flag": false
         },
         {
-          "sendBy": 2,
-          "date": "30/8/2023",
-          "hour": "2:44 p. m.",
-          "message": "super me alegra mucho?",
-          "flag": false
-        },
-        {
-          "sendBy": 1,
-          "date": "30/8/2023",
-          "hour": "2:45 p. m.",
-          "message": "holi",
+          "sendBy": "1",
+          "date": "4/9/2023",
+          "hour": "2:16:24 p. m.",
+          "message": "exelente partido ayer messi",
           "flag": false
         }
       ],
@@ -245,6 +231,13 @@
           "hour": "2:46 p. m.",
           "message": "holi",
           "flag": false
+        },
+        {
+          "sendBy": "1",
+          "date": "4/9/2023",
+          "hour": "11:14:10 a. m.",
+          "message": "Elon Musk",
+          "flag": false
         }
       ],
       "id": 4
@@ -272,6 +265,13 @@
           "date": "31/8/2023",
           "hour": "2:46 p. m.",
           "message": "holi",
+          "flag": false
+        },
+        {
+          "sendBy": "1",
+          "date": "4/9/2023",
+          "hour": "11:14:17 a. m.",
+          "message": "y vos que ?",
           "flag": false
         }
       ],
@@ -301,6 +301,41 @@
           "hour": "2:46 p. m.",
           "message": "holi",
           "flag": false
+        },
+        {
+          "sendBy": "1",
+          "date": "4/9/2023",
+          "hour": "11:14:25 a. m.",
+          "message": "hola amor",
+          "flag": false
+        },
+        {
+          "sendBy": "1",
+          "date": "4/9/2023",
+          "hour": "11:14:46 a. m.",
+          "message": "amor ",
+          "flag": false
+        },
+        {
+          "sendBy": "1",
+          "date": "4/9/2023",
+          "hour": "11:15:03 a. m.",
+          "message": "amooor",
+          "flag": false
+        },
+        {
+          "sendBy": "1",
+          "date": "4/9/2023",
+          "hour": "11:15:03 a. m.",
+          "message": "",
+          "flag": false
+        },
+        {
+          "sendBy": "1",
+          "date": "4/9/2023",
+          "hour": "11:16:41 a. m.",
+          "message": "que paso aqui",
+          "flag": false
         }
       ],
       "id": 6
@@ -328,6 +363,20 @@
           "date": "31/8/2023",
           "hour": "2:46 p. m.",
           "message": "holi",
+          "flag": false
+        },
+        {
+          "sendBy": "1",
+          "date": "4/9/2023",
+          "hour": "11:14:31 a. m.",
+          "message": "usted quien es ?",
+          "flag": false
+        },
+        {
+          "sendBy": "1",
+          "date": "4/9/2023",
+          "hour": "12:38:58 p. m.",
+          "message": "hola",
           "flag": false
         }
       ],
