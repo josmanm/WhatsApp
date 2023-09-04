@@ -154,7 +154,7 @@ export const LOADING_MESSAGES = async (ID2) => {
 export const LAST_MESSAGE = async () => {
     let bandera_fecha ={
         "date": '30/12/2000',
-        "hour": '00:0 0 p.m'
+        "hour": '00:00:00 a.m'
     }
     let mylistMessages = listMessages.filter(message => message.idUser1 == ID || message.idUser2 == ID);
     mylistMessages.forEach((message) => {
@@ -179,10 +179,17 @@ export const LAST_CHAT = async () => {
     let html = ``;
     let mylistMessages = listMessages.filter(message => message.idUser1 == ID || message.idUser2 == ID);
     let div = document.querySelector('.container__whatsapp__myChat__fondo');
-    console.log(bandera_fecha);
     mylistMessages.forEach(async (message) => {
-        if (String(message.conversaciones[message.conversaciones.length - 1].date == String (bandera_fecha.date)) && String(message.conversaciones[message.conversaciones.length - 1].hour == String (bandera_fecha.hour)) ) {
-            LOADING_MESSAGES(message.idUser2);
+        
+        if(message.conversaciones[message.conversaciones.length - 1].date === String (bandera_fecha.date) && message.conversaciones[message.conversaciones.length - 1].hour === String (bandera_fecha.hour)) {
+            console.log(String(message.conversaciones[message.conversaciones.length - 1].date === String (bandera_fecha.date)) && String(message.conversaciones[message.conversaciones.length - 1].hour === String (bandera_fecha.hour)), 'Ingreso con esta respuesta' )
+            if(ID == message.idUser1){
+                LOADDING_CHAT(message.idUser2);
+                LOADING_MESSAGES(message.idUser2);
+            }else{
+                LOADDING_CHAT(message.idUser1);
+                LOADING_MESSAGES(message.idUser1);
+            }
             listMessages = await getMessages();
         }
     })
