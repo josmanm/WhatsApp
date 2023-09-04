@@ -7,7 +7,7 @@
       "urlImgPerfil": "https://res.cloudinary.com/dbktnqag9/image/upload/v1693584151/sprint1-profundizaci%C3%B3n/user3_atf6ad.webp",
       "flag": "En Linea",
       "infoUsuario": "Estoy dormido",
-      "fechaHoraEnLinea": "8:07 p. m.",
+      "fechaHoraEnLinea": "12:41 a. m.",
       "id": 1
     },
     {
@@ -126,6 +126,13 @@
           "hour": "8:05:30 p. m.",
           "message": "hola",
           "flag": false
+        },
+        {
+          "sendBy": "1",
+          "date": "4/9/2023",
+          "hour": "12:33:07 a. m.",
+          "message": "que putas",
+          "flag": false
         }
       ],
       "id": 1
@@ -153,7 +160,7 @@
     },
     {
       "idUser1": 1,
-      "idUser2": 8,
+      "idUser2": 10,
       "conversaciones": [
         {
           "sendBy": 1,
@@ -178,9 +185,9 @@
         },
         {
           "sendBy": "1",
-          "date": "1/9/2023",
-          "hour": "4:41:13 p. m.",
-          "message": "Buenas tardes",
+          "date": "4/9/2023",
+          "hour": "12:37:29 a. m.",
+          "message": "hola messi com ovas?",
           "flag": false
         }
       ],

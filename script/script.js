@@ -102,8 +102,6 @@ NAME_USER();
 /*Los siguientes container los cargamos aqui y no en el principio de la script para no generar errores*/
 const MY_CONTACTS_CARD = document.querySelectorAll('.container__whatsapp__myContacts__card__cardContact');
 const CHANGE_PERSONAL_INFORMATION = document.querySelector('.container__whatsapp__myContacts__header-user');
-console.log(CONTAINER_CARD)
-console.log('Lista',MY_CONTACTS_CARD)
 /*Poner en otro color cuando se seleccione una card */
 CONTAINER_CARD.addEventListener('click', () => {
     MY_CONTACTS_CARD.forEach((card) => {
@@ -156,11 +154,26 @@ EDIT_NAME.addEventListener('click', () => {
 });
 
 NAME_CHANGE.addEventListener('dblclick', async()=>{
-   
-    
         let n = document.querySelector('.container__whatsapp__changeImagen__body__data__formulario__nameImg-name').value
         let user = listUsers.find(user => user.id == ID);
         await updateNameUser(user,n);
-
-    
 });
+
+const SEARCH_CHAT = "algún valor";
+const inputElement = document.getElementById('searchbar'); 
+
+inputElement.onkeyup = function SEARCH_CHAT () {
+    let input = document.getElementById('searchbar').value
+    input=input.toLowerCase();
+    let x = document.querySelectorAll('.container__whatsapp__myContacts__card__cardContact__text__nameDate-name');
+    let card = document.querySelectorAll('.container__whatsapp__myContacts__card__cardContact');
+    for (let i = 0; i < x.length; i++) {
+        if (!x[i].innerHTML.toLowerCase().includes(input)) {
+
+            card[i].style.display="none";
+        }
+        else {   
+            card[i].style.display="flex";              
+        }
+    }
+}

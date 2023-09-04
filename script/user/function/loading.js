@@ -160,7 +160,6 @@ export const LAST_MESSAGE = async () => {
     }
     let mylistMessages = listMessages.filter(message => message.idUser1 == ID || message.idUser2 == ID);
     mylistMessages.forEach((message) => {
-        console.log(message.conversaciones[message.conversaciones.length - 1].date);
         if (message.conversaciones[message.conversaciones.length - 1].date > bandera_fecha.date) {
              bandera_fecha.date = message.conversaciones[message.conversaciones.length - 1].date;
              bandera_fecha.hour = message.conversaciones[message.conversaciones.length - 1].hour;
@@ -179,8 +178,6 @@ const CONTAINER_RECEIVE_MESSAGE = document.querySelector('.container__whatsapp__
 const ARROW_DOWN_RECEIVE = document.querySelector('.container__whatsapp__myChat__fondo__mensajeRecibido__contenedor__message-arrow');
 export const LAST_CHAT = async () => {
     let bandera_fecha=  await LAST_MESSAGE();
-    console.log(bandera_fecha);
-    console.log('enviados', CONTAINER_SEND_MESSAGE);
 }
 
 
