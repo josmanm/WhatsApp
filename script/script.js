@@ -3,8 +3,9 @@ import { getUsers } from './user/service/getUsers.js';
 import { getMessages } from './message/service/getMessages.js';
 import { updateMessage } from './message/service/updateMessage.js';
 import { DateTime } from 'https://moment.github.io/luxon/es6/luxon.js';
-import {LOADING_IMAGE_PROFILE,LIST_MY_CHAT,LOADDING_CHAT,LOADING_MESSAGES,LAST_MESSAGE,LAST_CHAT,IMAGEN_PANEL_CHANGE_IMAGEN, URL_DEFECTO} from './user/function/loading.js';
-
+import {LOADING_IMAGE_PROFILE,LIST_MY_CHAT,LOADDING_CHAT,LOADING_MESSAGES,LAST_MESSAGE,LAST_CHAT,IMAGEN_PANEL_CHANGE_IMAGEN, URL_DEFECTO, NAME_USER} from './user/function/loading.js';
+import { updatePhotoUser } from './user/service/updatePhoto.js';
+import { updateNameUser } from './user/service/updateNameUser.js';
 
 /*Capturar los parametros que recibimos en la URL*/ 
 const params = new URLSearchParams(window.location.search);
@@ -18,21 +19,18 @@ const IMG_SEND = document.querySelector('.container__whatsapp__myChat__barraChat
 const TEMPLATE_CHANGE_IMAGE = document.querySelector('.container__whatsapp__changeImagen');
 const TEMPLATE_MY_CONTACTS = document.querySelector('.container__whatsapp__myContacts');
 const ARROW_BACK_PERFIL = document.querySelector('.container__whatsapp__changeImagen__header__imgPerfil-arrow');
-const EDIT_NAME = document.querySelector('.container__whatsapp__changeImagen__body__data__formulario__nameImg-img');
-const INPUT_EDIT = document.querySelector('.container__whatsapp__changeImagen__body__data__formulario__nameImg-name');
 const SEND_MESSAGE_MY_CHAT = document.querySelector('.container__whatsapp__myChat__header-search');
 const TEMPLETE_INFO_MESSAGE = document.querySelector('.container__whatsapp__infoMesagge');
 const CLOSE_TEMPLETE_INFO_MESSAGE = document.querySelector('.container__whatsapp__infoMesagge__header-closeIcon');
-const CONTAINER_SEND_MESSAGE = document.querySelector('.container__whatsapp__myChat__fondo__mensajeEnviado__contenedor');
-const ARROW_DOWN_SEND = document.querySelector('.container__whatsapp__myChat__fondo__mensajeEnviado__contenedor__message-arrow');
-const CONTAINER_RECEIVE_MESSAGE = document.querySelector('.container__whatsapp__myChat__fondo__mensajeRecibido__contenedor');
-const ARROW_DOWN_RECEIVE = document.querySelector('.container__whatsapp__myChat__fondo__mensajeRecibido__contenedor__message-arrow');
+
 const LIST_MESSAGE_SEND = document.querySelector('.container__whatsapp__myChat__fondo__mensajeEnviado__contenedor__message-arrow-lista');
 const LIST_MESSAGE_RECEIVE = document.querySelector('.container__whatsapp__myChat__fondo__mensajeRecibido__contenedor__message-arrow-lista');
 const CONTAINER_CARD = document.querySelector('.container__whatsapp__myContacts__card')
 const CONTAINER_HEADER_USER = document.querySelector('.container__whatsapp__myContacts__header');
 const CHANGE_IMAGEN = document.querySelector('.container__whatsapp__changeImagen__body__img');
 const FORM_CHANGE_IMAGEN = document.querySelector('.container__whatsapp__changeImagen__body__ChangeImagen');
+
+
 
 /*Realizamos dos gets uno para obtener infornacion de los mensajes y otros de los usuarios*/
 let listMessages = await getMessages();
@@ -77,11 +75,7 @@ ARROW_BACK_PERFIL.addEventListener('click', () => {
     TEMPLATE_MY_CONTACTS.style.display = 'block';
 });
 
-/*Editar el nombre */
-EDIT_NAME.addEventListener('click', () => {
-    INPUT_EDIT.readOnly = true;
-    INPUT_EDIT.style.border = "2px solid black";
-});
+
 
 /*Templete de buscar los mensajes */
 SEND_MESSAGE_MY_CHAT.addEventListener('click', () => {
@@ -104,6 +98,7 @@ LOADING_IMAGE_PROFILE();
 LIST_MY_CHAT();
 IMAGEN_PANEL_CHANGE_IMAGEN();
 URL_DEFECTO();
+NAME_USER();
 /*Los siguientes container los cargamos aqui y no en el principio de la script para no generar errores*/
 const MY_CONTACTS_CARD = document.querySelectorAll('.container__whatsapp__myContacts__card__cardContact');
 const CHANGE_PERSONAL_INFORMATION = document.querySelector('.container__whatsapp__myContacts__header-user');
@@ -130,35 +125,6 @@ CHANGE_PERSONAL_INFORMATION.addEventListener('click', () => {
     TEMPLATE_MY_CONTACTS.style.display = 'none';
 });
 
-/*Mostrar y desaparecer la flecha de opciones de los mensajes enviados */
-CONTAINER_SEND_MESSAGE.addEventListener('mouseover', () => {
-    ARROW_DOWN_SEND.style.display = 'block';
-});
-CONTAINER_SEND_MESSAGE.addEventListener('mouseout', () => {
-    ARROW_DOWN_SEND.style.display = 'none';
-});
-/*Mostrar y desaparecer la lista desplegable de los mensajes enviados */
-ARROW_DOWN_SEND.addEventListener('click', () => {
-    LIST_MESSAGE_SEND.style.display = 'block';
-});
-ARROW_DOWN_SEND.addEventListener('dblclick', () => {
-    LIST_MESSAGE_SEND.style.display = 'none';
-});
-/*Mostrar y desaparecer la flecha de opciones de los mensajes recividos */
-CONTAINER_RECEIVE_MESSAGE.addEventListener('mouseover', () => {
-    ARROW_DOWN_RECEIVE.style.display = 'block';
-});
-CONTAINER_RECEIVE_MESSAGE.addEventListener('mouseout', () => {
-    ARROW_DOWN_RECEIVE.style.display = 'none';
-});
-/*Mostrar y desaparecer la lista desplegable de los mensajes enviados */
-ARROW_DOWN_RECEIVE.addEventListener('click', () => {
-    LIST_MESSAGE_RECEIVE.style.display = 'block';
-});
-ARROW_DOWN_RECEIVE.addEventListener('dblclick', () => {
-    LIST_MESSAGE_RECEIVE.style.display = 'none';
-});
-
 /*Mostar form para cambiar la URL de la imagen */
 CHANGE_IMAGEN.addEventListener('click',()=>{
     FORM_CHANGE_IMAGEN.style.display='block';
@@ -166,4 +132,35 @@ CHANGE_IMAGEN.addEventListener('click',()=>{
 /*Ocultar form para cambiar la URL de la imagen */
 CHANGE_IMAGEN.addEventListener('dblclick',()=>{
     FORM_CHANGE_IMAGEN.style.display='none';
+});
+/*update user photo*/
+const CAMBIAR_URL =document.querySelector('.container__whatsapp__changeImagen__body__ChangeImagen__formulario__nameImg-img')
+
+CAMBIAR_URL.addEventListener('click',async()=>{
+    let urlActualizar = document.querySelector('.container__whatsapp__changeImagen__body__ChangeImagen__formulario__nameImg-name').value;    
+    let user = listUsers.find(user => user.id == ID);
+    await updatePhotoUser(user, urlActualizar);
+});
+
+
+
+/*Editar el nombre */
+
+const EDIT_NAME = document.querySelector('.container__whatsapp__changeImagen__body__data__formulario__nameImg-img');
+const INPUT_EDIT = document.querySelector('.container__whatsapp__changeImagen__body__data__formulario__nameImg-name');
+const NAME_CHANGE = document.querySelector('.container__whatsapp__changeImagen__body__data__formulario__nameImg-img');
+
+EDIT_NAME.addEventListener('click', () => {
+    INPUT_EDIT.disabled=false;
+    INPUT_EDIT.style.border = "2px solid black";
+});
+
+NAME_CHANGE.addEventListener('dblclick', async()=>{
+   
+    
+        let n = document.querySelector('.container__whatsapp__changeImagen__body__data__formulario__nameImg-name').value
+        let user = listUsers.find(user => user.id == ID);
+        await updateNameUser(user,n);
+
+    
 });

@@ -7,7 +7,7 @@
       "urlImgPerfil": "https://res.cloudinary.com/dbktnqag9/image/upload/v1693584151/sprint1-profundizaci%C3%B3n/user3_atf6ad.webp",
       "flag": "En Linea",
       "infoUsuario": "Estoy dormido",
-      "fechaHoraEnLinea": "5:58 p. m.",
+      "fechaHoraEnLinea": "8:07 p. m.",
       "id": 1
     },
     {
@@ -27,7 +27,7 @@
       "urlImgPerfil": "https://res.cloudinary.com/dbktnqag9/image/upload/v1693584150/sprint1-profundizaci%C3%B3n/pexels-photo-614810_uqf2rk.webp",
       "flag": "En Linea",
       "infoUsuario": "Disponible",
-      "fechaHoraEnLinea": "",
+      "fechaHoraEnLinea": "2:50 a.m",
       "id": 3
     },
     {
@@ -37,7 +37,7 @@
       "urlImgPerfil": "https://res.cloudinary.com/dbktnqag9/image/upload/v1693584150/sprint1-profundizaci%C3%B3n/primer-mujer-feliz-que-coloca-brazos-abiertos-al-aire-libre-sonriendo-camara_109710-2487_wv19pl.avif",
       "flag": "desconectado",
       "infoUsuario": "Solo llamadas",
-      "fechaHoraEnLinea": "Viernes",
+      "fechaHoraEnLinea": "1:50 a.m",
       "id": 4
     },
     {
@@ -47,7 +47,7 @@
       "urlImgPerfil": "https://res.cloudinary.com/dbktnqag9/image/upload/v1693584150/sprint1-profundizaci%C3%B3n/istockphoto-1200677760-612x612_euokeo.jpg",
       "flag": "En Linea",
       "infoUsuario": "Disponible",
-      "fechaHoraEnLinea": "Viernes",
+      "fechaHoraEnLinea": "6:50 a.m",
       "id": 5
     },
     {
@@ -87,7 +87,7 @@
       "urlImgPerfil": "https://res.cloudinary.com/dbktnqag9/image/upload/v1693585597/sprint1-profundizaci%C3%B3n/Elon_Musk_Royal_Society__crop2_ipmfjr.jpg",
       "flag": "En Linea",
       "infoUsuario": "Disponible",
-      "fechaHoraEnLinea": "Viernes",
+      "fechaHoraEnLinea": "2:50 a.m",
       "id": 9
     },
     {
@@ -104,7 +104,7 @@
   "mensajes": [
     {
       "idUser1": 1,
-      "idUser2": 2,
+      "idUser2": 7,
       "conversaciones": [
         {
           "sendBy": 1,
@@ -118,6 +118,13 @@
           "date": "31/8/2023",
           "hour": "10:13",
           "message": "Bien y tu ¿como vas?",
+          "flag": false
+        },
+        {
+          "sendBy": "1",
+          "date": "3/9/2023",
+          "hour": "8:05:30 p. m.",
+          "message": "hola",
           "flag": false
         }
       ],
@@ -146,7 +153,7 @@
     },
     {
       "idUser1": 1,
-      "idUser2": 6,
+      "idUser2": 8,
       "conversaciones": [
         {
           "sendBy": 1,
@@ -209,7 +216,7 @@
     },
     {
       "idUser1": 1,
-      "idUser2": 7,
+      "idUser2": 9,
       "conversaciones": [
         {
           "sendBy": 1,
@@ -237,7 +244,7 @@
     },
     {
       "idUser1": 1,
-      "idUser2": 8,
+      "idUser2": 6,
       "conversaciones": [
         {
           "sendBy": 1,
@@ -265,7 +272,7 @@
     },
     {
       "idUser1": 1,
-      "idUser2": 9,
+      "idUser2": 2,
       "conversaciones": [
         {
           "sendBy": 1,
@@ -293,7 +300,7 @@
     },
     {
       "idUser1": 1,
-      "idUser2": 10,
+      "idUser2": 3,
       "conversaciones": [
         {
           "sendBy": 1,

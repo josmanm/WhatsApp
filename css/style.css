@@ -1,6 +1,6 @@
 .container__whatsapp__myChat {
-  height: 95vh;
-  padding: 0;
+  max-height: 95vh;
+  padding-left: 0;
 }
 .container__whatsapp__myChat__header {
   height: 4rem;
@@ -193,6 +193,7 @@
 .container__whatsapp__myChat__barraChats {
   display: flex;
   height: 4rem;
+  width: 100%;
   background-color: rgb(237, 237, 237);
   align-items: center;
   padding-left: 1rem;
@@ -208,9 +209,10 @@
 }
 .container__whatsapp__myChat__barraChats__formulario {
   display: flex;
+  width: 100%;
 }
 .container__whatsapp__myChat__barraChats__formulario-input {
-  width: 56vw;
+  width: 95%;
   height: 2.5rem;
   border: none;
   border-radius: 15px;
@@ -226,6 +228,16 @@
 }
 .container__whatsapp__myChat__barraChats__formulario button {
   border: none;
+}
+@media (max-width: 1115px) {
+  .container__whatsapp__myChat {
+    display: none;
+  }
+}
+
+.container__whatsapp__myContacts {
+  max-height: 95vh;
+  padding-bottom: 0;
 }
 .container__whatsapp__myContacts__header {
   height: 4rem;
@@ -263,20 +275,21 @@
 .container__whatsapp__myContacts__barraSearch-search {
   width: 2rem;
   height: 2.5rem;
-  background-color: white;
-  border-radius: 15px 0 0 15px;
   margin-left: 1rem;
 }
 .container__whatsapp__myContacts__barraSearch__formulario-input {
   border: none;
   height: 2.5rem;
   width: 27rem;
-  border-radius: 0 15px 15px 0;
+  border-radius: 15px;
   padding-left: 1rem;
 }
 .container__whatsapp__myContacts__card {
   overflow-y: scroll;
-  height: 73%;
+  height: 81%;
+  width: 103%;
+  padding-right: 0;
+  margin-right: 0;
 }
 .container__whatsapp__myContacts__card__cardContact {
   border-bottom: 1px solid rgb(237, 237, 237);
@@ -324,6 +337,7 @@
   display: none;
   background-color: rgb(237, 237, 237);
   padding: 0;
+  height: 95vh;
 }
 .container__whatsapp__changeImagen__header {
   height: 8rem;
@@ -442,7 +456,7 @@
 .container__whatsapp__infoMesagge {
   display: none;
   position: absolute;
-  margin-left: 63.5rem;
+  margin-left: 65%;
   background-color: rgb(237, 237, 237);
   height: 95vh;
 }
@@ -457,28 +471,31 @@
 }
 .container__whatsapp__infoMesagge__header-closeIcon {
   cursor: pointer;
+  width: 1.5rem;
+  height: 1.5rem;
 }
 .container__whatsapp__infoMesagge__search {
   display: flex;
   align-items: center;
+  width: 100%;
 }
 .container__whatsapp__infoMesagge__search-search {
   width: 2rem;
   height: 2rem;
-  background-color: white;
-  border-radius: 15px 0 0 15px;
+}
+.container__whatsapp__infoMesagge__search__formulario {
+  width: 100%;
 }
 .container__whatsapp__infoMesagge__search__formulario-input {
-  width: 26rem;
+  width: 100%;
   border: none;
   height: 2rem;
+  border-radius: 15px;
 }
 .container__whatsapp__infoMesagge__search-closeIcon {
-  width: 2rem;
-  height: 2rem;
-  background-color: white;
+  width: 2.5rem;
+  height: 2.5rem;
   padding: 0.5rem;
-  border-radius: 0 15px 15px 0;
 }
 .container__whatsapp__infoMesagge__cardInfo {
   margin-top: 1rem;

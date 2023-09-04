@@ -3,32 +3,17 @@ import { getUsers } from '../service/getUsers.js';
 import { updateMessage } from '../../message/service/updateMessage.js';
 import { getMessages } from '../../message/service/getMessages.js';
 import { DateTime } from 'https://moment.github.io/luxon/es6/luxon.js';
+import { updatePhotoUser } from '../service/updatePhoto.js';
 const params = new URLSearchParams(window.location.search);
 const ID = params.get('id');
 let ID2 = 0;
 let listMessages = await getMessages();
 let listUsers = await getUsers();
 
-const SEND_MESSAGE = document.querySelector('.container__whatsapp__myChat__barraChats__formulario-input');
-const IMG_SEND = document.querySelector('.container__whatsapp__myChat__barraChats__formulario-send');
-const TEMPLATE_CHANGE_IMAGE = document.querySelector('.container__whatsapp__changeImagen');
-const TEMPLATE_MY_CONTACTS = document.querySelector('.container__whatsapp__myContacts');
-const ARROW_BACK_PERFIL = document.querySelector('.container__whatsapp__changeImagen__header__imgPerfil-arrow');
-const EDIT_NAME = document.querySelector('.container__whatsapp__changeImagen__body__data__formulario__nameImg-img');
-const INPUT_EDIT = document.querySelector('.container__whatsapp__changeImagen__body__data__formulario__nameImg-name');
-const SEND_MESSAGE_MY_CHAT = document.querySelector('.container__whatsapp__myChat__header-search');
-const TEMPLETE_INFO_MESSAGE = document.querySelector('.container__whatsapp__infoMesagge');
-const CLOSE_TEMPLETE_INFO_MESSAGE = document.querySelector('.container__whatsapp__infoMesagge__header-closeIcon');
-const CONTAINER_SEND_MESSAGE = document.querySelector('.container__whatsapp__myChat__fondo__mensajeEnviado__contenedor');
-const ARROW_DOWN_SEND = document.querySelector('.container__whatsapp__myChat__fondo__mensajeEnviado__contenedor__message-arrow');
-const CONTAINER_RECEIVE_MESSAGE = document.querySelector('.container__whatsapp__myChat__fondo__mensajeRecibido__contenedor');
-const ARROW_DOWN_RECEIVE = document.querySelector('.container__whatsapp__myChat__fondo__mensajeRecibido__contenedor__message-arrow');
-const LIST_MESSAGE_SEND = document.querySelector('.container__whatsapp__myChat__fondo__mensajeEnviado__contenedor__message-arrow-lista');
-const LIST_MESSAGE_RECEIVE = document.querySelector('.container__whatsapp__myChat__fondo__mensajeRecibido__contenedor__message-arrow-lista');
 const CONTAINER_CARD = document.querySelector('.container__whatsapp__myContacts__card')
 const CONTAINER_HEADER_USER = document.querySelector('.container__whatsapp__myContacts__header');
-const CHANGE_IMAGEN = document.querySelector('.container__whatsapp__changeImagen__body__img');
-const URL_CHANGE_IMAGEN = document.querySelector('.container__whatsapp__changeImagen__body__ChangeImagen__formulario__nameImg');
+
+
 /*Imagen del usuario en watsApp */
 export const LOADING_IMAGE_PROFILE = async () => {
     let user = listUsers.find(user => user.id == ID);
@@ -36,12 +21,16 @@ export const LOADING_IMAGE_PROFILE = async () => {
     CONTAINER_HEADER_USER.innerHTML = img;
 }
 /*Imagen del usario en el panel change imagen */
+const CHANGE_IMAGEN = document.querySelector('.container__whatsapp__changeImagen__body__img');
 export const IMAGEN_PANEL_CHANGE_IMAGEN = async()=>{
     let user = listUsers.find(user=> user.id == ID);
     const IMG_CHANGE_IMAGEN = `<img class="container__whatsapp__changeImagen__body__img-img" src="${user.urlImgPerfil}" alt="fondoChangeImg">`
     CHANGE_IMAGEN.innerHTML = IMG_CHANGE_IMAGEN;    
 }
 /*Url por defecto del usuario que ingreso */
+
+const URL_CHANGE_IMAGEN = document.querySelector('.container__whatsapp__changeImagen__body__ChangeImagen__formulario__nameImg');
+
 export const URL_DEFECTO = async()=>{
     let user = listUsers.find(user=> user.id == ID);
     const URLDEFECTO = `
@@ -49,8 +38,20 @@ export const URL_DEFECTO = async()=>{
                         <img class="container__whatsapp__changeImagen__body__ChangeImagen__formulario__nameImg-img" src="https://res.cloudinary.com/dbktnqag9/image/upload/v1693670649/right_or_wrong_4_preview_fntwpz.png" alt="edit">
                         `
     URL_CHANGE_IMAGEN.innerHTML = URLDEFECTO;
+       
+    
 }
 
+/*Cargar el nombre del usuario */
+const ADDNAME =document.querySelector('.container__whatsapp__changeImagen__body__data__formulario__nameImg');
+export const NAME_USER = async () => {
+    let user = listUsers.find(user => user.id == ID);
+    const name = `
+                <input type="text" id="nombre" class="container__whatsapp__changeImagen__body__data__formulario__nameImg-name" value="${user.nombre}" disabled>
+                <img class="container__whatsapp__changeImagen__body__data__formulario__nameImg-img" src="img/edit.png" alt="edit">
+                `
+    ADDNAME.innerHTML = name;
+}
 
 /*Listar la lista de mensajes de cada usuario */
 export const LIST_MY_CHAT = async () => {
@@ -90,10 +91,10 @@ export const LOADDING_CHAT = async (ID2) => {
     const div = document.querySelector('.container__whatsapp__myChat__header__imgUserLine');
     const IMAGE_PERFIL =
         `<img class="container__whatsapp__myChat__header__imgUserLine-img" src="${user2.urlImgPerfil}" alt="user_chat">
-    <div class="container__whatsapp__myChat__header__imgUserLine__userLine">
-        <h5 class="container__whatsapp__myChat__header__imgUserLine__userLine-name">${user2.nombre}</h5>
-        <h6 class="container__whatsapp__myChat__header__imgUserLine__userLine-line"> ${user2.fechaHoraEnLinea}</h6>
-    </div>`
+        <div class="container__whatsapp__myChat__header__imgUserLine__userLine">
+            <h5 class="container__whatsapp__myChat__header__imgUserLine__userLine-name">${user2.nombre}</h5>
+            <h6 class="container__whatsapp__myChat__header__imgUserLine__userLine-line"> ${user2.fechaHoraEnLinea}</h6>
+        </div>`
     div.innerHTML = IMAGE_PERFIL;
 }
 /*Cargar los mensajes de chat  selecionado */
@@ -146,7 +147,7 @@ export const LOADING_MESSAGES = async (ID2) => {
                             </div>
                         </div>
                         
-                    </div>`
+            </div>`
         html += DIV_MENSSAGE_SEND;
         }
     });
@@ -172,7 +173,45 @@ export const LAST_MESSAGE = async () => {
     });
     return bandera_fecha;
 }
+const CONTAINER_SEND_MESSAGE = document.querySelector('.container__whatsapp__myChat__fondo__mensajeEnviado__contenedor');
+const ARROW_DOWN_SEND = document.querySelector('.container__whatsapp__myChat__fondo__mensajeEnviado__contenedor__message-arrow');
+const CONTAINER_RECEIVE_MESSAGE = document.querySelector('.container__whatsapp__myChat__fondo__mensajeRecibido__contenedor');
+const ARROW_DOWN_RECEIVE = document.querySelector('.container__whatsapp__myChat__fondo__mensajeRecibido__contenedor__message-arrow');
 export const LAST_CHAT = async () => {
     let bandera_fecha=  await LAST_MESSAGE();
     console.log(bandera_fecha);
+    console.log('enviados', CONTAINER_SEND_MESSAGE);
 }
+
+
+
+/*Mostrar y desaparecer la flecha de opciones de los mensajes enviados */
+CONTAINER_SEND_MESSAGE.addEventListener('mouseover', () => {
+    ARROW_DOWN_SEND.style.display = 'block';
+});
+CONTAINER_SEND_MESSAGE.addEventListener('mouseout', () => {
+    ARROW_DOWN_SEND.style.display = 'none';
+});
+/*Mostrar y desaparecer la lista desplegable de los mensajes enviados */
+ARROW_DOWN_SEND.addEventListener('click', () => {
+    LIST_MESSAGE_SEND.style.display = 'block';
+});
+ARROW_DOWN_SEND.addEventListener('dblclick', () => {
+    LIST_MESSAGE_SEND.style.display = 'none';
+});
+/*Mostrar y desaparecer la flecha de opciones de los mensajes recividos */
+CONTAINER_RECEIVE_MESSAGE.addEventListener('mouseover', () => {
+    ARROW_DOWN_RECEIVE.style.display = 'block';
+});
+CONTAINER_RECEIVE_MESSAGE.addEventListener('mouseout', () => {
+    ARROW_DOWN_RECEIVE.style.display = 'none';
+});
+/*Mostrar y desaparecer la lista desplegable de los mensajes enviados */
+ARROW_DOWN_RECEIVE.addEventListener('click', () => {
+    LIST_MESSAGE_RECEIVE.style.display = 'block';
+});
+ARROW_DOWN_RECEIVE.addEventListener('dblclick', () => {
+    LIST_MESSAGE_RECEIVE.style.display = 'none';
+});
+
+
