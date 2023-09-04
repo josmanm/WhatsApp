@@ -1,8 +1,8 @@
 @use '../variables' as color;
 .container__whatsapp__myContacts
 { 
-    max-height: 95vh; 
-    
+    height: 95vh; 
+  
     padding-bottom: 0;
     &__header
     {
@@ -44,6 +44,7 @@
         }
         &-search
         {
+            
             width: 2rem;
             height: 2.5rem;
             margin-left: 1rem;
@@ -51,12 +52,12 @@
         }
         &__formulario
         {
-            
+            width: 87%;
             &-input
             {
                 border: none;
                 height: 2.5rem;
-                width: 27rem;
+                width: 100%;
                 border-radius: 15px ;
                 padding-left: 1rem;
 

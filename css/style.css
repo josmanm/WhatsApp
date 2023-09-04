@@ -236,7 +236,7 @@
 }
 
 .container__whatsapp__myContacts {
-  max-height: 95vh;
+  height: 95vh;
   padding-bottom: 0;
 }
 .container__whatsapp__myContacts__header {
@@ -277,10 +277,13 @@
   height: 2.5rem;
   margin-left: 1rem;
 }
+.container__whatsapp__myContacts__barraSearch__formulario {
+  width: 87%;
+}
 .container__whatsapp__myContacts__barraSearch__formulario-input {
   border: none;
   height: 2.5rem;
-  width: 27rem;
+  width: 100%;
   border-radius: 15px;
   padding-left: 1rem;
 }
