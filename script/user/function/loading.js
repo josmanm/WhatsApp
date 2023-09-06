@@ -220,9 +220,44 @@ export const LIST_MY_MESSAGE = async (ID2) => {
 
  export function iniciada(){
     const CONTAINER_SEND_MESSAGE = document.querySelectorAll('.container__whatsapp__myChat__fondo__mensajeEnviado__contenedor');
-    const ARROW_DOWN_SEND = document.querySelector('.container__whatsapp__myChat__fondo__mensajeEnviado__contenedor__message-arrow');
+    const ARROW_DOWN_SEND = document.querySelectorAll('.container__whatsapp__myChat__fondo__mensajeEnviado__contenedor__message-arrow');
     const CONTAINER_RECEIVE_MESSAGE = document.querySelectorAll('.container__whatsapp__myChat__fondo__mensajeRecibido__contenedor');
-    const ARROW_DOWN_RECEIVE = document.querySelector('.container__whatsapp__myChat__fondo__mensajeRecibido__contenedor__message-arrow');
-    console.log(CONTAINER_SEND_MESSAGE);
+    const ARROW_DOWN_RECEIVE = document.querySelectorAll('.container__whatsapp__myChat__fondo__mensajeRecibido__contenedor__message-arrow');
+    const MENU_DESPLEGABLE_SEND =document.querySelectorAll('.container__whatsapp__myChat__fondo__mensajeEnviado__contenedor__message-arrow-lista');
+    const MENU_DESPLEGABLE_RECIVE = document.querySelectorAll('.container__whatsapp__myChat__fondo__mensajeRecibido__contenedor__message-arrow-lista');
+    console.log('send ',CONTAINER_SEND_MESSAGE);
+    console.log('recive ',CONTAINER_RECEIVE_MESSAGE)
 
+    for (let index = 0; index < CONTAINER_SEND_MESSAGE.length; index++) {
+        /*Enviados */
+        CONTAINER_SEND_MESSAGE[index].addEventListener('mouseover',()=>{
+            ARROW_DOWN_SEND[index].style.display='block';
+        });
+        CONTAINER_SEND_MESSAGE[index].addEventListener('mouseout',()=>{
+            ARROW_DOWN_SEND[index].style.display='none';
+        });
+        ARROW_DOWN_SEND[index].addEventListener('click',()=>{
+            MENU_DESPLEGABLE_SEND[index].style.display='block';
+        })
+        ARROW_DOWN_SEND[index].addEventListener('dblclick',()=>{
+            MENU_DESPLEGABLE_SEND[index].style.display='none';
+        })
+        /*Recividos */
+        CONTAINER_RECEIVE_MESSAGE[index].addEventListener('mouseover',()=>{
+            ARROW_DOWN_RECEIVE[index].style.display='block';
+        });
+        CONTAINER_RECEIVE_MESSAGE[index].addEventListener('mouseout',()=>{
+            ARROW_DOWN_RECEIVE[index].style.display='none';
+        });
+        ARROW_DOWN_RECEIVE[index].addEventListener('click',()=>{
+            MENU_DESPLEGABLE_RECIVE[index].style.display='block';
+        })
+        ARROW_DOWN_RECEIVE[index].addEventListener('dblclick',()=>{
+            MENU_DESPLEGABLE_RECIVE[index].style.display='none';
+        })
+        
+    }
+        
+
+ 
 }
