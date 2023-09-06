@@ -15,6 +15,7 @@ const CONTAINER_HEADER_USER = document.querySelector('.container__whatsapp__myCo
 const LIST_MESSAGE_SEND = document.querySelector('.container__whatsapp__myChat__fondo__mensajeEnviado__contenedor__message-arrow-lista');
 const LIST_MESSAGE_RECEIVE = document.querySelector('.container__whatsapp__myChat__fondo__mensajeRecibido__contenedor__message-arrow-lista');
 
+
 /*Imagen del usuario en watsApp */
 export const LOADING_IMAGE_PROFILE = async () => {
     let user = listUsers.find(user => user.id == ID);
@@ -99,7 +100,7 @@ export const LOADDING_CHAT = async (ID2) => {
 export const LOADING_MESSAGES = async (ID2) => {
     let user = listUsers.find(user => user.id == ID);
     let user2 = listUsers.find(user => user.id == ID2);
-    let mylistMessages = listMessages.find(message => message.idUser1 == ID && message.idUser2 == ID2 || message.idUser1 == ID2 && message.idUser2 == ID);
+    let mylistMessages = listMessages.find(message => message.idUser1 == user.id && message.idUser2 == ID2 || message.idUser1 == ID2 && message.idUser2 == ID);
     let html = ``;
     let div = document.querySelector('.container__whatsapp__myChat__fondo');
     mylistMessages.conversaciones.forEach((message) => {
@@ -222,3 +223,27 @@ ARROW_DOWN_RECEIVE.addEventListener('click', () => {
 ARROW_DOWN_RECEIVE.addEventListener('dblclick', () => {
     LIST_MESSAGE_RECEIVE.style.display = 'none';
 });
+
+/*Listar la lista de mensajes de cada conversacion */
+const CONTAINER_CARD_MESSAGE =document.querySelector('.container__whatsapp__infoMesagge__cardInfo');
+export const LIST_MY_MESSAGE = async (ID2) => {
+    //CONTAINER_CARD_MESSAGE.style.display='none';
+    let user = listUsers.find(user => user.id == ID);
+    let mylistMessages = listMessages.filter(index => index.idUser1 == ID && index.idUser2 == ID2)
+    mylistMessages[0].conversaciones.forEach(messages => {
+
+        const {sendBy,date,hour,message,flag} =messages;
+        CONTAINER_CARD_MESSAGE.innerHTML += `    
+                    <div id="${messages}" class="container__whatsapp__infoMesagge__cardInfo-card">
+                        <h6 class="container__whatsapp__infoMesagge__cardInfo-card-date"> ${messages.date}</h6>
+                        <div class="container__whatsapp__infoMesagge__cardInfo-card__infoMessage">
+                            <img class="container__whatsapp__infoMesagge__cardInfo-card__infoMessage-check" src="img/check.png" alt="iconCheck">
+                            <p class="container__whatsapp__infoMesagge__cardInfo-card__infoMessage-message">
+                            ${messages.message}
+                            </p>
+                        </div>
+                    </div>`;
+       
+    });
+    
+}

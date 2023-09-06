@@ -54,32 +54,42 @@
             padding: .5rem;
 
         }
+        
     }
+
     &__cardInfo
     {
-        margin-top: 1rem;
-        height: 7rem;
-        background-color: white;
-        border-radius: 10px;
-        &-date
+        height: 87%;
+        overflow-y: scroll;
+        &-card
         {
-            color: color.$gray;
-            padding-left: 0.5rem;
-        }
-        &__infoMessage
-        {
-            display: flex;
-            &-check
+            display: none;
+            margin-top: 1rem;
+            height: 7rem;
+            background-color: white;
+            border-radius: 10px;
+            &-date
             {
-                width: 2.5rem;
-                height: 2.5rem;
+                color: color.$gray;
+                padding-left: 0.5rem;
             }
-            &-message
+            &__infoMessage
             {
-                width: 91%;
-                overflow: hidden;
+                display: flex;
+                &-check
+                {
+                    width: 2.5rem;
+                    height: 2.5rem;
+                }
+                &-message
+                {
+                    width: 91%;
+                    overflow: hidden;
+                }
             }
         }
+        
+        
     }
    
 }

@@ -7,7 +7,7 @@
       "urlImgPerfil": "https://res.cloudinary.com/dbktnqag9/image/upload/v1693584151/sprint1-profundizaci%C3%B3n/user3_atf6ad.webp",
       "flag": "En Linea",
       "infoUsuario": "Estoy dormido",
-      "fechaHoraEnLinea": "10:56 a. m.",
+      "fechaHoraEnLinea": "7:21 p. m.",
       "id": 1
     },
     {
@@ -121,24 +121,17 @@
           "flag": false
         },
         {
-          "sendBy": "1",
+          "sendBy": 1,
           "date": "3/9/2023",
           "hour": "8:05:30 p. m.",
-          "message": "hola",
+          "message": "Bien, gracias, me estabas llamando?",
           "flag": false
         },
         {
-          "sendBy": "1",
+          "sendBy": 2,
           "date": "4/9/2023",
           "hour": "12:33:07 a. m.",
-          "message": "que putas",
-          "flag": false
-        },
-        {
-          "sendBy": "1",
-          "date": "4/9/2023",
-          "hour": "12:39:19 p. m.",
-          "message": "probando",
+          "message": "Si, era para ver si me podias dar unas clases de programación",
           "flag": false
         }
       ],
@@ -170,7 +163,7 @@
       "idUser2": 10,
       "conversaciones": [
         {
-          "sendBy": 1,
+          "sendBy": 2,
           "date": "30/8/2023",
           "hour": "2:43 p. m.",
           "message": "Hola, como estas?",
@@ -180,21 +173,21 @@
           "sendBy": 2,
           "date": "30/8/2023",
           "hour": "2:44 p. m.",
-          "message": "super me alegra mucho?",
+          "message": "Quieres jugar un apostado esta noche?",
           "flag": false
         },
         {
           "sendBy": 1,
           "date": "30/8/2023",
           "hour": "2:45 p. m.",
-          "message": "holi",
+          "message": "Bien pc",
           "flag": false
         },
         {
-          "sendBy": "1",
+          "sendBy": 1,
           "date": "4/9/2023",
           "hour": "12:37:29 a. m.",
-          "message": "hola messi com ovas?",
+          "message": "Listo, y donde?✌",
           "flag": false
         }
       ],
@@ -208,28 +201,49 @@
           "sendBy": 1,
           "date": "31/8/2023",
           "hour": "2:29 p. m.",
-          "message": "Hola, como estas?",
+          "message": "Bien o no?",
           "flag": false
         },
         {
           "sendBy": 2,
           "date": "31/8/2023",
           "hour": "2:35 p. m.",
-          "message": "super me alegra mucho?",
+          "message": "Bien, bien y voz, que haces?",
           "flag": false
         },
         {
           "sendBy": 1,
           "date": "31/8/2023",
           "hour": "2:46 p. m.",
-          "message": "holi",
+          "message": "Bien, no nada, estaba viendo que sacaste un nuevo carro",
+          "flag": false
+        },
+        {
+          "sendBy": 2,
+          "date": "4/9/2023",
+          "hour": "11:14:10 a. m.",
+          "message": "Si pc, queres ir a dar una vuelta y lo ensayas?",
           "flag": false
         },
         {
           "sendBy": "1",
-          "date": "4/9/2023",
-          "hour": "11:14:10 a. m.",
-          "message": "Elon Musk",
+          "date": "5/9/2023",
+          "hour": "7:40:41 p. m.",
+          "message": "De una a que hora?",
+          "flag": false
+        },
+        {
+          "sendBy": "2",
+          "date": "5/9/2023",
+          "hour": "7:41:10 p. m.",
+          "message": "Tu me diras",
+          "flag": false
+        },
+        {
+          "sendBy": "1",
+          "date": "5/9/2023",
+          "hour": "7:41:30 p. m.",
+          "message": "Listo, pasa por mi en 30 min ",
           "flag": false
         }
       ],
@@ -237,34 +251,48 @@
     },
     {
       "idUser1": 1,
-      "idUser2": 6,
+      "idUser2": 8,
       "conversaciones": [
         {
-          "sendBy": 1,
+          "sendBy": 2,
           "date": "31/8/2023",
           "hour": "2:29 p. m.",
-          "message": "Hola, como estas?",
+          "message": "Como vas, necesito tu ayuda urgente",
           "flag": false
         },
         {
           "sendBy": 2,
           "date": "31/8/2023",
           "hour": "2:35 p. m.",
-          "message": "super me alegra mucho?",
+          "message": "Estas ocupado?",
+          "flag": false
+        },
+        {
+          "sendBy": 1,
+          "date": "4/9/2023",
+          "hour": "3:00 p. m..",
+          "message": "No contame que paso?",
+          "flag": false
+        },
+        {
+          "sendBy": 2,
+          "date": "31/8/2023",
+          "hour": "3:46 p. m.",
+          "message": "Se me volvio a caer facebook y no se como arreglarlo, ayudame",
           "flag": false
         },
         {
           "sendBy": 1,
           "date": "31/8/2023",
-          "hour": "2:46 p. m.",
-          "message": "holi",
+          "hour": "4:40 p. m.",
+          "message": "Listo",
           "flag": false
         },
         {
-          "sendBy": "1",
-          "date": "4/9/2023",
-          "hour": "11:14:17 a. m.",
-          "message": "y vos que ?",
+          "sendBy": 1,
+          "date": "31/8/2023",
+          "hour": "4:46 p. m.",
+          "message": "Te faltaba un punto y coma ; ✌",
           "flag": false
         }
       ],
@@ -278,56 +306,56 @@
           "sendBy": 1,
           "date": "31/8/2023",
           "hour": "2:29 p. m.",
-          "message": "Hola, como estas?",
+          "message": "Perdona, pero tienes la sonrisa más bonita que he visto por aquí.",
           "flag": false
         },
         {
-          "sendBy": 2,
+          "sendBy":2 ,
           "date": "31/8/2023",
           "hour": "2:35 p. m.",
-          "message": "super me alegra mucho?",
+          "message": " JAJAJJAJAAJ, que favor necesitas",
           "flag": false
         },
         {
           "sendBy": 1,
           "date": "31/8/2023",
           "hour": "2:46 p. m.",
-          "message": "holi",
+          "message": "Uish, uno ya no puede solucionar, porque piensan que es pa un favor ( ͡❛ . ͡❛)",
           "flag": false
         },
         {
-          "sendBy": "1",
+          "sendBy": 2,
           "date": "4/9/2023",
-          "hour": "11:14:25 a. m.",
-          "message": "hola amor",
+          "hour": "2:50 p. m.",
+          "message": "Si como no, dime pa que soy buena",
           "flag": false
         },
         {
-          "sendBy": "1",
+          "sendBy": 1,
           "date": "4/9/2023",
-          "hour": "11:14:46 a. m.",
-          "message": "amor ",
+          "hour": "2:56 p. m.",
+          "message": "Tú pa muchas cosas, pero en especial, pa que me cubras en clase ",
           "flag": false
         },
         {
-          "sendBy": "1",
+          "sendBy": 1,
           "date": "4/9/2023",
-          "hour": "11:15:03 a. m.",
-          "message": "amooor",
+          "hour": "3:06 p. m.",
+          "message": "No puedo ir :(",
           "flag": false
         },
         {
-          "sendBy": "1",
+          "sendBy": 2,
           "date": "4/9/2023",
-          "hour": "11:15:03 a. m.",
-          "message": "",
+          "hour": "3:08 p. m.",
+          "message": "Lo sabia, tanta amabilidad no es de gratis",
           "flag": false
         },
         {
-          "sendBy": "1",
+          "sendBy": 1,
           "date": "4/9/2023",
-          "hour": "11:16:41 a. m.",
-          "message": "que paso aqui",
+          "hour": "3:10 p. m.",
+          "message": "Eres la mejor t(❛̀ ● ́❛t)",
           "flag": false
         }
       ],
@@ -341,39 +369,109 @@
           "sendBy": 1,
           "date": "31/8/2023",
           "hour": "2:29 p. m.",
-          "message": "Hola, como estas?",
+          "message": "Oe perro, como estas?",
           "flag": false
         },
         {
           "sendBy": 2,
           "date": "31/8/2023",
           "hour": "2:35 p. m.",
-          "message": "super me alegra mucho?",
+          "message": "Me dejaste tirado en la fiesta ",
+          "flag": false
+        },
+        {
+          "sendBy": 2,
+          "date": "31/8/2023",
+          "hour": "2:46 p. m.",
+          "message": "(ง︡'-'︠)ง",
+          "flag": false
+        }
+      ],
+      "id": 7
+    },
+    {
+      "idUser1": 1,
+      "idUser2": 5,
+      "conversaciones": [
+        {
+          "sendBy": 1,
+          "date": "31/8/2023",
+          "hour": "2:29 p. m.",
+          "message": "Bien o no ñero?",
+          "flag": false
+        },
+        {
+          "sendBy": 2,
+          "date": "31/8/2023",
+          "hour": "2:35 p. m.",
+          "message": "sisas pa, ya hizo el sprint?",
+          "flag": false
+        }
+      ],
+      "id": 8
+    },
+    {
+      "idUser1": 1,
+      "idUser2": 6,
+      "conversaciones": [
+        {
+          "sendBy": 1,
+          "date": "31/8/2023",
+          "hour": "2:29 p. m.",
+          "message": "Doña Melissa?",
+          "flag": false
+        },
+        {
+          "sendBy": 2,
+          "date": "31/8/2023",
+          "hour": "2:35 p. m.",
+          "message": "Como vas?",
           "flag": false
         },
         {
           "sendBy": 1,
           "date": "31/8/2023",
           "hour": "2:46 p. m.",
-          "message": "holi",
+          "message": "No tan bien como tu, pero hay vamos, que haces",
+          "flag": false
+        },
+        {
+          "sendBy": 2,
+          "date": "4/9/2023",
+          "hour": "2:60 p. m.",
+          "message": "Nada y tu",
           "flag": false
         },
         {
           "sendBy": "1",
-          "date": "4/9/2023",
-          "hour": "11:14:31 a. m.",
-          "message": "usted quien es ?",
+          "date": "5/9/2023",
+          "hour": "3:16 p. m.",
+          "message": "Nada, quieres ir a comer?",
+          "flag": false
+        },
+        {
+          "sendBy": "2",
+          "date": "5/9/2023",
+          "hour": "3:18 p. m.",
+          "message": "Que se va a gastar pues?",
           "flag": false
         },
         {
           "sendBy": "1",
-          "date": "4/9/2023",
-          "hour": "12:38:58 p. m.",
-          "message": "hola",
+          "date": "5/9/2023",
+          "hour": "3:26 p. m.",
+          "message": "Lo que quiera, aproveche ✌",
+          "flag": false
+        },
+        {
+          "sendBy": "2",
+          "date": "5/9/2023",
+          "hour": "3:36 p. m.",
+          "message": "(⊙.⊙) De una pase por mi en 5 ",
           "flag": false
         }
       ],
-      "id": 7
+      "id": 9
     }
   ]
 }

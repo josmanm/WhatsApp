@@ -501,23 +501,28 @@
   padding: 0.5rem;
 }
 .container__whatsapp__infoMesagge__cardInfo {
+  height: 87%;
+  overflow-y: scroll;
+}
+.container__whatsapp__infoMesagge__cardInfo-card {
+  display: none;
   margin-top: 1rem;
   height: 7rem;
   background-color: white;
   border-radius: 10px;
 }
-.container__whatsapp__infoMesagge__cardInfo-date {
+.container__whatsapp__infoMesagge__cardInfo-card-date {
   color: rgb(135, 135, 136);
   padding-left: 0.5rem;
 }
-.container__whatsapp__infoMesagge__cardInfo__infoMessage {
+.container__whatsapp__infoMesagge__cardInfo-card__infoMessage {
   display: flex;
 }
-.container__whatsapp__infoMesagge__cardInfo__infoMessage-check {
+.container__whatsapp__infoMesagge__cardInfo-card__infoMessage-check {
   width: 2.5rem;
   height: 2.5rem;
 }
-.container__whatsapp__infoMesagge__cardInfo__infoMessage-message {
+.container__whatsapp__infoMesagge__cardInfo-card__infoMessage-message {
   width: 91%;
   overflow: hidden;
 }

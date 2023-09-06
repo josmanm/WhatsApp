@@ -3,7 +3,7 @@ import { getUsers } from './user/service/getUsers.js';
 import { getMessages } from './message/service/getMessages.js';
 import { updateMessage } from './message/service/updateMessage.js';
 import { DateTime } from 'https://moment.github.io/luxon/es6/luxon.js';
-import {LOADING_IMAGE_PROFILE,LIST_MY_CHAT,LOADDING_CHAT,LOADING_MESSAGES,LAST_MESSAGE,LAST_CHAT,IMAGEN_PANEL_CHANGE_IMAGEN, URL_DEFECTO, NAME_USER} from './user/function/loading.js';
+import {LOADING_IMAGE_PROFILE,LIST_MY_CHAT,LOADDING_CHAT,LOADING_MESSAGES,LAST_MESSAGE,LAST_CHAT,IMAGEN_PANEL_CHANGE_IMAGEN, URL_DEFECTO, NAME_USER,LIST_MY_MESSAGE} from './user/function/loading.js';
 import { updatePhotoUser } from './user/service/updatePhoto.js';
 import { updateNameUser } from './user/service/updateNameUser.js';
 
@@ -77,14 +77,6 @@ ARROW_BACK_PERFIL.addEventListener('click', () => {
 
 
 
-/*Templete de buscar los mensajes */
-SEND_MESSAGE_MY_CHAT.addEventListener('click', () => {
-    TEMPLETE_INFO_MESSAGE.style.display = 'block';
-});
-
-CLOSE_TEMPLETE_INFO_MESSAGE.addEventListener('click', () => {
-    TEMPLETE_INFO_MESSAGE.style.display = 'none';
-});
 
 /*Listar la lista de mensajes de cada usuario */
 
@@ -99,9 +91,14 @@ LIST_MY_CHAT();
 IMAGEN_PANEL_CHANGE_IMAGEN();
 URL_DEFECTO();
 NAME_USER();
+
+//variable global para saber cual es el id de la persona con la que se sostiene la conversacion
+let message_search;
+
 /*Los siguientes container los cargamos aqui y no en el principio de la script para no generar errores*/
 const MY_CONTACTS_CARD = document.querySelectorAll('.container__whatsapp__myContacts__card__cardContact');
 const CHANGE_PERSONAL_INFORMATION = document.querySelector('.container__whatsapp__myContacts__header-user');
+
 /*Poner en otro color cuando se seleccione una card */
 CONTAINER_CARD.addEventListener('click', () => {
     MY_CONTACTS_CARD.forEach((card) => {
@@ -110,12 +107,28 @@ CONTAINER_CARD.addEventListener('click', () => {
             ID2 = parseInt(card.id);
             LOADDING_CHAT(card.id);
             LOADING_MESSAGES(card.id);
+            message_search= card.id;
+            //LIST_MY_MESSAGE(card.id);
         });
         if(card.id != ID2){
             card.style.backgroundColor = '#ffffff';
         }
     });
 });
+
+const CONTAINER_SEARCG_MESSAGE = document.querySelector('.container__whatsapp__infoMesagge__cardInfo');
+
+/*Templete de buscar los mensajes */
+SEND_MESSAGE_MY_CHAT.addEventListener('click', () => {
+    TEMPLETE_INFO_MESSAGE.style.display = 'block';
+    LIST_MY_MESSAGE(message_search);
+});
+
+CLOSE_TEMPLETE_INFO_MESSAGE.addEventListener('click', () => {
+    TEMPLETE_INFO_MESSAGE.style.display = 'none';
+    CONTAINER_SEARCG_MESSAGE.innerHTML='';
+});
+
 
 /*Dar click en la foto, para cambiar los datos */
 CHANGE_PERSONAL_INFORMATION.addEventListener('click', () => {
@@ -159,6 +172,7 @@ NAME_CHANGE.addEventListener('dblclick', async()=>{
         await updateNameUser(user,n);
 });
 
+/*Buscar chat */
 const SEARCH_CHAT = "algún valor";
 const inputElement = document.getElementById('searchbar'); 
 
@@ -178,3 +192,24 @@ inputElement.onkeyup = function SEARCH_CHAT () {
     }
 }
 
+/*Buscar mensaje */
+const SEARCH_MESSAGE = "algún valor";
+const inputMessage = document.querySelector('.container__whatsapp__infoMesagge__search__formulario-input'); 
+
+inputMessage.onkeyup = function SEARCH_MESSAGE () {
+    let input = inputMessage.value;
+    console.log('aaa', input);
+    input=input.toLowerCase();
+    let x = document.querySelectorAll('.container__whatsapp__infoMesagge__cardInfo-card__infoMessage-message');
+    let card = document.querySelectorAll('.container__whatsapp__infoMesagge__cardInfo-card');
+    console.log('x: ', x.length , 'card: ', card.length);
+    for (let i = 0; i < card.length; i++) {
+        if (x[i].innerHTML.toLowerCase().includes(input)) {
+
+            card[i].style.display="block";
+        }
+        else {   
+            card[i].style.display="none";              
+        }
+    }
+}
