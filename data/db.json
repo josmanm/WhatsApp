@@ -7,7 +7,7 @@
       "urlImgPerfil": "https://res.cloudinary.com/dbktnqag9/image/upload/v1693584151/sprint1-profundizaci%C3%B3n/user3_atf6ad.webp",
       "flag": "En Linea",
       "infoUsuario": "Estoy dormido",
-      "fechaHoraEnLinea": "7:21 p. m.",
+      "fechaHoraEnLinea": "2:53 p. m.",
       "id": 1
     },
     {
@@ -310,7 +310,7 @@
           "flag": false
         },
         {
-          "sendBy":2 ,
+          "sendBy": 2,
           "date": "31/8/2023",
           "hour": "2:35 p. m.",
           "message": " JAJAJJAJAAJ, que favor necesitas",

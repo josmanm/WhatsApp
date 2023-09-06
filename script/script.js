@@ -3,7 +3,7 @@ import { getUsers } from './user/service/getUsers.js';
 import { getMessages } from './message/service/getMessages.js';
 import { updateMessage } from './message/service/updateMessage.js';
 import { DateTime } from 'https://moment.github.io/luxon/es6/luxon.js';
-import {LOADING_IMAGE_PROFILE,LIST_MY_CHAT,LOADDING_CHAT,LOADING_MESSAGES,LAST_MESSAGE,LAST_CHAT,IMAGEN_PANEL_CHANGE_IMAGEN, URL_DEFECTO, NAME_USER,LIST_MY_MESSAGE} from './user/function/loading.js';
+import {LOADING_IMAGE_PROFILE,LIST_MY_CHAT,LOADDING_CHAT,LOADING_MESSAGES,LAST_MESSAGE,LAST_CHAT,IMAGEN_PANEL_CHANGE_IMAGEN, URL_DEFECTO, NAME_USER,LIST_MY_MESSAGE,iniciada} from './user/function/loading.js';
 import { updatePhotoUser } from './user/service/updatePhoto.js';
 import { updateNameUser } from './user/service/updateNameUser.js';
 
@@ -92,6 +92,7 @@ IMAGEN_PANEL_CHANGE_IMAGEN();
 URL_DEFECTO();
 NAME_USER();
 
+
 //variable global para saber cual es el id de la persona con la que se sostiene la conversacion
 let message_search;
 
@@ -107,6 +108,7 @@ CONTAINER_CARD.addEventListener('click', () => {
             ID2 = parseInt(card.id);
             LOADDING_CHAT(card.id);
             LOADING_MESSAGES(card.id);
+            iniciada();
             message_search= card.id;
             //LIST_MY_MESSAGE(card.id);
         });

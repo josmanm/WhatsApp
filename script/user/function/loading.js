@@ -171,10 +171,6 @@ export const LAST_MESSAGE = async () => {
     });
     return bandera_fecha;
 }
-const CONTAINER_SEND_MESSAGE = document.querySelector('.container__whatsapp__myChat__fondo__mensajeEnviado__contenedor');
-const ARROW_DOWN_SEND = document.querySelector('.container__whatsapp__myChat__fondo__mensajeEnviado__contenedor__message-arrow');
-const CONTAINER_RECEIVE_MESSAGE = document.querySelector('.container__whatsapp__myChat__fondo__mensajeRecibido__contenedor');
-const ARROW_DOWN_RECEIVE = document.querySelector('.container__whatsapp__myChat__fondo__mensajeRecibido__contenedor__message-arrow');
 export const LAST_CHAT = async () => {
     let bandera_fecha =  await LAST_MESSAGE();
     let html = ``;
@@ -185,6 +181,7 @@ export const LAST_CHAT = async () => {
         if(message.conversaciones[message.conversaciones.length - 1].date === String (bandera_fecha.date) && message.conversaciones[message.conversaciones.length - 1].hour === String (bandera_fecha.hour)) {
             console.log(String(message.conversaciones[message.conversaciones.length - 1].date === String (bandera_fecha.date)) && String(message.conversaciones[message.conversaciones.length - 1].hour === String (bandera_fecha.hour)), 'Ingreso con esta respuesta' )
             if(ID == message.idUser1){
+                ID2 = message.idUser2;
                 LOADDING_CHAT(message.idUser2);
                 LOADING_MESSAGES(message.idUser2);
             }else{
@@ -195,34 +192,7 @@ export const LAST_CHAT = async () => {
         }
     })
 }
-/*Mostrar y desaparecer la flecha de opciones de los mensajes enviados */
-CONTAINER_SEND_MESSAGE.addEventListener('mouseover', () => {
-    ARROW_DOWN_SEND.style.display = 'block';
-});
-CONTAINER_SEND_MESSAGE.addEventListener('mouseout', () => {
-    ARROW_DOWN_SEND.style.display = 'none';
-});
-/*Mostrar y desaparecer la lista desplegable de los mensajes enviados */
-ARROW_DOWN_SEND.addEventListener('click', () => {
-    LIST_MESSAGE_SEND.style.display = 'block';
-});
-ARROW_DOWN_SEND.addEventListener('dblclick', () => {
-    LIST_MESSAGE_SEND.style.display = 'none';
-});
-/*Mostrar y desaparecer la flecha de opciones de los mensajes recividos */
-CONTAINER_RECEIVE_MESSAGE.addEventListener('mouseover', () => {
-    ARROW_DOWN_RECEIVE.style.display = 'block';
-});
-CONTAINER_RECEIVE_MESSAGE.addEventListener('mouseout', () => {
-    ARROW_DOWN_RECEIVE.style.display = 'none';
-});
-/*Mostrar y desaparecer la lista desplegable de los mensajes enviados */
-ARROW_DOWN_RECEIVE.addEventListener('click', () => {
-    LIST_MESSAGE_RECEIVE.style.display = 'block';
-});
-ARROW_DOWN_RECEIVE.addEventListener('dblclick', () => {
-    LIST_MESSAGE_RECEIVE.style.display = 'none';
-});
+
 
 /*Listar la lista de mensajes de cada conversacion */
 const CONTAINER_CARD_MESSAGE =document.querySelector('.container__whatsapp__infoMesagge__cardInfo');
@@ -246,4 +216,13 @@ export const LIST_MY_MESSAGE = async (ID2) => {
        
     });
     
+}
+
+ export function iniciada(){
+    const CONTAINER_SEND_MESSAGE = document.querySelectorAll('.container__whatsapp__myChat__fondo__mensajeEnviado__contenedor');
+    const ARROW_DOWN_SEND = document.querySelector('.container__whatsapp__myChat__fondo__mensajeEnviado__contenedor__message-arrow');
+    const CONTAINER_RECEIVE_MESSAGE = document.querySelectorAll('.container__whatsapp__myChat__fondo__mensajeRecibido__contenedor');
+    const ARROW_DOWN_RECEIVE = document.querySelector('.container__whatsapp__myChat__fondo__mensajeRecibido__contenedor__message-arrow');
+    console.log(CONTAINER_SEND_MESSAGE);
+
 }
