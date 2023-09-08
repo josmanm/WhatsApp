@@ -4,6 +4,7 @@ import { updateMessage } from '../../message/service/updateMessage.js';
 import { getMessages } from '../../message/service/getMessages.js';
 import { DateTime } from 'https://moment.github.io/luxon/es6/luxon.js';
 import { updatePhotoUser } from '../service/updatePhoto.js';
+import { deleteMessage } from '../../message/service/deleteMessage.js';
 const params = new URLSearchParams(window.location.search);
 const ID = params.get('id');
 let ID2 = 0;
@@ -257,7 +258,16 @@ export const LIST_MY_MESSAGE = async (ID2) => {
         })
         
     }
-        
-
- 
 }
+
+
+/*Eliminar mensajes de un chat*/
+export const DELETE_MESSAGE_FROM_CHAT = async (idmessge,mylistMessages, position) => {
+    mylistMessages.splice(position, 1);
+    await deleteMessage(idmessge,mylistMessages);
+}
+/*Editar mensajes de un chat*/
+export const EDIT_MESSAGE_FROM_CHAT = async (idmessge,mylistMessages, position, message) => {
+    mylistMessages[position].message = message;
+    await updateMessage(idmessge,mylistMessages);
+}   
