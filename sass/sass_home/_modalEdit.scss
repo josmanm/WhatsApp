@@ -1,0 +1,124 @@
+@use '../variables' as color;
+.container__whatsapp__ModalEdit
+{
+   
+    display: none;
+    justify-content: center;
+    height: 95vh;
+    background-color:color.$WhiteOpaco;
+    align-items: center !important;
+    position: absolute;
+    width: 100%;
+    &-body
+    {
+        
+        width: 40%; 
+        height: 50%;
+        border-radius: 15px;
+        &-header
+        {
+            border-radius: 15px 15px 0 0 ;
+            background-color: color.$green;
+            display: flex;
+            height: 3rem;
+            align-items: center;
+            width: 100%;
+           
+            &-closeIcon
+            {
+                margin: 1rem;
+                width: 1rem;
+                height: 1.2rem;
+            
+            }
+            &-title
+            {
+                font-size: 1.2rem;
+                color: white;
+            }
+        }
+        &_fondo
+        {
+            
+            height: 70%;
+            background-image: url(../../img/fondo.jpg);
+            display: flex;
+            align-items: center;
+            justify-content: end;
+            &__mensajeEnviado
+            {
+          
+                    justify-content: end;
+                    margin-right: 1.5rem;
+
+                    &__contenedor
+                    {
+                        margin-top: 1rem;
+                        border-radius: 15px 15px 15px 15px;
+                        padding-right: 1rem;
+                        background-color: color.$greenChat;
+                        width: 26rem;
+                        flex-direction: column;
+                        &__message
+                        {
+                            display: flex;
+                            justify-content: space-between;
+                            &-text
+                            {
+                                padding: 0.5rem; 
+                            }
+                             
+                        }
+                        &-img
+                        {
+                            display: flex;
+                            align-items: center;
+                            justify-content: flex-end;
+                            
+                            &_img
+                            {
+                   
+                                width: 2rem;
+                                height: 100%;
+                            }
+                            
+                        }
+                    }
+                    
+            }
+        }
+        &-Mensaje
+        {
+            
+            background-color: color.$grayLigth;
+            width: 100%;
+            display:flex ;
+            align-items: center;
+            height: 16%;
+            border-radius: 0 0 15px 15px;
+            &__formulario
+            {
+                width: 100%;
+                padding-left: 1rem;
+                &-input
+                {
+                    width: 90%;
+                    
+                    border-radius: 8px;
+                }
+                & button
+                {
+                    border: none;
+                }
+                &-send
+                {
+
+                    width: 1.5rem;
+                    height: 1.5rem;
+                 
+                }
+            }
+        }
+    }
+    
+}
