@@ -226,10 +226,15 @@ export const LIST_MY_MESSAGE = async (ID2) => {
     const ARROW_DOWN_RECEIVE = document.querySelectorAll('.container__whatsapp__myChat__fondo__mensajeRecibido__contenedor__message-arrow');
     const MENU_DESPLEGABLE_SEND =document.querySelectorAll('.container__whatsapp__myChat__fondo__mensajeEnviado__contenedor__message-arrow-lista');
     const MENU_DESPLEGABLE_RECIVE = document.querySelectorAll('.container__whatsapp__myChat__fondo__mensajeRecibido__contenedor__message-arrow-lista');
+    const DELETE_MESSAGE = document.querySelectorAll('.container__whatsapp__myChat__fondo__mensajeEnviado__contenedor__message-arrow-lista__textDelete');
+    const EDIT_MESSAGE = document.querySelectorAll('.container__whatsapp__myChat__fondo__mensajeEnviado__contenedor__message-arrow-lista__textEdit');
+    const MESSAGES = document.querySelectorAll('.container__whatsapp__myChat__fondo__mensajeEnviado__contenedor__message-text');
+    const DATE_MESSAGE =document.querySelectorAll('.container__whatsapp__myChat__fondo__mensajeEnviado__contenedor-img_date');
     console.log('send ',CONTAINER_SEND_MESSAGE);
-    console.log('recive ',CONTAINER_RECEIVE_MESSAGE)
+    console.log('recive ',MESSAGES)
 
     for (let index = 0; index < CONTAINER_SEND_MESSAGE.length; index++) {
+        console.log('xxxx ',MESSAGES[index].innerText);
         /*Enviados */
         CONTAINER_SEND_MESSAGE[index].addEventListener('mouseover',()=>{
             ARROW_DOWN_SEND[index].style.display='block';
@@ -243,19 +248,70 @@ export const LIST_MY_MESSAGE = async (ID2) => {
         ARROW_DOWN_SEND[index].addEventListener('dblclick',()=>{
             MENU_DESPLEGABLE_SEND[index].style.display='none';
         })
-        /*Recividos */
+        /*Recividos 
         CONTAINER_RECEIVE_MESSAGE[index].addEventListener('mouseover',()=>{
             ARROW_DOWN_RECEIVE[index].style.display='block';
         });
         CONTAINER_RECEIVE_MESSAGE[index].addEventListener('mouseout',()=>{
             ARROW_DOWN_RECEIVE[index].style.display='none';
+        });*/
+        DELETE_MESSAGE[index].addEventListener('click',()=>{
+            MENU_DESPLEGABLE_SEND[index].style.display='none';
+            Swal.fire({
+                title: "Eliminar",
+                text: "¿Deseas eliminar este mensaje?",
+                icon: "warning", // Puedes usar 'warning', 'error', 'info', etc.
+                showCancelButton: true, // Muestra el botón "Cancelar"
+                confirmButtonText: "Aceptar",
+                cancelButtonText: "Cancelar",
+            }).then((result) => {
+                if (result.isConfirmed) {
+                  Swal.fire("Mensaje Eliminado");
+
+                }
+              });
+        }); 
+        const renderizarEdit = document.querySelector('.container__whatsapp__ModalEdit');
+        EDIT_MESSAGE[index].addEventListener('click',()=>{
+            MENU_DESPLEGABLE_SEND[index].style.display='none';
+            let html = ``;
+            
+            renderizarEdit.style.display='flex';
+            const DIV_MENSSAGE_EDIT =
+            `
+            <div class="container__whatsapp__ModalEdit-body">
+                    <div class="container__whatsapp__ModalEdit-body-header">
+                        <img class="container__whatsapp__ModalEdit-body-header-closeIcon" src="img/icon-closeW.svg" alt="closeIndoMesagge">
+                        <h3 class="container__whatsapp__ModalEdit-body-header-title"> Edita el mensaje</h3>
+                    </div>
+                    <div class="container__whatsapp__ModalEdit-body_fondo">
+                        <div class="container__whatsapp__ModalEdit-body_fondo__mensajeEnviado">
+                            <div class="container__whatsapp__ModalEdit-body_fondo__mensajeEnviado__contenedor">
+                                <div class="container__whatsapp__ModalEdit-body_fondo__mensajeEnviado__contenedor__message">
+                                    <h5 class="container__whatsapp__ModalEdit-body_fondo__mensajeEnviado__contenedor__message-text"> ${MESSAGES[index].innerText} </h5>
+                                </div>
+                                <div class="container__whatsapp__ModalEdit-body_fondo__mensajeEnviado__contenedor-img">
+                                    <h6 class="container__whatsapp__ModalEdit-body_fondo__mensajeEnviado__contenedor-img_date">${DATE_MESSAGE[index].innerText} </h6>
+                                    <img class="container__whatsapp__ModalEdit-body_fondo__mensajeEnviado__contenedor-img_img" src="img/check.png" alt="mesage enviado">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container__whatsapp__ModalEdit-body-Mensaje">
+                        <form class="container__whatsapp__ModalEdit-body-Mensaje__formulario">
+                            <input type="text" class="container__whatsapp__ModalEdit-body-Mensaje__formulario-input" placeholder="Escribe un mensaje" value ="${MESSAGES[index].innerText}">
+                            <button  type="button"><img class="container__whatsapp__ModalEdit-body-Mensaje__formulario-send" src="img/microphone.png" alt="iconMicrophone"></button>
+                        </form>
+                    </div>
+                </div>`
+                renderizarEdit.innerHTML= DIV_MENSSAGE_EDIT;
+                const CLOSE_MODAL_EDIT = document.querySelectorAll('.container__whatsapp__ModalEdit-body-header-closeIcon');
+
+                CLOSE_MODAL_EDIT[index].addEventListener('click',()=>{
+                     renderizarEdit.style.display='none';
+                });
         });
-        ARROW_DOWN_RECEIVE[index].addEventListener('click',()=>{
-            MENU_DESPLEGABLE_RECIVE[index].style.display='block';
-        })
-        ARROW_DOWN_RECEIVE[index].addEventListener('dblclick',()=>{
-            MENU_DESPLEGABLE_RECIVE[index].style.display='none';
-        })
+
         
     }
 }
