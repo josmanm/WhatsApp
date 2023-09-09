@@ -178,16 +178,9 @@
         },
         {
           "sendBy": 1,
-          "date": "30/8/2023",
-          "hour": "2:45 p. m.",
-          "message": "Bien pc",
-          "flag": false
-        },
-        {
-          "sendBy": 1,
-          "date": "4/9/2023",
-          "hour": "12:37:29 a. m.",
-          "message": "Listo, y donde?✌",
+          "date": "9/9/2023",
+          "hour": "3:23 p. m.",
+          "message": "Bien pc que hay para hacer? toca salir",
           "flag": false
         }
       ],
@@ -223,13 +216,6 @@
           "date": "4/9/2023",
           "hour": "11:14:10 a. m.",
           "message": "Si pc, queres ir a dar una vuelta y lo ensayas?",
-          "flag": false
-        },
-        {
-          "sendBy": "1",
-          "date": "5/9/2023",
-          "hour": "7:40:41 p. m.",
-          "message": "De una a que hora?",
           "flag": false
         },
         {
@@ -290,8 +276,8 @@
         },
         {
           "sendBy": 1,
-          "date": "31/8/2023",
-          "hour": "4:46 p. m.",
+          "date": "9/9/2023",
+          "hour": "3:40 p. m.",
           "message": "Te faltaba un punto y coma ; ✌",
           "flag": false
         }

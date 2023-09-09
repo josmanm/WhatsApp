@@ -43,17 +43,16 @@ SEND_MESSAGE.addEventListener('input', () => {
     } else {
         IMG_SEND.src = "img/iconEnviarMensaje.png";
     }
-
 });
 
 /*Enviar Mensaje del usuario con sesion iniciada al del ultimo chat seleccionado*/
 SEND_MESSAGE.addEventListener('keypress', async (e) => {
     /*Se enviara el mensaje cuando se presione la tecla enter, falta hacer validacion de el boton que se encuentra al lado izquierdo*/ 
     if (e.key === 'Enter') {
+        console.log('ID: ', ID, 'ID2: ', ID2);
         /*Obtenemos la informacino del usuario que inicio sesion y el usuario que se selecciono para chatear*/
-        let user = listUsers.find(user => user.id == ID);
-        let user2 = listUsers.find(user => user.id == ID2);
         let message = listMessages.find(message => message.idUser1 == ID && message.idUser2 == ID2 || message.idUser1 == ID2 && message.idUser2 == ID);
+       console.log('message: ', message);
         message.conversaciones.push(
             {
                 "sendBy": ID,
@@ -63,7 +62,7 @@ SEND_MESSAGE.addEventListener('keypress', async (e) => {
                 "flag": false
             }
         );
-        let data = updateMessage(parseInt(ID), parseInt(ID2), message.id, message.conversaciones);
+        let data = updateMessage(message.id,message.conversaciones);
         SEND_MESSAGE.value = "";
         listMessages = await getMessages();
     }
@@ -85,7 +84,7 @@ ARROW_BACK_PERFIL.addEventListener('click', () => {
 /*Cargar los mensajes de chat  selecionado */
 
 
-LAST_CHAT();
+ID2 = await LAST_CHAT();
 LOADING_IMAGE_PROFILE();
 LIST_MY_CHAT();
 IMAGEN_PANEL_CHANGE_IMAGEN();
@@ -108,7 +107,7 @@ CONTAINER_CARD.addEventListener('click', () => {
             ID2 = parseInt(card.id);
             LOADDING_CHAT(card.id);
             LOADING_MESSAGES(card.id);
-            iniciada();
+            iniciada(ID,ID2);
             message_search= card.id;
             //LIST_MY_MESSAGE(card.id);
         });
@@ -185,7 +184,6 @@ inputElement.onkeyup = function SEARCH_CHAT () {
     let card = document.querySelectorAll('.container__whatsapp__myContacts__card__cardContact');
     for (let i = 0; i < x.length; i++) {
         if (!x[i].innerHTML.toLowerCase().includes(input)) {
-
             card[i].style.display="none";
         }
         else {   
@@ -207,7 +205,6 @@ inputMessage.onkeyup = function SEARCH_MESSAGE () {
     console.log('x: ', x.length , 'card: ', card.length);
     for (let i = 0; i < card.length; i++) {
         if (x[i].innerHTML.toLowerCase().includes(input)) {
-
             card[i].style.display="block";
         }
         else {   
