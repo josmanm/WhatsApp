@@ -36,6 +36,11 @@
   background-image: url(../img/fondo.jpg);
   background-repeat: no-repeat;
   background-size: cover;
+  /*@media (max-width: 1115px)
+  {
+      border: 1px solid red;
+
+  }*/
 }
 .container__whatsapp__myChat__fondo__date {
   display: flex;
@@ -241,6 +246,7 @@
 @media (max-width: 1115px) {
   .container__whatsapp__myChat {
     display: none;
+    height: 100vh;
   }
 }
 
@@ -535,6 +541,12 @@
   width: 91%;
   overflow: hidden;
 }
+@media (max-width: 1115px) {
+  .container__whatsapp__infoMesagge {
+    margin-left: 47.5%;
+    width: 50%;
+  }
+}
 
 .container__whatsapp__ModalEdit {
   display: none;
@@ -624,6 +636,11 @@
 .container__whatsapp__ModalEdit-body-Mensaje__formulario-send {
   width: 1.5rem;
   height: 1.5rem;
+}
+@media (max-width: 1115px) {
+  .container__whatsapp__ModalEdit-body {
+    width: 65%;
+  }
 }
 
 body {

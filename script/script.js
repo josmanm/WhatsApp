@@ -18,6 +18,7 @@ const SEND_MESSAGE = document.querySelector('.container__whatsapp__myChat__barra
 const IMG_SEND = document.querySelector('.container__whatsapp__myChat__barraChats__formulario-send');
 const TEMPLATE_CHANGE_IMAGE = document.querySelector('.container__whatsapp__changeImagen');
 const TEMPLATE_MY_CONTACTS = document.querySelector('.container__whatsapp__myContacts');
+const TEMPLETE_MY_CHAT = document.querySelector('.container__whatsapp__myChat');
 const ARROW_BACK_PERFIL = document.querySelector('.container__whatsapp__changeImagen__header__imgPerfil-arrow');
 const SEND_MESSAGE_MY_CHAT = document.querySelector('.container__whatsapp__myChat__header-search');
 const TEMPLETE_INFO_MESSAGE = document.querySelector('.container__whatsapp__infoMesagge');
@@ -30,6 +31,25 @@ const CONTAINER_HEADER_USER = document.querySelector('.container__whatsapp__myCo
 const CHANGE_IMAGEN = document.querySelector('.container__whatsapp__changeImagen__body__img');
 const FORM_CHANGE_IMAGEN = document.querySelector('.container__whatsapp__changeImagen__body__ChangeImagen');
 
+const mediaQuery = window.matchMedia('(max-width: 1115px)');
+
+
+function queryMovil(event)
+{
+    if(event.matches)
+    {
+        TEMPLATE_MY_CONTACTS.style.display='block';
+        TEMPLETE_MY_CHAT.style.display='none';
+    }
+    else
+    {
+        TEMPLATE_MY_CONTACTS.style.display='block';
+        TEMPLETE_MY_CHAT.style.display='block';
+    }
+   
+}
+
+mediaQuery.addListener(queryMovil);
 
 
 /*Realizamos dos gets uno para obtener infornacion de los mensajes y otros de los usuarios*/
@@ -84,7 +104,7 @@ LIST_MY_CHAT();
 IMAGEN_PANEL_CHANGE_IMAGEN();
 URL_DEFECTO();
 NAME_USER();
-
+queryMovil(mediaQuery);
 
 /*Pintar la card del ultimo mensaje enviado*/
 console.log('ID2: ', ID2);
@@ -100,11 +120,13 @@ const CHANGE_PERSONAL_INFORMATION = document.querySelector('.container__whatsapp
 CONTAINER_CARD.addEventListener('click', () => {
     MY_CONTACTS_CARD.forEach((card) => {
         card.addEventListener('click', () => {
+            //queryMovil(mediaQuery);
             card.style.backgroundColor = '#e9e9e9';
             ID2 = parseInt(card.id);
             LOADDING_CHAT(card.id);
             LOADING_MESSAGES(card.id);
             iniciada(ID,ID2);
+            
             //LIST_MY_MESSAGE(card.id);
         });
         if(card.id != ID2){

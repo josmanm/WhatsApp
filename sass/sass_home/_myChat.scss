@@ -256,6 +256,11 @@
                 }
             }
         }
+        /*@media (max-width: 1115px)
+        {
+            border: 1px solid red;
+                
+        }*/
     }
     &__barraChats
     {
@@ -312,7 +317,8 @@
     @media (max-width: 1115px)
     {
         display: none;
-
+        height: 100vh;
+       
     }
    
 }

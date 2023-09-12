@@ -16,6 +16,29 @@ const CONTAINER_HEADER_USER = document.querySelector('.container__whatsapp__myCo
 const LIST_MESSAGE_SEND = document.querySelector('.container__whatsapp__myChat__fondo__mensajeEnviado__contenedor__message-arrow-lista');
 const LIST_MESSAGE_RECEIVE = document.querySelector('.container__whatsapp__myChat__fondo__mensajeRecibido__contenedor__message-arrow-lista');
 
+/*HAVER UNA MEDIA QUERY PARA UN EVENTO */
+const TEMPLATE_MY_CONTACTS = document.querySelector('.container__whatsapp__myContacts');
+const TEMPLETE_MY_CHAT = document.querySelector('.container__whatsapp__myChat');
+const mediaQuery = window.matchMedia('(max-width: 1115px)');
+
+
+function queryMovil(event)
+{
+    if(event.matches)
+    {
+        TEMPLATE_MY_CONTACTS.style.display='none';
+        TEMPLETE_MY_CHAT.style.display='block';
+    }
+    else
+    {
+        TEMPLATE_MY_CONTACTS.style.display='block';
+        TEMPLETE_MY_CHAT.style.display='block';
+    }
+   
+}
+
+mediaQuery.addListener(queryMovil);
+
 
 /*Imagen del usuario en watsApp */
 export const LOADING_IMAGE_PROFILE = async () => {
@@ -86,6 +109,7 @@ export const LIST_MY_CHAT = async () => {
 }
 /*Cargar la foto de perfil del usuario que se selecciono para chatear */
 export const LOADDING_CHAT = async (ID2) => {
+    queryMovil(mediaQuery);
     let user2 = listUsers.find(user => user.id == ID2);
     const div = document.querySelector('.container__whatsapp__myChat__header__imgUserLine');
     const IMAGE_PERFIL =
@@ -210,7 +234,7 @@ export const LIST_MY_MESSAGE = async (ID2) => {
         const { sendBy, date, hour, message, flag } = messages;
         CONTAINER_CARD_MESSAGE.innerHTML += `    
                     <div id="${messages}" class="container__whatsapp__infoMesagge__cardInfo-card">
-                        <h6 class="container__whatsapp__infoMesagge__cardInfo-card-date"> ${messages.date}</h6>
+                        <h6 class="container__whatsapp__infoMesagge__cardInfo-card-date"> ${DateTime.fromISO(messages.hour).toLocaleString(DateTime.TIME_SIMPLE)}</h6>
                         <div class="container__whatsapp__infoMesagge__cardInfo-card__infoMessage">
                             <img class="container__whatsapp__infoMesagge__cardInfo-card__infoMessage-check" src="img/check.png" alt="iconCheck">
                             <p class="container__whatsapp__infoMesagge__cardInfo-card__infoMessage-message">
