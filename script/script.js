@@ -65,6 +65,7 @@ SEND_MESSAGE.addEventListener('keypress', async (e) => {
         let data = updateMessage(message.id,message.conversaciones);
         SEND_MESSAGE.value = "";
         listMessages = await getMessages();
+        window.location.reload()
     }
 });
 
@@ -86,15 +87,13 @@ NAME_USER();
 
 
 /*Pintar la card del ultimo mensaje enviado*/
+console.log('ID2: ', ID2);
 const LAST_CHAT_CONTAINER =document.getElementById(ID2);
 LAST_CHAT_CONTAINER.style.backgroundColor = '#e9e9e9';
 
 /*Los siguientes container los cargamos aqui y no en el principio de la script para no generar errores*/
 const MY_CONTACTS_CARD = document.querySelectorAll('.container__whatsapp__myContacts__card__cardContact');
 const CHANGE_PERSONAL_INFORMATION = document.querySelector('.container__whatsapp__myContacts__header-user');
-
-
-
 
 
 /*Poner en otro color cuando se seleccione una card */
@@ -149,6 +148,7 @@ CAMBIAR_URL.addEventListener('click',async()=>{
     let urlActualizar = document.querySelector('.container__whatsapp__changeImagen__body__ChangeImagen__formulario__nameImg-name').value;    
     let user = listUsers.find(user => user.id == ID);
     await updatePhotoUser(user, urlActualizar);
+    window.location.reload()
 });
 
 
@@ -168,6 +168,7 @@ NAME_CHANGE.addEventListener('dblclick', async()=>{
         let n = document.querySelector('.container__whatsapp__changeImagen__body__data__formulario__nameImg-name').value
         let user = listUsers.find(user => user.id == ID);
         await updateNameUser(user,n);
+        window.location.reload()
 });
 
 /*Buscar chat */

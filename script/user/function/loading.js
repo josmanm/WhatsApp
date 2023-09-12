@@ -175,18 +175,20 @@ export const LAST_MESSAGE = async () => {
 }
 export const LAST_CHAT = async () => {
     let bandera_fecha = await LAST_MESSAGE();
-    console.log(bandera_fecha);
+    console.log('bandera_fecha: ', bandera_fecha);
     let mylistMessages = listMessages.filter(message => message.idUser1 == ID || message.idUser2 == ID);
     mylistMessages.forEach(async (message) => {
         
         let fecha = message.conversaciones[message.conversaciones.length - 1].date;
         let hour =  message.conversaciones[message.conversaciones.length - 1].hour;
-        if (fecha ==  bandera_fecha.date && hour ==bandera_fecha.hour) {
+        if (fecha ==  bandera_fecha.date && hour == bandera_fecha.hour) {
+            console.log('message: ', message);
             if (ID == message.idUser1) {
                 ID2 = message.idUser2;
                 LOADDING_CHAT(message.idUser2);
                 LOADING_MESSAGES(message.idUser2);
             } else {
+                ID2 = message.idUser1;
                 LOADDING_CHAT(message.idUser1);
                 LOADING_MESSAGES(message.idUser1);
             }
