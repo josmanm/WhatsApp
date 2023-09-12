@@ -2,7 +2,7 @@ import axios from 'https://cdn.jsdelivr.net/npm/axios@1.3.5/+esm';
 
 export async function getMessagesUser(id){
     try {
-        const response = await axios.get(`http://localhost:3000/mensajes/?idUsuario=${id}`);
+        const response = await axios.get(`https://whatsapp-dz29.onrender.com/usuarios/?idUsuario=${id}`);
         console.log("response get", response.data)
         return response.data;
     } catch (error) {

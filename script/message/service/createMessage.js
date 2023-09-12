@@ -2,7 +2,7 @@ import axios from 'https://cdn.jsdelivr.net/npm/axios@1.3.5/+esm';
 
 export async function createMessage(message){
     try{
-        const response = await axios.post(`http://localhost:3000/mensajes/`, message);
+        const response = await axios.post(`https://whatsapp-dz29.onrender.com/mensajes`, message);
         console.log("response create", response.data)
     }catch(error){
         console.error('Error creating mensaje:', error);

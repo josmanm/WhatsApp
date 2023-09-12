@@ -2,9 +2,9 @@
 import { getUsers } from '../service/getUsers.js';
 import { updateMessage } from '../../message/service/updateMessage.js';
 import { getMessages } from '../../message/service/getMessages.js';
-import { DateTime } from 'https://moment.github.io/luxon/es6/luxon.js';
 import { updatePhotoUser } from '../service/updatePhoto.js';
 import { deleteMessage } from '../../message/service/deleteMessage.js';
+import { DateTime } from 'https://moment.github.io/luxon/es6/luxon.js';
 const params = new URLSearchParams(window.location.search);
 const ID = params.get('id');
 let ID2 = 0;
@@ -70,7 +70,7 @@ export const LIST_MY_CHAT = async () => {
         <div class="container__whatsapp__myContacts__card__cardContact__text">
             <div class="container__whatsapp__myContacts__card__cardContact__text__nameDate">
                 <h5 class="container__whatsapp__myContacts__card__cardContact__text__nameDate-name">${user2.nombre}</h5>
-                <h6 class="container__whatsapp__myContacts__card__cardContact__text__nameDate-date">${message.conversaciones[message.conversaciones.length - 1].hour} </h6>
+                <h6 class="container__whatsapp__myContacts__card__cardContact__text__nameDate-date">${DateTime.fromISO(message.conversaciones[message.conversaciones.length - 1].hour).toLocaleString(DateTime.TIME_SIMPLE)} </h6>
             </div>
             <div class="container__whatsapp__myContacts__card__cardContact__text__imgText">
                 <img class="container__whatsapp__myContacts__card__cardContact__text__imgText-img" src="img/check.png" alt="">
@@ -86,7 +86,6 @@ export const LIST_MY_CHAT = async () => {
 }
 /*Cargar la foto de perfil del usuario que se selecciono para chatear */
 export const LOADDING_CHAT = async (ID2) => {
-    let user = listUsers.find(user => user.id == ID);
     let user2 = listUsers.find(user => user.id == ID2);
     const div = document.querySelector('.container__whatsapp__myChat__header__imgUserLine');
     const IMAGE_PERFIL =
@@ -120,7 +119,7 @@ export const LOADING_MESSAGES = async (ID2) => {
                     </li>
                 </div>
                 <div class="container__whatsapp__myChat__fondo__mensajeEnviado__contenedor-img">
-                    <h6 class="container__whatsapp__myChat__fondo__mensajeEnviado__contenedor-img_date">${message.hour.toLocaleString(DateTime.TIME_SIMPLE)} </h6>
+                    <h6 class="container__whatsapp__myChat__fondo__mensajeEnviado__contenedor-img_date">${DateTime.fromISO(message.hour).toLocaleString(DateTime.TIME_SIMPLE)} </h6>
                     <img class="container__whatsapp__myChat__fondo__mensajeEnviado__contenedor-img_img" src="img/check.png" alt="mesage enviado">
                 </div>
             </div>
@@ -142,7 +141,7 @@ export const LOADING_MESSAGES = async (ID2) => {
                                     </li>
                             </div>
                             <div class="container__whatsapp__myChat__fondo__mensajeRecibido__contenedor-img">
-                                <h6 class="container__whatsapp__myChat__fondo__mensajeRecibido__contenedor-img_date">${message.hour.toLocaleString(DateTime.TIME_SIMPLE)} </h6>
+                                <h6 class="container__whatsapp__myChat__fondo__mensajeRecibido__contenedor-img_date">${DateTime.fromISO(message.hour).toLocaleString(DateTime.TIME_SIMPLE)} </h6>
                                 <img class="container__whatsapp__myChat__fondo__mensajeRecibido__contenedor-img_img" src="img/check.png" alt="mesage enviado">
                             </div>
                         </div>
@@ -155,32 +154,34 @@ export const LOADING_MESSAGES = async (ID2) => {
 }
 export const LAST_MESSAGE = async () => {
     let bandera_fecha = {
-        "date": '30/12/2000',
-        "hour": '00:00:00 a.m'
+        "date": "2000-08-12T07:30:39.179-05:00",
+        "hour": "2000-08-12T07:30:39.179-05:00"
     }
     let mylistMessages = listMessages.filter(message => message.idUser1 == ID || message.idUser2 == ID);
     mylistMessages.forEach((message) => {
-        if (message.conversaciones[message.conversaciones.length - 1].date > bandera_fecha.date) {
-            bandera_fecha.date = message.conversaciones[message.conversaciones.length - 1].date;
-            bandera_fecha.hour = message.conversaciones[message.conversaciones.length - 1].hour;
-        } else if (message.conversaciones[message.conversaciones.length - 1].date == bandera_fecha.date) {
-            if (message.conversaciones[message.conversaciones.length - 1].hour > bandera_fecha.hour) {
-                bandera_fecha.date = message.conversaciones[message.conversaciones.length - 1].date;
-                bandera_fecha.hour = message.conversaciones[message.conversaciones.length - 1].hour;
-            }
+        let fecha = message.conversaciones[message.conversaciones.length - 1].date;
+        let hour =  message.conversaciones[message.conversaciones.length - 1].hour;
+        // Compara las fechas
+        if (fecha > bandera_fecha.date) {
+            bandera_fecha.date = fecha;
+            bandera_fecha.hour = hour;
         }
     });
-    return bandera_fecha;
+    
+    return  {
+        "date": bandera_fecha.date,
+        "hour": bandera_fecha.hour
+    };
 }
 export const LAST_CHAT = async () => {
     let bandera_fecha = await LAST_MESSAGE();
-    let html = ``;
+    console.log(bandera_fecha);
     let mylistMessages = listMessages.filter(message => message.idUser1 == ID || message.idUser2 == ID);
-    let div = document.querySelector('.container__whatsapp__myChat__fondo');
     mylistMessages.forEach(async (message) => {
-
-        if (message.conversaciones[message.conversaciones.length - 1].date === String(bandera_fecha.date) && message.conversaciones[message.conversaciones.length - 1].hour === String(bandera_fecha.hour)) {
-            console.log(String(message.conversaciones[message.conversaciones.length - 1].date === String(bandera_fecha.date)) && String(message.conversaciones[message.conversaciones.length - 1].hour === String(bandera_fecha.hour)), 'Ingreso con esta respuesta')
+        
+        let fecha = message.conversaciones[message.conversaciones.length - 1].date;
+        let hour =  message.conversaciones[message.conversaciones.length - 1].hour;
+        if (fecha ==  bandera_fecha.date && hour ==bandera_fecha.hour) {
             if (ID == message.idUser1) {
                 ID2 = message.idUser2;
                 LOADDING_CHAT(message.idUser2);
@@ -231,8 +232,6 @@ export function iniciada(ID, ID2) {
     const EDIT_MESSAGE = document.querySelectorAll('.container__whatsapp__myChat__fondo__mensajeEnviado__contenedor__message-arrow-lista__textEdit');
     const MESSAGES = document.querySelectorAll('.container__whatsapp__myChat__fondo__mensajeEnviado__contenedor__message-text');
     const DATE_MESSAGE = document.querySelectorAll('.container__whatsapp__myChat__fondo__mensajeEnviado__contenedor-img_date');
-    console.log('send ', CONTAINER_SEND_MESSAGE);
-    console.log('recive ', MESSAGES)
 
     for (let index = 0; index < CONTAINER_SEND_MESSAGE.length; index++) {
         /*Enviados */
@@ -248,13 +247,6 @@ export function iniciada(ID, ID2) {
         ARROW_DOWN_SEND[index].addEventListener('dblclick', () => {
             MENU_DESPLEGABLE_SEND[index].style.display = 'none';
         })
-        /*Recividos 
-        CONTAINER_RECEIVE_MESSAGE[index].addEventListener('mouseover',()=>{
-            ARROW_DOWN_RECEIVE[index].style.display='block';
-        });
-        CONTAINER_RECEIVE_MESSAGE[index].addEventListener('mouseout',()=>{
-            ARROW_DOWN_RECEIVE[index].style.display='none';
-        });*/
         DELETE_MESSAGE[index].addEventListener('click', () => {
             MENU_DESPLEGABLE_SEND[index].style.display = 'none';
             Swal.fire({

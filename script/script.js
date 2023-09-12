@@ -56,8 +56,8 @@ SEND_MESSAGE.addEventListener('keypress', async (e) => {
         message.conversaciones.push(
             {
                 "sendBy": ID,
-                "date": DateTime.now().toLocaleString(),
-                "hour": DateTime.local().toLocaleString(DateTime.TIME_WITH_SECONDS),
+                "date": DateTime.now(),
+                "hour": DateTime.now(),
                 "message": SEND_MESSAGE.value,
                 "flag": false
             }
@@ -74,16 +74,9 @@ ARROW_BACK_PERFIL.addEventListener('click', () => {
     TEMPLATE_MY_CONTACTS.style.display = 'block';
 });
 
-
-
-
 /*Listar la lista de mensajes de cada usuario */
-
 /*Cargar la foto de perfil del usuario que se selecciono para chatear */
-
 /*Cargar los mensajes de chat  selecionado */
-
-
 ID2 = await LAST_CHAT();
 LOADING_IMAGE_PROFILE();
 LIST_MY_CHAT();
@@ -92,12 +85,17 @@ URL_DEFECTO();
 NAME_USER();
 
 
-//variable global para saber cual es el id de la persona con la que se sostiene la conversacion
-let message_search;
+/*Pintar la card del ultimo mensaje enviado*/
+const LAST_CHAT_CONTAINER =document.getElementById(ID2);
+LAST_CHAT_CONTAINER.style.backgroundColor = '#e9e9e9';
 
 /*Los siguientes container los cargamos aqui y no en el principio de la script para no generar errores*/
 const MY_CONTACTS_CARD = document.querySelectorAll('.container__whatsapp__myContacts__card__cardContact');
 const CHANGE_PERSONAL_INFORMATION = document.querySelector('.container__whatsapp__myContacts__header-user');
+
+
+
+
 
 /*Poner en otro color cuando se seleccione una card */
 CONTAINER_CARD.addEventListener('click', () => {
@@ -108,7 +106,6 @@ CONTAINER_CARD.addEventListener('click', () => {
             LOADDING_CHAT(card.id);
             LOADING_MESSAGES(card.id);
             iniciada(ID,ID2);
-            message_search= card.id;
             //LIST_MY_MESSAGE(card.id);
         });
         if(card.id != ID2){
@@ -122,7 +119,7 @@ const CONTAINER_SEARCG_MESSAGE = document.querySelector('.container__whatsapp__i
 /*Templete de buscar los mensajes */
 SEND_MESSAGE_MY_CHAT.addEventListener('click', () => {
     TEMPLETE_INFO_MESSAGE.style.display = 'block';
-    LIST_MY_MESSAGE(message_search);
+    LIST_MY_MESSAGE(ID2);
 });
 
 CLOSE_TEMPLETE_INFO_MESSAGE.addEventListener('click', () => {

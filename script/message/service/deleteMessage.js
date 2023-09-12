@@ -2,7 +2,7 @@ import axios from 'https://cdn.jsdelivr.net/npm/axios@1.3.5/+esm';
 
 export async function deleteMessage(id,conversacion){
     try {
-        const response = await axios.patch(`http://localhost:3000/mensajes/${id}`, {conversaciones : conversacion});
+        const response = await axios.patch(`https://whatsapp-dz29.onrender.com/mensajes/${id}`, {conversaciones : conversacion});
         console.log("response delete", response.data)
     }catch (error) {
         console.error('Error deleting mensaje:', error);
