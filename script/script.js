@@ -107,7 +107,6 @@ NAME_USER();
 queryMovil(mediaQuery);
 
 /*Pintar la card del ultimo mensaje enviado*/
-console.log('ID2: ', ID2);
 const LAST_CHAT_CONTAINER =document.getElementById(ID2);
 LAST_CHAT_CONTAINER.style.backgroundColor = '#e9e9e9';
 

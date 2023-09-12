@@ -10,6 +10,7 @@ const ID = params.get('id');
 let ID2 = 0;
 let listMessages = await getMessages();
 let listUsers = await getUsers();
+let banderaEdit =true;
 
 const CONTAINER_CARD = document.querySelector('.container__whatsapp__myContacts__card')
 const CONTAINER_HEADER_USER = document.querySelector('.container__whatsapp__myContacts__header');
@@ -344,15 +345,17 @@ export function iniciada(ID, ID2) {
                     for (let i = 0; i < mylistMessages.conversaciones.length; i++) {
                         if (mylistMessages.conversaciones[i].message == MESSAGES[index].innerText) {
                             mylistMessages.conversaciones[i].message = SEND_MESSAGE.value;
-                            mylistMessages.conversaciones[i].hour = DateTime.now().toLocaleString(DateTime.TIME_SIMPLE);
-                            mylistMessages.conversaciones[i].date = DateTime.now().toLocaleString(DateTime.DATE_SHORT);
+                            mylistMessages.conversaciones[i].hour = DateTime.now();
+                            mylistMessages.conversaciones[i].date = DateTime.now();
                             EDIT_MESSAGE_FROM_CHAT(mylistMessages.id, mylistMessages.conversaciones);
                             renderizarEdit.style.display = 'none';
+                            listMessages = await getMessages();
+                            window.location.reload()
                         }
                     }
                 }
             })
-        });
+        });  
     }
 };
 
